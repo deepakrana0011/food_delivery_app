@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/view/auth/forgot_password.dart';
 import 'package:food_delivery_app/view/auth/login.dart';
 import 'package:food_delivery_app/view/auth/sign_up.dart';
+import 'package:food_delivery_app/view/cart/my_cart.dart';
 import 'package:food_delivery_app/view/checkout/checkout.dart';
 import 'package:food_delivery_app/view/dashboard/home_page.dart';
 import 'package:food_delivery_app/view/onboarding/onboardingview.dart';
 import 'package:food_delivery_app/view/profile/profile.dart';
+import 'package:food_delivery_app/view/restaurant_details/restaurant_details.dart';
 import 'package:food_delivery_app/view/summary/summary.dart';
 
 import 'constants/route_constants.dart';
@@ -53,6 +55,15 @@ class Router {
         return MaterialPageRoute(
             builder: (_) => Summary(), settings: settings);
 
+      case RoutesConstants.cart:
+        return MaterialPageRoute(
+            builder: (_) => MyCart(), settings: settings);
+
+
+
+      case RoutesConstants.restaurant_details:
+        return MaterialPageRoute(
+            builder: (_) => RestaurantDetails(), settings: settings);
 
 
 

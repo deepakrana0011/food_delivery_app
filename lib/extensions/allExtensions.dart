@@ -68,11 +68,15 @@ extension ExtendText on Text {
       maxLines: maxLines,
       overflow: overflow,
       textAlign: textAlign,
+
+
+
       style: TextStyle(
           color: color,
           fontFamily: "Gilroy",
           fontWeight: FontWeight.w500,
-          fontSize: textSize),
+          fontSize: textSize,
+      ),
     );
   }
 
@@ -114,8 +118,8 @@ extension ExtendText on Text {
       textAlign: alignment,
       style: TextStyle(
           color: color,
-          fontFamily: "popins",
-          fontWeight: FontWeight.w700,
+          fontFamily: "Gilroy",
+          fontWeight: FontWeight.w800,
           fontSize: textSize),
     );
   }

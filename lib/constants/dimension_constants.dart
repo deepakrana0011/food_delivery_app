@@ -117,16 +117,64 @@ class DimensionConstants{
   static const double d17=17;
   static const double d16=16;
   static const double d7=7;
+  static const double d3=3;
   static const double d104=104;
   static const double d38=38;
   static const double d59=59;
   static const double d52=52;
   static const double d92=52;
   static const double d179=179.5;
-  static const double d242=242;
+  static const double d250=250;
   static const double d124=124;
-  static const double d199=199;
-  static const double d237=237;
+  static const double d207=207;
+  static const double d245=245;
+  static const double d116 =116;
+  static const double d264 =264;
+  static const double d108 =108;
+  static const double d230 =230;
+  static const double d110 =110;
+  static const double d187 =187;
+  static const double d227 =227;
+  static const double d200 =200;
+  static const double d191 =191;
+  static const double d260 =260;
+  static const double d147 =147;
+  static const double d10 =10;
+  static const double d40 =40;
+  static const double d24 =24;
+  static const double d37 =41;
+  static const double d182 =182;
+  static const double d158 =158;
+  static const double d89 =89;
+  static const double d338 =338;
+  static const double d6 =6;
+  static const double d79=79;
+  static const double d144=154;
+  static const double d94=94;
+  static const double d134=134;
+  static const double d468=468;
+  static const double d54=54;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -34,6 +34,20 @@ class ImageConstants {
   static const ic_expiry= "images/ic_expiry.svg";
   static const ic_card_number= "images/ic_card.svg";
   static const ic_card_holder= "images/ic_card_holder.png";
+  static const ic_minus= "images/ic_minus.svg";
+  static const ic_add= "images/ic_add.svg";
+  static const ic_cancel= "images/ic_cancel.svg";
+  static const ic_fire= "images/ic_fire.svg";
+  static const ic_cart_burger= "images/ic_cart_burger.png";
+  static const ic_restaurant_promo= "images/ic_restaurant_promo.png";
+  static const ic_sprite= "images/ic_drink.png";
+
+
+
+
+
+
+
 
 
 

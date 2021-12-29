@@ -54,7 +54,9 @@ class _HomePageState extends State<HomePage> {
   ];
   List navigationitems=['Home','WishList','Home','Cart','Profile'];
   List navigationicons=[ImageConstants.ic_home,ImageConstants.ic_favorite,ImageConstants.ic_dashboard,ImageConstants.ic_cart,ImageConstants.ic_profile];
-
+  List restuarntnames=['Vegan Resto','Healthy Food','Good Food','Good Food'];
+  List restaurantimages= [ImageConstants.ic_restaurant1,ImageConstants.ic_restaurant2,ImageConstants.ic_restaurant3,ImageConstants.ic_restaurant4];
+  List restauranttimings=['12 Mins','8 Mins','12 Mins','8 Mins'];
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
  int ind=0;
 
@@ -327,8 +329,8 @@ class _HomePageState extends State<HomePage> {
                               child: new CarouselSlider(
                                 options: CarouselOptions(
                                     height: 150.0,
-                                    viewportFraction: 1.9,
-                                    aspectRatio: 4.0,
+                                    aspectRatio: 16/9,
+                                    viewportFraction: .8,
                                     enlargeCenterPage: true),
                                 items: [1, 2, 3, 4, 5].map((i) {
                                   return Builder(
@@ -370,9 +372,7 @@ class _HomePageState extends State<HomePage> {
                                       DimensionConstants.noaccounttextsize)
                                 ],
                               )),
-                          SizedBox(
-                            height: DimensionConstants.d12.h,
-                          ),
+
                           Padding(
                             padding: EdgeInsets.only(
                                 left: DimensionConstants
@@ -381,7 +381,7 @@ class _HomePageState extends State<HomePage> {
                                     .nametextfieldleftpadding.w),
                             child: Container(
                               color: ColorConstants.whiteColor,
-                              height: 61.h,
+                              height: 73.h,
                               child: ListView.builder(
                                   shrinkWrap: true,
                                   scrollDirection: Axis.horizontal,
@@ -399,18 +399,18 @@ class _HomePageState extends State<HomePage> {
                                             borderRadius: BorderRadius.circular(DimensionConstants.buttonradius.r),
                                             child: RoundCornerShape(
                                                 bgColor:
-                                                    ColorConstants.whiteColor,
+                                                ColorConstants.whiteColor,
                                                 radius: DimensionConstants
                                                     .buttonradius.r,
                                                 child: Column(
                                                   children: [
                                                     SizedBox(
                                                       height:
-                                                          DimensionConstants.d9.h,
+                                                      DimensionConstants.d9.h,
                                                     ),
                                                     ImageView(
                                                       path:
-                                                          categoriesimages[index],
+                                                      categoriesimages[index],
                                                       height: DimensionConstants
                                                           .d25.h,
                                                       width: DimensionConstants
@@ -418,18 +418,20 @@ class _HomePageState extends State<HomePage> {
                                                     ),
                                                     SizedBox(
                                                       height:
-                                                          DimensionConstants.d4.h,
+                                                      DimensionConstants.d4.h,
                                                     ),
                                                     Text(categories[index])
                                                         .btnText(
-                                                            ColorConstants
-                                                                .colorBlack,
-                                                            DimensionConstants
-                                                                .d12.sp),
+                                                        ColorConstants
+                                                            .colorBlack,
+                                                        DimensionConstants
+                                                            .d12.sp),
                                                   ],
                                                 )),
                                           ),
                                         ),
+
+
                                         SizedBox(
                                           width: 10.w,
                                         )
@@ -439,7 +441,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           SizedBox(
-                            height: DimensionConstants.d26.h,
+                            height: DimensionConstants.d15.h,
                           ),
                           Padding(
                               padding: EdgeInsets.only(
@@ -462,176 +464,75 @@ class _HomePageState extends State<HomePage> {
                                       DimensionConstants.noaccounttextsize)
                                 ],
                               )),
-                          SizedBox(
-                            height: DimensionConstants.d8.h,
-                          ),
+
                           Padding(
-                              padding: EdgeInsets.only(
-                                  left: DimensionConstants.d20.w,
-                                  right: DimensionConstants.d20.w),
-                              child: Row(
-                                children: [
-                                  Container(
-                                    height: DimensionConstants.d218.h,
-                                    width: DimensionConstants.d173.w,
-                                    child: RoundCornerShape(
-                                      bgColor: ColorConstants.whiteColor,
-                                      radius: DimensionConstants.d22.r,
-                                      child: Column(
-                                        children: [
-                                          SizedBox(
-                                            height: DimensionConstants.d30.h,
+                            padding: EdgeInsets.only(
+                                left: DimensionConstants.d20.w,
+                                ),
+                            child: GridView.count(
+                              crossAxisCount: 2,
+                              physics: ClampingScrollPhysics(),
+
+                              shrinkWrap: true,
+                              children: List.generate(restuarntnames.length, (index) {
+                                return Row(
+                                  children: [
+                                    GestureDetector(
+                                      onTap: (){
+                                        Navigator.of(context)
+                                            .pushNamed(RoutesConstants.restaurant_details);
+                                      },
+                                      child: Container(
+                                        height: DimensionConstants.d218.h,
+                                        width: DimensionConstants.d173.w,
+                                        child: BottomNavigationBarShape(
+                                          bgColor: ColorConstants.whiteColor,
+                                          topRightradius: DimensionConstants.d22.r,
+                                          topleftradius: DimensionConstants.d22.r,
+                                          bottomleftradius:DimensionConstants.d22.r ,
+                                          bottomRightradius: DimensionConstants.d22.r,
+
+                                          child: Column(
+                                            children: [
+                                              SizedBox(
+                                                height: DimensionConstants.d30.h,
+                                              ),
+                                              ImageView(
+                                                path: restaurantimages[index],
+                                                height: DimensionConstants.d86.h,
+                                                width: DimensionConstants.d114.w,
+                                              ),
+                                              SizedBox(
+                                                height: DimensionConstants.d20.h,
+                                              ),
+                                              Text(restuarntnames[index]).mediumText(
+                                                  ColorConstants.colorBlack,
+                                                  DimensionConstants
+                                                      .textfieldTextSize.sp,
+                                                  TextAlign.center),
+                                              SizedBox(
+                                                height: DimensionConstants.d5.h,
+                                              ),
+                                              Text(restauranttimings[index]).btnText(
+                                                ColorConstants.colorBlack,
+                                                DimensionConstants.d13.sp,
+                                              ),
+                                            ],
                                           ),
-                                          ImageView(
-                                            path: ImageConstants.ic_restaurant1,
-                                            height: DimensionConstants.d86.h,
-                                            width: DimensionConstants.d114.w,
-                                          ),
-                                          SizedBox(
-                                            height: DimensionConstants.d20.h,
-                                          ),
-                                          Text('Vegan Resto').mediumText(
-                                              ColorConstants.colorBlack,
-                                              DimensionConstants
-                                                  .textfieldTextSize.sp,
-                                              TextAlign.center),
-                                          SizedBox(
-                                            height: DimensionConstants.d5.h,
-                                          ),
-                                          Text('12 Mins').btnText(
-                                            ColorConstants.colorBlack,
-                                            DimensionConstants.d13.sp,
-                                          ),
-                                        ],
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    width: DimensionConstants.d23.w,
-                                  ),
-                                  Container(
-                                    height: DimensionConstants.d218.h,
-                                    width: DimensionConstants.d173.w,
-                                    child: RoundCornerShape(
-                                      bgColor: ColorConstants.whiteColor,
-                                      radius: DimensionConstants.d22.r,
-                                      child: Column(
-                                        children: [
-                                          SizedBox(
-                                            height: DimensionConstants.d30.h,
-                                          ),
-                                          ImageView(
-                                            path: ImageConstants.ic_restaurant2,
-                                            height: DimensionConstants.d86.h,
-                                            width: DimensionConstants.d114.w,
-                                          ),
-                                          SizedBox(
-                                            height: DimensionConstants.d20.h,
-                                          ),
-                                          Text('Healthy Food').mediumText(
-                                              ColorConstants.colorBlack,
-                                              DimensionConstants
-                                                  .textfieldTextSize.sp,
-                                              TextAlign.center),
-                                          SizedBox(
-                                            height: DimensionConstants.d5.h,
-                                          ),
-                                          Text('8 Mins').btnText(
-                                            ColorConstants.colorBlack,
-                                            DimensionConstants.d13.sp,
-                                          ),
-                                        ],
-                                      ),
+                                    SizedBox(
+                                      width: DimensionConstants.d23.w,
                                     ),
-                                  ),
-                                ],
-                              )),
-                          SizedBox(
-                            height: DimensionConstants.d23.h,
+                                  ],
+                                );
+                              },),
+                            ),
                           ),
-                          Padding(
-                              padding: EdgeInsets.only(
-                                  left: DimensionConstants.d20.w,
-                                  right: DimensionConstants.d20.w),
-                              child: Row(
-                                children: [
-                                  Container(
-                                    height: DimensionConstants.d218.h,
-                                    width: DimensionConstants.d173.w,
-                                    child: RoundCornerShape(
-                                      bgColor: ColorConstants.whiteColor,
-                                      radius: DimensionConstants.d22.r,
-                                      child: Column(
-                                        children: [
-                                          SizedBox(
-                                            height: DimensionConstants.d30.h,
-                                          ),
-                                          ImageView(
-                                            path: ImageConstants.ic_restaurant3,
-                                            height: DimensionConstants.d86.h,
-                                            width: DimensionConstants.d114.w,
-                                          ),
-                                          SizedBox(
-                                            height: DimensionConstants.d20.h,
-                                          ),
-                                          Text('Good Food').mediumText(
-                                              ColorConstants.colorBlack,
-                                              DimensionConstants
-                                                  .textfieldTextSize.sp,
-                                              TextAlign.center),
-                                          SizedBox(
-                                            height: DimensionConstants.d5.h,
-                                          ),
-                                          Text('12 Mins').btnText(
-                                            ColorConstants.colorBlack,
-                                            DimensionConstants.d13.sp,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: DimensionConstants.d23.w,
-                                  ),
-                                  Container(
-                                    height: DimensionConstants.d218.h,
-                                    width: DimensionConstants.d173.w,
-                                    child: RoundCornerShape(
-                                      bgColor: ColorConstants.whiteColor,
-                                      radius: DimensionConstants.d22.r,
-                                      child: Column(
-                                        children: [
-                                          SizedBox(
-                                            height: DimensionConstants.d30.h,
-                                          ),
-                                          ImageView(
-                                            path: ImageConstants.ic_restaurant4,
-                                            height: DimensionConstants.d86.h,
-                                            width: DimensionConstants.d114.w,
-                                          ),
-                                          SizedBox(
-                                            height: DimensionConstants.d20.h,
-                                          ),
-                                          Text('Smart Resto').mediumText(
-                                              ColorConstants.colorBlack,
-                                              DimensionConstants
-                                                  .textfieldTextSize.sp,
-                                              TextAlign.center),
-                                          SizedBox(
-                                            height: DimensionConstants.d5.h,
-                                          ),
-                                          Text('8 Mins').btnText(
-                                            ColorConstants.colorBlack,
-                                            DimensionConstants.d13.sp,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              )),
+
                           SizedBox(
-                            height: DimensionConstants.d36.h,
+                            height: DimensionConstants.d15.h,
                           ),
                           Padding(
                               padding: EdgeInsets.only(
@@ -818,13 +719,18 @@ class _HomePageState extends State<HomePage> {
   }
 
   void onItemTapped(int index) {
-    if(index==2){
-      Navigator.of(context)
-          .pushNamed(RoutesConstants.checkout);
-    }
+
     if(index==1){
       Navigator.of(context)
           .pushNamed(RoutesConstants.summary);
+    }
+    if(index==3){
+      Navigator.of(context)
+          .pushNamed(RoutesConstants.cart);
+    }
+    if(index==4){
+      Navigator.of(context)
+          .pushNamed(RoutesConstants.profile);
     }
   }
 }

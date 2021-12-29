@@ -37,6 +37,15 @@ class ColorConstants {
   static const homepagebgcolor = Color(0xffFCFCFC);
   static const bottomcontainercolor=Color(0xff1AE21F23);
   static const percentagecolor=Color(0xff476FB0);
+  static const strokecolor=Color(0xffF0F0F0);
+  static const darkblackcolor=Color(0xff181725);
+  static const cartTextcolor=Color(0xffAEAEAE);
+  static const blackcolor=Color(0xff09051C);
+  static const detailsTextcolor=Color(0xffB8B8B8);
+
+
+
+
 
 
 

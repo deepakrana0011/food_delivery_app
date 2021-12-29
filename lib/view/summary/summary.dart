@@ -16,6 +16,7 @@ import 'package:food_delivery_app/extensions/allExtensions.dart';
 import 'package:food_delivery_app/helper/keyboard_helper.dart';
 import 'package:food_delivery_app/provider/signup_provider.dart';
 import 'package:food_delivery_app/view/base_view.dart';
+import 'package:food_delivery_app/widgets/bottom_bar_Container_shape.dart';
 import 'package:food_delivery_app/widgets/image_view.dart';
 import 'package:food_delivery_app/widgets/roundCornerShape.dart';
 
@@ -98,7 +99,7 @@ class _SummaryState extends State<Summary> {
                                       ),
                                       Text('Address').btnText(ColorConstants.colorBlack, DimensionConstants.d14.sp),
                                       SizedBox(
-                                        width: DimensionConstants.d242.w,
+                                        width: DimensionConstants.d250.w,
                                       ),
                                       Text('Edit').btnText(ColorConstants.percentagecolor, DimensionConstants.d14.sp)
 
@@ -137,7 +138,7 @@ class _SummaryState extends State<Summary> {
                                         ),
                                         Text('Phone Number').btnText(ColorConstants.colorBlack, DimensionConstants.d14.sp),
                                         SizedBox(
-                                          width: DimensionConstants.d199.w,
+                                          width: DimensionConstants.d207.w,
                                         ),
                                         Text('Edit').btnText(ColorConstants.percentagecolor, DimensionConstants.d14.sp)
 
@@ -176,7 +177,7 @@ class _SummaryState extends State<Summary> {
                                         ),
                                         Text('Payment').btnText(ColorConstants.colorBlack, DimensionConstants.d14.sp),
                                         SizedBox(
-                                          width: DimensionConstants.d237.w,
+                                          width: DimensionConstants.d245.w,
                                         ),
                                         Text('Edit').btnText(ColorConstants.percentagecolor, DimensionConstants.d14.sp)
 
@@ -192,6 +193,290 @@ class _SummaryState extends State<Summary> {
                                 ),
                               ),
                             ),),
+                          SizedBox(
+                            height: DimensionConstants.d15.h,
+                          ),
+                          Padding(padding: EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
+                            child: Container(
+                              height: DimensionConstants.d116.h,
+                              width: DimensionConstants.d372.w,
+                              child: RoundCornerShape(
+                                bgColor: ColorConstants.whiteColor,
+                                radius: DimensionConstants.buttonradius.r,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      height: DimensionConstants.d14.h,
+                                    ),
+                                    Row(
+                                      children: [
+                                        SizedBox(
+                                          width: DimensionConstants.d18.w,
+                                        ),
+                                        Text('Order').btnText(ColorConstants.colorBlack, DimensionConstants.d14.sp),
+                                        SizedBox(
+                                          width: DimensionConstants.d264.w,
+                                        ),
+                                        Text('Edit').btnText(ColorConstants.percentagecolor, DimensionConstants.d14.sp)
+
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: DimensionConstants.d3.h,
+                                    ),
+                                    Padding(padding: EdgeInsets.only(left:DimensionConstants.d18.w ),
+                                      child:Row(
+                                        children: [
+                                          Text('Chicken Zinger, Size (S)').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp),
+                                          SizedBox(
+                                            width: DimensionConstants.d86.w,
+                                          ),
+                                          Container(
+                                            height: DimensionConstants.d18.h,
+                                            width: DimensionConstants.d18.w,
+                                            child: BottomNavigationBarShape(
+                                              bgColor: ColorConstants.whiteColor,
+                                              strokeColor: ColorConstants.strokecolor,
+                                              topleftradius: DimensionConstants.buttonradius.r,
+                                              topRightradius: DimensionConstants.buttonradius.r,
+                                              bottomRightradius: DimensionConstants.buttonradius.r,
+                                              bottomleftradius: DimensionConstants.buttonradius.r,
+                                              child: Padding(
+                                                padding:  EdgeInsets.only(left: DimensionConstants.d5.w,top: DimensionConstants.d8.h,bottom: DimensionConstants.d8.h,
+                                                right: DimensionConstants.d5.w),
+                                                child: ImageView(
+                                                  path: ImageConstants.ic_minus,
+                                                  height: DimensionConstants.d1.h,
+                                                  width: DimensionConstants.d7.w,
+                                                )
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: DimensionConstants.d4.w,
+                                          ),
+                                          Text('1 X 79.99 EGP').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp),
+                                          SizedBox(
+                                            width: DimensionConstants.d4.w,
+                                          ),
+                                          Container(
+                                            height: DimensionConstants.d18.h,
+                                            width: DimensionConstants.d18.w,
+                                            child: BottomNavigationBarShape(
+                                              bgColor: ColorConstants.whiteColor,
+                                              strokeColor: ColorConstants.strokecolor,
+                                              topleftradius: DimensionConstants.buttonradius.r,
+                                              topRightradius: DimensionConstants.buttonradius.r,
+                                              bottomRightradius: DimensionConstants.buttonradius.r,
+                                              bottomleftradius: DimensionConstants.buttonradius.r,
+                                              child: Padding(
+                                                  padding:  EdgeInsets.only(left: DimensionConstants.d5.w,top: DimensionConstants.d5.h,bottom: DimensionConstants.d5.h,
+                                                      right: DimensionConstants.d5.w),
+                                                  child: ImageView(
+                                                    path: ImageConstants.ic_add,
+                                                    height: DimensionConstants.d7.h,
+                                                    width: DimensionConstants.d7.w,
+                                                  )
+                                              ),
+                                            ),
+                                          ),
+
+                                        ],
+                                      )
+                                      ,),
+                                    SizedBox(
+                                      height: DimensionConstants.d8.h,
+                                    ),
+                                    Padding(padding: EdgeInsets.only(left:DimensionConstants.d18.w ),
+                                      child:Row(
+                                        children: [
+                                          Text('Pizza Marina, Size (L)').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp),
+                                          SizedBox(
+                                            width: DimensionConstants.d108.w,
+                                          ),
+                                          Container(
+                                            height: DimensionConstants.d18.h,
+                                            width: DimensionConstants.d18.w,
+                                            child: BottomNavigationBarShape(
+                                              bgColor: ColorConstants.whiteColor,
+                                              strokeColor: ColorConstants.strokecolor,
+                                              topleftradius: DimensionConstants.buttonradius.r,
+                                              topRightradius: DimensionConstants.buttonradius.r,
+                                              bottomRightradius: DimensionConstants.buttonradius.r,
+                                              bottomleftradius: DimensionConstants.buttonradius.r,
+                                              child: Padding(
+                                                  padding:  EdgeInsets.only(left: DimensionConstants.d5.w,top: DimensionConstants.d8.h,bottom: DimensionConstants.d8.h,
+                                                      right: DimensionConstants.d5.w),
+                                                  child: ImageView(
+                                                    path: ImageConstants.ic_minus,
+                                                    height: DimensionConstants.d1.h,
+                                                    width: DimensionConstants.d7.w,
+                                                  )
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: DimensionConstants.d4.w,
+                                          ),
+                                          Text('2 X 50 EGP').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp),
+                                          SizedBox(
+                                            width: DimensionConstants.d4.w,
+                                          ),
+                                          Container(
+                                            height: DimensionConstants.d18.h,
+                                            width: DimensionConstants.d18.w,
+                                            child: BottomNavigationBarShape(
+                                              bgColor: ColorConstants.whiteColor,
+                                              strokeColor: ColorConstants.strokecolor,
+                                              topleftradius: DimensionConstants.buttonradius.r,
+                                              topRightradius: DimensionConstants.buttonradius.r,
+                                              bottomRightradius: DimensionConstants.buttonradius.r,
+                                              bottomleftradius: DimensionConstants.buttonradius.r,
+                                              child: Padding(
+                                                  padding:  EdgeInsets.only(left: DimensionConstants.d5.w,top: DimensionConstants.d5.h,bottom: DimensionConstants.d5.h,
+                                                      right: DimensionConstants.d5.w),
+                                                  child: ImageView(
+                                                    path: ImageConstants.ic_add,
+                                                    height: DimensionConstants.d7.h,
+                                                    width: DimensionConstants.d7.w,
+                                                  )
+                                              ),
+                                            ),
+                                          ),
+
+                                        ],
+                                      )
+                                      ,),
+                                    SizedBox(
+                                      height: DimensionConstants.d2.h,
+                                    ),
+                                    Padding(padding: EdgeInsets.only(left:DimensionConstants.d18.w ),
+                                      child:Row(
+                                        children: [
+                                          Text('Exter Fries').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp),
+                                          SizedBox(
+                                            width: DimensionConstants.d218.w,
+                                          ),
+
+                                          Text('1 X 5 EGP').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp),
+
+
+
+                                        ],
+                                      )
+                                      ,),
+                                  ],
+                                ),
+                              ),
+                            ),),
+                          SizedBox(
+                            height: DimensionConstants.d15.h,
+                          ),
+                          Padding(padding: EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
+                            child: Container(
+                              height: DimensionConstants.d110.h,
+                              width: DimensionConstants.d372.w,
+                              child: RoundCornerShape(
+                                bgColor: ColorConstants.whiteColor,
+                                radius: DimensionConstants.buttonradius.r,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      height: DimensionConstants.d11.h,
+                                    ),
+                                    Row(
+                                      children: [
+                                        SizedBox(
+                                          width: DimensionConstants.d18.w,
+                                        ),
+                                        Text('Total Items').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d15.sp),
+                                        SizedBox(
+                                          width: DimensionConstants.d187.w,
+                                        ),
+                                        Text('134.99 EGP').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d15.sp)
+
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: DimensionConstants.d8.h,
+                                    ),
+                                    Padding(padding: EdgeInsets.only(left:DimensionConstants.d18.w ),
+                                      child:Row(
+                                        children: [
+                                          Text('Shipping').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d15.sp),
+                                          SizedBox(
+                                            width: DimensionConstants.d227.w,
+                                          ),
+
+                                          Text('10 EGP').boldText(ColorConstants.colorHintTextColor, DimensionConstants.d15.sp,TextAlign.center),
+
+
+
+                                        ],
+                                      )
+                                      ,),
+
+                                    Padding(
+                                      padding:  EdgeInsets.only(left: DimensionConstants.d18.w,right: DimensionConstants.d18.w),
+                                      child: Divider(
+                                        thickness: DimensionConstants.d1.h,
+                                      ),
+                                    ),
+
+                                    Padding(padding: EdgeInsets.only(left:DimensionConstants.d18.w ),
+                                      child:Row(
+                                        children: [
+                                          Text('Total Cost').btnText(ColorConstants.darkblackcolor, DimensionConstants.d15.sp),
+                                          SizedBox(
+                                            width: DimensionConstants.d200.w,
+                                          ),
+
+                                          Text('14.99 EGP').btnText(ColorConstants.colorButtonbgColor, DimensionConstants.d15.sp),
+
+
+
+                                        ],
+                                      )
+                                      ,),
+
+
+
+
+                                  ],
+                                ),
+                              ),
+                            ),),
+                          SizedBox(
+                            height: DimensionConstants.d260.h,
+                          ),
+                          Padding(
+                            padding:  EdgeInsets.only(left: DimensionConstants.d21.w,right: DimensionConstants.d21.w),
+                            child: SizedBox(
+                              width: DimensionConstants.buttonwidth.w,
+                              height: DimensionConstants.buttonheight.h,
+                              child: RoundCornerShape(
+                                  bgColor: ColorConstants.colorButtonbgColor,
+                                  radius: DimensionConstants.buttonradius.r,
+                                  child: Center(
+                                    child: Row(
+                                      mainAxisAlignment:
+                                      MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'done'.tr(),
+                                        ).buttonText(
+                                            ColorConstants.whiteColor,
+                                            DimensionConstants.buttontextsize.sp,
+                                            TextAlign.center),
+
+                                      ],
+                                    ),
+                                  )
+                              ),
+                            ),
+                          ),
 
 
 

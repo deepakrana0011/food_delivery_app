@@ -30,6 +30,7 @@
   "card_number": "Card Number",
   "expiry": "Expiry Date",
   "cvv": "CVV",
-  "done": "Done"
+  "done": "Done",
+  "checkout": "Checkout"
 
 }

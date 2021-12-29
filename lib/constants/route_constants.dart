@@ -7,6 +7,9 @@ class RoutesConstants {
   static const forgot = "forgot";
   static const checkout = "checkout";
   static const summary = "summary";
+  static const cart = "cart";
+  static const restaurant_details = "restaurant_details";
+
 
 
 
