@@ -13,6 +13,7 @@ import 'package:food_delivery_app/constants/image_constants.dart';
 import 'package:food_delivery_app/constants/route_constants.dart';
 import 'package:food_delivery_app/constants/validations.dart';
 import 'package:food_delivery_app/extensions/allExtensions.dart';
+import 'package:food_delivery_app/helper/dialog_helper.dart';
 import 'package:food_delivery_app/helper/keyboard_helper.dart';
 import 'package:food_delivery_app/provider/signup_provider.dart';
 import 'package:food_delivery_app/view/base_view.dart';
@@ -27,6 +28,11 @@ class Checkout extends StatefulWidget {
 class _CheckoutState extends State<Checkout> {
   final addresscontroller=new TextEditingController();
   final phonecontroller =new TextEditingController();
+  final cardholder =new TextEditingController();
+  final cardnumber =new TextEditingController();
+  final expirydate =new TextEditingController();
+  final cvv =new TextEditingController();
+
   bool status=false;
   bool status1=true;
   Object _radioSelected = 1;
@@ -47,6 +53,7 @@ class _CheckoutState extends State<Checkout> {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
+            elevation: 0,
             backgroundColor: ColorConstants.colorbackground,
             title:
             Text('Checkout').btnText(ColorConstants.colorTextAppBar, DimensionConstants.d20.sp),
@@ -141,13 +148,7 @@ class _CheckoutState extends State<Checkout> {
                                     ),
                                     textInputAction: TextInputAction.next,
                                     keyboardType: TextInputType.text,
-                                    validator: (value) {
-                                      if (value!.trim().isEmpty) {
-                                        return 'empty_phone'.tr();
-                                      } else {
-                                        return null;
-                                      }
-                                    },
+
                                   ),
                                 ),
                               ),
@@ -195,13 +196,7 @@ class _CheckoutState extends State<Checkout> {
                                     ),
                                     textInputAction: TextInputAction.next,
                                     keyboardType: TextInputType.text,
-                                    validator: (value) {
-                                      if (value!.trim().isEmpty) {
-                                        return 'empty_phone'.tr();
-                                      } else {
-                                        return null;
-                                      }
-                                    },
+
                                   ),
                                 ),
                               ),
@@ -285,6 +280,7 @@ class _CheckoutState extends State<Checkout> {
                                   bgColor: ColorConstants.whiteColor,
                                   radius: DimensionConstants.buttonradius.r,
                                   child: TextFormField(
+                                    controller: cardholder,
 
                                     textCapitalization:
                                     TextCapitalization.sentences,
@@ -343,6 +339,7 @@ class _CheckoutState extends State<Checkout> {
                                   bgColor: ColorConstants.whiteColor,
                                   radius: DimensionConstants.buttonradius.r,
                                   child: TextFormField(
+                                    controller: cardnumber,
 
                                     textCapitalization:
                                     TextCapitalization.sentences,
@@ -378,13 +375,7 @@ class _CheckoutState extends State<Checkout> {
                                     ),
                                     textInputAction: TextInputAction.next,
                                     keyboardType: TextInputType.text,
-                                    validator: (value) {
-                                      if (value!.trim().isEmpty) {
-                                        return 'empty_phone'.tr();
-                                      } else {
-                                        return null;
-                                      }
-                                    },
+
                                   ),
                                 ),
                               ),
@@ -403,6 +394,7 @@ class _CheckoutState extends State<Checkout> {
                                       bgColor: ColorConstants.whiteColor,
                                       radius: DimensionConstants.buttonradius.r,
                                       child: TextFormField(
+                                        controller: expirydate,
 
                                         textCapitalization:
                                         TextCapitalization.sentences,
@@ -438,13 +430,7 @@ class _CheckoutState extends State<Checkout> {
                                         ),
                                         textInputAction: TextInputAction.next,
                                         keyboardType: TextInputType.text,
-                                        validator: (value) {
-                                          if (value!.trim().isEmpty) {
-                                            return 'empty_phone'.tr();
-                                          } else {
-                                            return null;
-                                          }
-                                        },
+
                                       ),
                                     ),
                                   ),
@@ -458,6 +444,7 @@ class _CheckoutState extends State<Checkout> {
                                       bgColor: ColorConstants.whiteColor,
                                       radius: DimensionConstants.buttonradius.r,
                                       child: TextFormField(
+                                        controller: cvv,
 
                                         textCapitalization:
                                         TextCapitalization.sentences,
@@ -493,13 +480,7 @@ class _CheckoutState extends State<Checkout> {
                                         ),
                                         textInputAction: TextInputAction.next,
                                         keyboardType: TextInputType.text,
-                                        validator: (value) {
-                                          if (value!.trim().isEmpty) {
-                                            return 'empty_phone'.tr();
-                                          } else {
-                                            return null;
-                                          }
-                                        },
+
                                       ),
                                     ),
                                   ),
@@ -532,27 +513,60 @@ class _CheckoutState extends State<Checkout> {
                             ),
                             Padding(
                               padding:  EdgeInsets.only(left: DimensionConstants.d21.w,right: DimensionConstants.d21.w),
-                              child: SizedBox(
-                                width: DimensionConstants.buttonwidth.w,
-                                height: DimensionConstants.buttonheight.h,
-                                child: RoundCornerShape(
-                                    bgColor: ColorConstants.colorButtonbgColor,
-                                    radius: DimensionConstants.buttonradius.r,
-                                    child: Center(
-                                      child: Row(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            'done'.tr(),
-                                          ).buttonText(
-                                              ColorConstants.whiteColor,
-                                              DimensionConstants.buttontextsize.sp,
-                                              TextAlign.center),
+                              child: GestureDetector(
+                                onTap: (){
+                                  if(addresscontroller.text==''){
+                                    DialogHelper.showMessage(context, 'Address cannot be empty');
+                                    return;
+                                  }
 
-                                        ],
-                                      ),
-                                    )
+                                  if(phonecontroller.text==''){
+                                    DialogHelper.showMessage(context, 'Phone number cannot be empty');
+                                    return;
+                                  }
+
+                                  if(cardholder.text==''){
+                                    DialogHelper.showMessage(context, 'Card Holder cannot be empty');
+                                    return;
+                                  }
+
+                                  if(cardnumber.text==''){
+                                    DialogHelper.showMessage(context, 'Card Number cannot be empty');
+                                    return;
+                                  }
+
+                                  if(expirydate.text==''){
+                                    DialogHelper.showMessage(context, 'Please enter expiry date');
+                                    return;
+                                  }
+                                  if(cvv.text==''){
+                                    DialogHelper.showMessage(context, 'Please enter CVV');
+                                    return;
+                                  }
+                                  Navigator.of(context).pushNamed(RoutesConstants.maps);
+                                },
+                                child: SizedBox(
+                                  width: DimensionConstants.buttonwidth.w,
+                                  height: DimensionConstants.buttonheight.h,
+                                  child: RoundCornerShape(
+                                      bgColor: ColorConstants.colorButtonbgColor,
+                                      radius: DimensionConstants.buttonradius.r,
+                                      child: Center(
+                                        child: Row(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              'done'.tr(),
+                                            ).buttonText(
+                                                ColorConstants.whiteColor,
+                                                DimensionConstants.buttontextsize.sp,
+                                                TextAlign.center),
+
+                                          ],
+                                        ),
+                                      )
+                                  ),
                                 ),
                               ),
                             ),

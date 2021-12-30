@@ -5,6 +5,7 @@ import 'package:food_delivery_app/view/auth/sign_up.dart';
 import 'package:food_delivery_app/view/cart/my_cart.dart';
 import 'package:food_delivery_app/view/checkout/checkout.dart';
 import 'package:food_delivery_app/view/dashboard/home_page.dart';
+import 'package:food_delivery_app/view/maps/map.dart';
 import 'package:food_delivery_app/view/onboarding/onboardingview.dart';
 import 'package:food_delivery_app/view/profile/profile.dart';
 import 'package:food_delivery_app/view/restaurant_details/restaurant_details.dart';
@@ -64,6 +65,11 @@ class Router {
       case RoutesConstants.restaurant_details:
         return MaterialPageRoute(
             builder: (_) => RestaurantDetails(), settings: settings);
+
+
+      case RoutesConstants.maps:
+        return MaterialPageRoute(
+            builder: (_) => Maps(), settings: settings);
 
 
 

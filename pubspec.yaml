@@ -51,6 +51,9 @@ dependencies:
   easy_localization: ^2.1.0+0
   carousel_slider: ^4.0.0
   carousel_indicator:
+  dots_indicator: ^2.0.0
+  google_maps_flutter: ^2.1.1
+  geolocator: ^8.0.1
 
 
 

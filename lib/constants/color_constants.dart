@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 
 class ColorConstants {
 
-
   static var primaryColor = Color(0xFF1C67D3);
   static var whiteColor = Color(0xFFFFFFFF);
-
   static const Color gray = Color(0XFFC7cdd2);
   static const Color border = Color(0XFFE0E0E0);
   static const Color colorLightGray = Color(0XFFF4F4F4);
@@ -42,13 +40,5 @@ class ColorConstants {
   static const cartTextcolor=Color(0xffAEAEAE);
   static const blackcolor=Color(0xff09051C);
   static const detailsTextcolor=Color(0xffB8B8B8);
-
-
-
-
-
-
-
-
 
 }

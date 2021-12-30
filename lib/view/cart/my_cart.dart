@@ -35,6 +35,7 @@ class _MyCartState extends State<MyCart> {
     ImageConstants.ic_profile
   ];
   int ind = 3;
+  List<int> count = [1,1,1];
 
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
@@ -49,6 +50,7 @@ class _MyCartState extends State<MyCart> {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
+            elevation: 0,
             backgroundColor: ColorConstants.colorbackground,
             title: Text('My Cart').btnText(
                 ColorConstants.colorTextAppBar, DimensionConstants.d20.sp),
@@ -58,7 +60,7 @@ class _MyCartState extends State<MyCart> {
                 color: ColorConstants.colorTextAppBar,
               ),
               onPressed: () {
-                Navigator.pop(context);
+                Navigator.of(context).pushNamed(RoutesConstants.home_page);
               },
             ),
             centerTitle: true,
@@ -68,10 +70,10 @@ class _MyCartState extends State<MyCart> {
             width: DimensionConstants.bottombarwidth.w,
             child: BottomNavigationBarShape(
                 topleftradius:
-                    DimensionConstants.bottomnavigationbartopleftradius.w,
+                DimensionConstants.bottomnavigationbartopleftradius.w,
                 bottomRightradius: 0,
                 topRightradius:
-                    DimensionConstants.bottomnavigationbartoprightradius.w,
+                DimensionConstants.bottomnavigationbartoprightradius.w,
                 bgColor: ColorConstants.whiteColor,
                 bottomleftradius: 0,
                 child: Padding(
@@ -89,8 +91,9 @@ class _MyCartState extends State<MyCart> {
                             children: [
                               GestureDetector(
                                 onTap: () {
+
                                   setState(() {
-                                    ind = index;
+                                    ind=index;
                                   });
                                   onItemTapped(index);
                                 },
@@ -98,19 +101,14 @@ class _MyCartState extends State<MyCart> {
                                   height: DimensionConstants
                                       .bottomcontainerheight.h,
                                   width:
-                                      DimensionConstants.bottomcontainerwidth.w,
+                                  DimensionConstants.bottomcontainerwidth.w,
                                   child: BottomNavigationBarShape(
-                                    bgColor: ind == index
-                                        ? ColorConstants.bottomcontainercolor
-                                        : ColorConstants.whiteColor,
-                                    topRightradius:
-                                        DimensionConstants.buttonradius.r,
-                                    topleftradius:
-                                        DimensionConstants.buttonradius.r,
-                                    bottomRightradius:
-                                        DimensionConstants.buttonradius.r,
-                                    bottomleftradius:
-                                        DimensionConstants.buttonradius.r,
+                                    bgColor:
+                                    ind==index? ColorConstants.bottomcontainercolor:ColorConstants.whiteColor,
+                                    topRightradius:  DimensionConstants.buttonradius.r,
+                                    topleftradius: DimensionConstants.buttonradius.r,
+                                    bottomRightradius: DimensionConstants.buttonradius.r,
+                                    bottomleftradius: DimensionConstants.buttonradius.r,
                                     child: Column(
                                       children: [
                                         SizedBox(
@@ -120,21 +118,14 @@ class _MyCartState extends State<MyCart> {
                                           path: navigationicons[index],
                                           height: DimensionConstants.d17.h,
                                           width: DimensionConstants.d18.w,
-                                          color: ind == index
-                                              ? ColorConstants
-                                                  .colorButtonbgColor
-                                              : ColorConstants.colorBlack,
+                                          color: ind==index?ColorConstants.colorButtonbgColor:ColorConstants.colorBlack,
                                         ),
                                         SizedBox(
                                           height: 1.h,
                                         ),
                                         Text(navigationitems[index]).btnText(
-                                            ind == index
-                                                ? ColorConstants
-                                                    .colorButtonbgColor
-                                                : ColorConstants.whiteColor,
-                                            DimensionConstants.d12.sp,
-                                            maxLines: 2),
+                                            ind==index?   ColorConstants.colorButtonbgColor:ColorConstants.whiteColor,
+                                            DimensionConstants.d10.sp,maxLines: 2),
                                         SizedBox(
                                           height: 1.h,
                                         )
@@ -144,7 +135,7 @@ class _MyCartState extends State<MyCart> {
                                 ),
                               ),
                               SizedBox(
-                                width: DimensionConstants.d30.w,
+                                width: DimensionConstants.d38.w,
                               ),
                             ],
                           );
@@ -290,58 +281,68 @@ class _MyCartState extends State<MyCart> {
                                                           ),
                                                           Row(
                                                             children: [
-                                                              Container(
-                                                                height:
-                                                                    DimensionConstants
-                                                                        .d40.h,
-                                                                width:
-                                                                    DimensionConstants
-                                                                        .d40.w,
-                                                                child:
-                                                                    BottomNavigationBarShape(
-                                                                  bgColor:
-                                                                      ColorConstants
-                                                                          .whiteColor,
-                                                                  strokeColor:
-                                                                      ColorConstants
-                                                                          .strokecolor,
-                                                                  topleftradius:
+                                                              GestureDetector(
+                                                                onTap: (){
+                                                                  if(count[index]>0){
+                                                                    count[index]--;
+                                                                    setState(() {
+                                                                      count[index]=count[index];
+                                                                    });
+                                                                  }
+                                                                },
+                                                                child: Container(
+                                                                  height:
                                                                       DimensionConstants
-                                                                          .buttonradius
-                                                                          .r,
-                                                                  topRightradius:
+                                                                          .d40.h,
+                                                                  width:
                                                                       DimensionConstants
-                                                                          .buttonradius
-                                                                          .r,
-                                                                  bottomleftradius:
-                                                                      DimensionConstants
-                                                                          .buttonradius
-                                                                          .r,
-                                                                  bottomRightradius:
-                                                                      DimensionConstants
-                                                                          .buttonradius
-                                                                          .r,
-                                                                  child: Padding(
-                                                                    padding: EdgeInsets.only(
-                                                                        left:
+                                                                          .d40.w,
+                                                                  child:
+                                                                      BottomNavigationBarShape(
+                                                                    bgColor:
+                                                                        ColorConstants
+                                                                            .whiteColor,
+                                                                    strokeColor:
+                                                                        ColorConstants
+                                                                            .strokecolor,
+                                                                    topleftradius:
+                                                                        DimensionConstants
+                                                                            .buttonradius
+                                                                            .r,
+                                                                    topRightradius:
+                                                                        DimensionConstants
+                                                                            .buttonradius
+                                                                            .r,
+                                                                    bottomleftradius:
+                                                                        DimensionConstants
+                                                                            .buttonradius
+                                                                            .r,
+                                                                    bottomRightradius:
+                                                                        DimensionConstants
+                                                                            .buttonradius
+                                                                            .r,
+                                                                    child: Padding(
+                                                                      padding: EdgeInsets.only(
+                                                                          left:
+                                                                              DimensionConstants
+                                                                                  .d12
+                                                                                  .w,
+                                                                          right:
+                                                                              DimensionConstants
+                                                                                  .d12
+                                                                                  .w),
+                                                                      child:
+                                                                          ImageView(
+                                                                        path: ImageConstants
+                                                                            .ic_minus,
+                                                                        height:
                                                                             DimensionConstants
-                                                                                .d12
+                                                                                .d3.h,
+                                                                        width:
+                                                                            DimensionConstants
+                                                                                .d17
                                                                                 .w,
-                                                                        right:
-                                                                            DimensionConstants
-                                                                                .d12
-                                                                                .w),
-                                                                    child:
-                                                                        ImageView(
-                                                                      path: ImageConstants
-                                                                          .ic_minus,
-                                                                      height:
-                                                                          DimensionConstants
-                                                                              .d3.h,
-                                                                      width:
-                                                                          DimensionConstants
-                                                                              .d17
-                                                                              .w,
+                                                                      ),
                                                                     ),
                                                                   ),
                                                                 ),
@@ -349,9 +350,9 @@ class _MyCartState extends State<MyCart> {
                                                               SizedBox(
                                                                 width:
                                                                     DimensionConstants
-                                                                        .d20.w,
+                                                                        .d15.w,
                                                               ),
-                                                              Text('1').mediumText(
+                                                              Text(count[index].toString()).mediumText(
                                                                   ColorConstants
                                                                       .darkblackcolor,
                                                                   DimensionConstants
@@ -360,60 +361,68 @@ class _MyCartState extends State<MyCart> {
                                                               SizedBox(
                                                                 width:
                                                                     DimensionConstants
-                                                                        .d20.w,
+                                                                        .d15.w,
                                                               ),
-                                                              Container(
-                                                                height:
-                                                                    DimensionConstants
-                                                                        .d40.h,
-                                                                width:
-                                                                    DimensionConstants
-                                                                        .d40.w,
-                                                                child:
-                                                                    BottomNavigationBarShape(
-                                                                  bgColor:
-                                                                      ColorConstants
-                                                                          .whiteColor,
-                                                                  strokeColor:
-                                                                      ColorConstants
-                                                                          .strokecolor,
-                                                                  topleftradius:
+                                                              GestureDetector(
+                                                                onTap: (){
+                                                                  count[index]++;
+                                                                  setState(() {
+                                                                    count[index]=count[index];
+                                                                  });
+                                                                },
+                                                                child: Container(
+                                                                  height:
                                                                       DimensionConstants
-                                                                          .buttonradius
-                                                                          .r,
-                                                                  topRightradius:
+                                                                          .d40.h,
+                                                                  width:
                                                                       DimensionConstants
-                                                                          .buttonradius
-                                                                          .r,
-                                                                  bottomleftradius:
-                                                                      DimensionConstants
-                                                                          .buttonradius
-                                                                          .r,
-                                                                  bottomRightradius:
-                                                                      DimensionConstants
-                                                                          .buttonradius
-                                                                          .r,
-                                                                  child: Padding(
-                                                                    padding: EdgeInsets.only(
-                                                                        left:
+                                                                          .d40.w,
+                                                                  child:
+                                                                      BottomNavigationBarShape(
+                                                                    bgColor:
+                                                                        ColorConstants
+                                                                            .whiteColor,
+                                                                    strokeColor:
+                                                                        ColorConstants
+                                                                            .strokecolor,
+                                                                    topleftradius:
+                                                                        DimensionConstants
+                                                                            .buttonradius
+                                                                            .r,
+                                                                    topRightradius:
+                                                                        DimensionConstants
+                                                                            .buttonradius
+                                                                            .r,
+                                                                    bottomleftradius:
+                                                                        DimensionConstants
+                                                                            .buttonradius
+                                                                            .r,
+                                                                    bottomRightradius:
+                                                                        DimensionConstants
+                                                                            .buttonradius
+                                                                            .r,
+                                                                    child: Padding(
+                                                                      padding: EdgeInsets.only(
+                                                                          left:
+                                                                              DimensionConstants
+                                                                                  .d12
+                                                                                  .w,
+                                                                          right:
+                                                                              DimensionConstants
+                                                                                  .d12
+                                                                                  .w),
+                                                                      child:
+                                                                          ImageView(
+                                                                        path: ImageConstants
+                                                                            .ic_add,
+                                                                        height:
                                                                             DimensionConstants
-                                                                                .d12
+                                                                                .d3.h,
+                                                                        width:
+                                                                            DimensionConstants
+                                                                                .d17
                                                                                 .w,
-                                                                        right:
-                                                                            DimensionConstants
-                                                                                .d12
-                                                                                .w),
-                                                                    child:
-                                                                        ImageView(
-                                                                      path: ImageConstants
-                                                                          .ic_add,
-                                                                      height:
-                                                                          DimensionConstants
-                                                                              .d3.h,
-                                                                      width:
-                                                                          DimensionConstants
-                                                                              .d17
-                                                                              .w,
+                                                                      ),
                                                                     ),
                                                                   ),
                                                                 ),
@@ -483,7 +492,7 @@ class _MyCartState extends State<MyCart> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     SizedBox(
-                                      height: DimensionConstants.d11.h,
+                                      height: DimensionConstants.d7.h,
                                     ),
                                     Row(
                                       children: [
@@ -597,9 +606,7 @@ class _MyCartState extends State<MyCart> {
       Navigator.of(context).pushNamed(RoutesConstants.home_page);
     }
 
-    if (index == 1) {
-      Navigator.of(context).pushNamed(RoutesConstants.summary);
-    }
+
     if(index==4){
       Navigator.of(context)
           .pushNamed(RoutesConstants.profile);

@@ -41,6 +41,10 @@ class ImageConstants {
   static const ic_cart_burger= "images/ic_cart_burger.png";
   static const ic_restaurant_promo= "images/ic_restaurant_promo.png";
   static const ic_sprite= "images/ic_drink.png";
+  static const ic_back= "images/ic_back.svg";
+  static const ic_location= "images/ic_location.svg";
+
+
 
 
 

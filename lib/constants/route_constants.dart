@@ -9,6 +9,8 @@ class RoutesConstants {
   static const summary = "summary";
   static const cart = "cart";
   static const restaurant_details = "restaurant_details";
+  static const maps = "maps";
+
 
 
 

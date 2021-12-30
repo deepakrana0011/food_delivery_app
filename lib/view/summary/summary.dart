@@ -48,6 +48,7 @@ class _SummaryState extends State<Summary> {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
+            elevation: 0,
             backgroundColor: ColorConstants.colorbackground,
             title:
             Text('Summary').btnText(ColorConstants.colorTextAppBar, DimensionConstants.d20.sp),

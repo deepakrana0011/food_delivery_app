@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:carousel_indicator/carousel_indicator.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -59,8 +61,58 @@ class _HomePageState extends State<HomePage> {
   List restauranttimings=['12 Mins','8 Mins','12 Mins','8 Mins'];
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
  int ind=0;
+  int pageIndex=0;
+
+  List<Widget> _demo=[
+    Container(height: DimensionConstants.d150.h,color: ColorConstants.whiteColor,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(DimensionConstants.d6.r),
+        child: ImageView(
+          path: ImageConstants.ic_promo,
+          height: DimensionConstants.d150.h,
+          width: DimensionConstants.d372.w,
+          fit: BoxFit.cover,
+        ),
+      ),
+    ),
+    Container(height: DimensionConstants.d150.h,color: ColorConstants.whiteColor,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(DimensionConstants.d6.r),
+        child: ImageView(
+          path: ImageConstants.ic_promo,
+          height: DimensionConstants.d150.h,
+          width: DimensionConstants.d372.w,
+          fit: BoxFit.cover,
+        ),
+      ),
+    ),
+    Container(height: DimensionConstants.d150.h,color: ColorConstants.whiteColor,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(DimensionConstants.d6.r),
+        child: ImageView(
+          path: ImageConstants.ic_promo,
+          height: DimensionConstants.d150.h,
+          width: DimensionConstants.d372.w,
+          fit: BoxFit.cover,
+        ),
+      ),
+    ),
+    Container(height: DimensionConstants.d150.h,color: ColorConstants.whiteColor,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(DimensionConstants.d6.r),
+        child: ImageView(
+          path: ImageConstants.ic_promo,
+          height: DimensionConstants.d150.h,
+          width: DimensionConstants.d372.w,
+          fit: BoxFit.cover,
+        ),
+      ),
+    ),
+  ];
 
   final searchcontroller = new TextEditingController();
+
+
 
   @override
   void initState() {
@@ -134,7 +186,7 @@ class _HomePageState extends State<HomePage> {
                                         ),
                                         Text(navigationitems[index]).btnText(
                                       ind==index?   ColorConstants.colorButtonbgColor:ColorConstants.whiteColor,
-                                            DimensionConstants.d12.sp,maxLines: 2),
+                                            DimensionConstants.d10.sp,maxLines: 2),
                                         SizedBox(
                                           height: 1.h,
                                         )
@@ -144,7 +196,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               SizedBox(
-                                width: DimensionConstants.d30.w,
+                                width: DimensionConstants.d38.w,
                               ),
                             ],
                           );
@@ -326,28 +378,32 @@ class _HomePageState extends State<HomePage> {
                               padding: EdgeInsets.only(
                                   left: DimensionConstants.d20.w,
                                   right: DimensionConstants.d20.w),
-                              child: new CarouselSlider(
-                                options: CarouselOptions(
-                                    height: 150.0,
-                                    aspectRatio: 16/9,
-                                    viewportFraction: .8,
-                                    enlargeCenterPage: true),
-                                items: [1, 2, 3, 4, 5].map((i) {
-                                  return Builder(
-                                    builder: (BuildContext context) {
-                                      return Container(
-                                          height: 150,
-                                          width: 371.w,
-                                          margin: EdgeInsets.symmetric(
-                                              horizontal: 15.0),
-                                          child: ImageView(
-                                            width: 371.w,
-                                            path: ImageConstants.ic_promo,
-                                          ));
-                                    },
-                                  );
-                                }).toList(),
-                              )),
+                              child: Column(
+                                children: [
+                                  Container(
+                                    height: DimensionConstants.d150.h,
+                                    width: DimensionConstants.d372.w,
+                                    child: PageView(
+                                      allowImplicitScrolling: true,
+
+                                      children: _demo,
+
+                                      onPageChanged: (index){
+                                        setState(() {
+                                          pageIndex=index;
+                                        });
+                                      },
+                                    ),
+                                  ),
+                                  CarouselIndicator(
+                                    cornerRadius: DimensionConstants.d20.r,
+                                    activeColor: ColorConstants.colorButtonbgColor,
+                                    color: ColorConstants.gray,
+                                    count: _demo.length,
+                                    index: pageIndex,
+
+                                  ),
+                              ])),
                           SizedBox(
                             height: DimensionConstants.d20.h,
                           ),
@@ -720,10 +776,7 @@ class _HomePageState extends State<HomePage> {
 
   void onItemTapped(int index) {
 
-    if(index==1){
-      Navigator.of(context)
-          .pushNamed(RoutesConstants.summary);
-    }
+
     if(index==3){
       Navigator.of(context)
           .pushNamed(RoutesConstants.cart);
