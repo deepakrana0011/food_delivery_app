@@ -34,14 +34,14 @@ class ViewDecoration{
 
         fillColor: ColorConstants.whiteColor,
         enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: ColorConstants.border, width: 1),
+            borderSide: BorderSide(color: ColorConstants.whiteColor, width: 1),
             borderRadius: BorderRadius.all(Radius.circular(6.r))),
         disabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: ColorConstants.gray, width: 1),
+            borderSide: BorderSide(color: ColorConstants.whiteColor, width: 1),
             borderRadius: BorderRadius.all(Radius.circular(6.r))),
         focusedBorder: OutlineInputBorder(
             borderSide:
-            BorderSide(color: ColorConstants.border, width: 1),
+            BorderSide(color: ColorConstants.whiteColor, width: 1),
             borderRadius: BorderRadius.all(Radius.circular(6.r))),
         errorBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.red, width: 1),

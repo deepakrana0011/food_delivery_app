@@ -12,6 +12,7 @@ import 'package:food_delivery_app/constants/route_constants.dart';
 import 'package:food_delivery_app/extensions/allExtensions.dart';
 import 'package:food_delivery_app/provider/signup_provider.dart';
 import 'package:food_delivery_app/view/base_view.dart';
+import 'package:food_delivery_app/view/maps/address_search.dart';
 import 'package:food_delivery_app/widgets/image_view.dart';
 import 'package:food_delivery_app/widgets/roundCornerShape.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -66,8 +67,7 @@ class _MapsState extends State<Maps> {
                   children: [
 
                     Container(
-                      height: DimensionConstants.loginscreenheight.h,
-                      width: DimensionConstants.loginscreenwidth.w,
+
                       child: GoogleMap(
                         mapType: MapType.normal,
                         mapToolbarEnabled: false,
@@ -113,8 +113,28 @@ class _MapsState extends State<Maps> {
                               width: DimensionConstants.d319.w,
                               child: RoundCornerShape(
                                 bgColor: ColorConstants.whiteColor,
-                                radius: DimensionConstants.buttonradius.r,
+                                radius: DimensionConstants.d6.r,
                                 child: TextFormField(
+                                  readOnly: true,
+                                  onTap: (){
+
+
+                                   /* Navigator.pushNamed(
+                                        context, RoutesConstants.autoComplete)
+                                        .then((value) {
+                                      if (value != null) {
+                                        Map<String, String> detail =
+                                        value as Map<String, String>;
+                                        final lat = value["latitude"];
+                                        final lng = value["longitude"];
+                                        final selectedAddress = detail["address"];
+                                        searchcontroller.text =
+                                        selectedAddress != null
+                                            ? selectedAddress
+                                            : "";
+                                      }
+                                    });*/
+                                  },
                                   //onChanged: (value) => applicationBloc.searchPlaces(value),
                                   //onTap: () => applicationBloc.clearSelectedLocation(),
                                   controller: searchcontroller,
@@ -125,7 +145,7 @@ class _MapsState extends State<Maps> {
                                   ColorConstants.colorButtonbgColor,
                                   style: ViewDecoration.textFieldStyle(
                                       DimensionConstants
-                                          .textfieldTextSize.sp),
+                                          .d16.sp),
                                   decoration: ViewDecoration
                                       .inputDecorationWithCurve(
                                       "Search for your address",
@@ -229,11 +249,11 @@ class _MapsState extends State<Maps> {
                             Navigator.of(context).pushNamed(RoutesConstants.summary);
                           },
                           child: SizedBox(
-                            width: DimensionConstants.buttonwidth.w,
-                            height: DimensionConstants.buttonheight.h,
+                            width: DimensionConstants.d373.w,
+                            height: DimensionConstants.d52.h,
                             child: RoundCornerShape(
                                 bgColor: ColorConstants.colorButtonbgColor,
-                                radius: DimensionConstants.buttonradius.r,
+                                radius: DimensionConstants.d6.r,
                                 child: Center(
                                   child: Row(
                                     mainAxisAlignment:
@@ -243,7 +263,7 @@ class _MapsState extends State<Maps> {
                                         'Deliver Here',
                                       ).buttonText(
                                           ColorConstants.whiteColor,
-                                          DimensionConstants.buttontextsize.sp,
+                                          DimensionConstants.d16.sp,
                                           TextAlign.center),
 
                                     ],

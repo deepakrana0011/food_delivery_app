@@ -71,928 +71,903 @@ class _RestaurantDetailsState extends State<RestaurantDetails> {
           body: BaseView<SignUpProvider>(
             onModelReady: (provider) {},
             builder: (context, provider, _) {
-              return SafeArea(
-                child: ScreenUtilInit(
-                  designSize: const Size(DimensionConstants.loginscreenwidth,
-                      DimensionConstants.loginscreenheight),
-                  builder: () {
-                    return SingleChildScrollView(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+              return SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: DimensionConstants.d25.h,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: DimensionConstants.d20.w,
+                          right: DimensionConstants.d20.w),
+                      child: Stack(
+                        clipBehavior: Clip.antiAliasWithSaveLayer,
+                        overflow: Overflow.visible,
                         children: [
-                          SizedBox(
-                            height: DimensionConstants.d25.h,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(
-                                left: DimensionConstants.d20.w,
-                                right: DimensionConstants.d20.w),
-                            child: Stack(
-                              clipBehavior: Clip.antiAliasWithSaveLayer,
-                              overflow: Overflow.visible,
-                              children: [
-                                Container(
+                          Container(
+                            height: DimensionConstants.d182.h,
+                            width: DimensionConstants.d372.w,
+                            child: BottomNavigationBarShape(
+                              topRightradius:
+                              DimensionConstants.d6.r,
+                              topleftradius:
+                              DimensionConstants.d6.r,
+                              bottomRightradius:
+                              DimensionConstants.d6.r,
+                              bottomleftradius:
+                              DimensionConstants.d6.r,
+                              bgColor: ColorConstants.whiteColor,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(
+                                    DimensionConstants.d6.r),
+                                child: ImageView(
+                                  path:
+                                  ImageConstants.ic_restaurant_promo,
                                   height: DimensionConstants.d182.h,
                                   width: DimensionConstants.d372.w,
-                                  child: BottomNavigationBarShape(
-                                    topRightradius:
-                                        DimensionConstants.buttonradius.r,
-                                    topleftradius:
-                                        DimensionConstants.buttonradius.r,
-                                    bottomRightradius:
-                                        DimensionConstants.buttonradius.r,
-                                    bottomleftradius:
-                                        DimensionConstants.buttonradius.r,
-                                    bgColor: ColorConstants.whiteColor,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(
-                                          DimensionConstants.buttonradius.r),
-                                      child: ImageView(
-                                        path:
-                                            ImageConstants.ic_restaurant_promo,
-                                        height: DimensionConstants.d182.h,
-                                        width: DimensionConstants.d372.w,
-                                        fit: BoxFit.cover,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: DimensionConstants.d158.h,
+                            left: DimensionConstants.d18.w,
+                            right: DimensionConstants.d18.w,
+                            child: Container(
+                              height: DimensionConstants.d89.h,
+                              width: DimensionConstants.d338.w,
+                              child: RoundCornerShape(
+                                  bgColor: ColorConstants.whiteColor,
+                                  radius: DimensionConstants.d10.r,
+                                  child: Column(
+                                    children: [
+                                      SizedBox(
+                                        height: DimensionConstants.d16.h,
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            left: DimensionConstants.d9.w,
+                                            right:
+                                            DimensionConstants.d9.w),
+                                        child: Row(
+                                          children: [
+                                            Text('Arabiata restaurant')
+                                                .btnText(
+                                                ColorConstants
+                                                    .colorBlack,
+                                                DimensionConstants
+                                                    .d15.sp),
+                                            SizedBox(
+                                              width: DimensionConstants
+                                                  .d102.w,
+                                            ),
+                                            ImageView(
+                                              path: ImageConstants.ic_map,
+                                              height: DimensionConstants
+                                                  .d15.h,
+                                              width: DimensionConstants
+                                                  .d16.w,
+                                            ),
+                                            Text('Assuit City ').btnText(
+                                                ColorConstants
+                                                    .colorHintTextColor,
+                                                DimensionConstants.d12.sp)
+                                          ],
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: DimensionConstants.d19.h,
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            left: DimensionConstants.d9.w,
+                                            right:
+                                            DimensionConstants.d9.w),
+                                        child: Row(
+                                          children: [
+                                            ImageView(
+                                              path:
+                                              ImageConstants.ic_star,
+                                              height: DimensionConstants
+                                                  .d14.h,
+                                              width: DimensionConstants
+                                                  .d15.w,
+                                            ),
+                                            SizedBox(
+                                              width:
+                                              DimensionConstants.d6.w,
+                                            ),
+                                            Text('4.5(234)').btnText(
+                                                ColorConstants.blackcolor,
+                                                DimensionConstants
+                                                    .d14.sp),
+                                            SizedBox(
+                                              width: DimensionConstants
+                                                  .d18.w,
+                                            ),
+                                            ImageView(
+                                              path: ImageConstants
+                                                  .ic_delivery,
+                                              height: DimensionConstants
+                                                  .d22.h,
+                                              width: DimensionConstants
+                                                  .d22.w,
+                                            ),
+                                            SizedBox(
+                                              width:
+                                              DimensionConstants.d6.w,
+                                            ),
+                                            Text('20 mins, 10 EGP')
+                                                .btnText(
+                                                ColorConstants
+                                                    .colorBlack,
+                                                DimensionConstants
+                                                    .d13.sp),
+                                            SizedBox(
+                                              width: DimensionConstants
+                                                  .d22.w,
+                                            ),
+                                            Text('20 miles away').btnText(
+                                                ColorConstants
+                                                    .colorButtonbgColor,
+                                                DimensionConstants.d13.sp)
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  )),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: DimensionConstants.d86.h,
+                    ),
+                    Padding(
+                      padding:
+                      EdgeInsets.only(left: DimensionConstants.d19.w),
+                      child: Text('Menu').btnText(
+                          ColorConstants.colorBlack,
+                          DimensionConstants.d16.sp),
+                    ),
+                    SizedBox(
+                      height: DimensionConstants.d10.h,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: DimensionConstants
+                              .d20.w,
+                          right: DimensionConstants
+                              .d26.w),
+                      child: Container(
+                        color: ColorConstants.whiteColor,
+                        height: DimensionConstants.d34.h,
+                        child: ListView.builder(
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            itemCount: menuitems.length,
+                            itemBuilder:
+                                (BuildContext context, int index) {
+                              return Row(
+                                children: [
+                                  GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        menuindex = index;
+                                      });
+                                    },
+                                    child: Container(
+                                      height: DimensionConstants.d32.h,
+                                      width: DimensionConstants.d79.w,
+                                      child: Material(
+                                        elevation: 1.5,
+                                        borderRadius:
+                                        BorderRadius.circular(
+                                            DimensionConstants
+                                                .d6.r),
+                                        child: RoundCornerShape(
+                                            bgColor: menuindex == index
+                                                ? ColorConstants
+                                                .colorButtonbgColor
+                                                : ColorConstants
+                                                .whiteColor,
+                                            radius: DimensionConstants
+                                                .d6.r,
+                                            child: Column(
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsets.only(
+                                                      top:
+                                                      DimensionConstants
+                                                          .d7.h,
+                                                      left:
+                                                      DimensionConstants
+                                                          .d20.w,
+                                                      right:
+                                                      DimensionConstants
+                                                          .d20.w),
+                                                  child: Text(menuitems[index]).btnText(
+                                                      menuindex == index
+                                                          ? ColorConstants
+                                                          .whiteColor
+                                                          : ColorConstants
+                                                          .blackcolor,
+                                                      DimensionConstants
+                                                          .d12.sp),
+                                                )
+                                              ],
+                                            )),
                                       ),
                                     ),
                                   ),
-                                ),
-                                Positioned(
-                                  top: DimensionConstants.d158.h,
-                                  left: DimensionConstants.d18.w,
-                                  right: DimensionConstants.d18.w,
+                                  SizedBox(
+                                    width: 10.w,
+                                  )
+                                ],
+                              );
+                            }),
+                      ),
+                    ),
+                    SizedBox(
+                      height: DimensionConstants.d20.h,
+                    ),
+                    Padding(
+                      padding:
+                      EdgeInsets.only(left: DimensionConstants.d19.w),
+                      child: Text('Soup').btnText(
+                          ColorConstants.colorBlack,
+                          DimensionConstants.d16.sp),
+                    ),
+                    SizedBox(
+                      height: DimensionConstants.d11.h,
+                    ),
+                    ListView.builder(
+                        shrinkWrap: true,
+                        physics: ClampingScrollPhysics(),
+                        itemCount: 2,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Column(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    left: DimensionConstants.d20.w,
+                                    right: DimensionConstants.d20.w),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    openModalSheet();
+                                  },
                                   child: Container(
-                                    height: DimensionConstants.d89.h,
-                                    width: DimensionConstants.d338.w,
+                                    height: DimensionConstants.d138.h,
+                                    width: DimensionConstants.d372.w,
                                     child: RoundCornerShape(
-                                        bgColor: ColorConstants.whiteColor,
-                                        radius: DimensionConstants.d10.r,
-                                        child: Column(
-                                          children: [
-                                            SizedBox(
-                                              height: DimensionConstants.d16.h,
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsets.only(
-                                                  left: DimensionConstants.d9.w,
-                                                  right:
-                                                      DimensionConstants.d9.w),
-                                              child: Row(
+                                        bgColor:
+                                        ColorConstants.whiteColor,
+                                       radius: DimensionConstants.d6.r,
+                                        child: Padding(
+                                          padding: EdgeInsets.only(
+                                              left: DimensionConstants
+                                                  .d10.w,
+                                              right: DimensionConstants
+                                                  .d10.w),
+                                          child: Column(
+                                            children: [
+                                              Row(
                                                 children: [
-                                                  Text('Arabiata restaurant')
-                                                      .btnText(
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                    CrossAxisAlignment
+                                                        .start,
+                                                    children: [
+                                                      SizedBox(
+                                                        height:
+                                                        DimensionConstants
+                                                            .d11.h,
+                                                      ),
+                                                      Text('Chicken Zinger').btnText(
                                                           ColorConstants
                                                               .colorBlack,
                                                           DimensionConstants
-                                                              .d15.sp),
+                                                              .d16.sp),
+                                                      SizedBox(
+                                                        height:
+                                                        DimensionConstants
+                                                            .d5.h,
+                                                      ),
+                                                      Text('Spicy & crispy with garlic').btnText(
+                                                          ColorConstants
+                                                              .cartTextcolor,
+                                                          DimensionConstants
+                                                              .d14.sp),
+                                                      SizedBox(
+                                                        height:
+                                                        DimensionConstants
+                                                            .d9.h,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          ImageView(
+                                                            path: ImageConstants
+                                                                .ic_fire,
+                                                            height:
+                                                            DimensionConstants
+                                                                .d16
+                                                                .h,
+                                                            width:
+                                                            DimensionConstants
+                                                                .d16
+                                                                .w,
+                                                          ),
+                                                          SizedBox(
+                                                            width:
+                                                            DimensionConstants
+                                                                .d4.w,
+                                                          ),
+                                                          Text('195Cal').btnText(
+                                                              ColorConstants
+                                                                  .colorBlack,
+                                                              DimensionConstants
+                                                                  .d14
+                                                                  .sp),
+                                                        ],
+                                                      ),
+                                                      SizedBox(
+                                                        height:
+                                                        DimensionConstants
+                                                            .d10.h,
+                                                      ),
+                                                      Text('7999 EGP')
+                                                          .btnText(
+                                                        ColorConstants
+                                                            .colorHintTextColor,
+                                                        DimensionConstants
+                                                            .d12.sp,
+                                                      )
+                                                    ],
+                                                  ),
                                                   SizedBox(
-                                                    width: DimensionConstants
-                                                        .d104.w,
+                                                    width:
+                                                    DimensionConstants
+                                                        .d86.w,
                                                   ),
                                                   ImageView(
-                                                    path: ImageConstants.ic_map,
-                                                    height: DimensionConstants
-                                                        .d15.h,
-                                                    width: DimensionConstants
-                                                        .d16.w,
-                                                  ),
-                                                  Text('Assuit City ').btnText(
-                                                      ColorConstants
-                                                          .colorHintTextColor,
-                                                      DimensionConstants.d12.sp)
+                                                    path: ImageConstants
+                                                        .ic_cart_burger,
+                                                    height:
+                                                    DimensionConstants
+                                                        .d94.h,
+                                                    width:
+                                                    DimensionConstants
+                                                        .d103.w,
+                                                  )
                                                 ],
                                               ),
-                                            ),
-                                            SizedBox(
-                                              height: DimensionConstants.d19.h,
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsets.only(
-                                                  left: DimensionConstants.d9.w,
-                                                  right:
-                                                      DimensionConstants.d9.w),
-                                              child: Row(
+                                              SizedBox(
+                                                height: DimensionConstants
+                                                    .d1.h,
+                                              ),
+                                              Row(
                                                 children: [
+                                                  Text('7999 EGP').btnText(
+                                                      ColorConstants
+                                                          .colorButtonbgColor,
+                                                      DimensionConstants
+                                                          .d16.sp),
+                                                  SizedBox(
+                                                    width:
+                                                    DimensionConstants
+                                                        .d12.w,
+                                                  ),
                                                   ImageView(
-                                                    path:
-                                                        ImageConstants.ic_star,
-                                                    height: DimensionConstants
+                                                    path: ImageConstants
+                                                        .ic_star,
+                                                    height:
+                                                    DimensionConstants
                                                         .d14.h,
-                                                    width: DimensionConstants
+                                                    width:
+                                                    DimensionConstants
                                                         .d15.w,
                                                   ),
                                                   SizedBox(
                                                     width:
-                                                        DimensionConstants.d6.w,
+                                                    DimensionConstants
+                                                        .d5.w,
                                                   ),
-                                                  Text('4.5(234)').btnText(
-                                                      ColorConstants.blackcolor,
+                                                  Text('4.5').btnText(
+                                                      ColorConstants
+                                                          .blackcolor,
                                                       DimensionConstants
-                                                          .d14.sp),
+                                                          .d15.sp),
                                                   SizedBox(
-                                                    width: DimensionConstants
-                                                        .d18.w,
+                                                    width:
+                                                    DimensionConstants
+                                                        .d134.w,
                                                   ),
-                                                  ImageView(
-                                                    path: ImageConstants
-                                                        .ic_delivery,
-                                                    height: DimensionConstants
-                                                        .d22.h,
-                                                    width: DimensionConstants
-                                                        .d22.w,
+                                                  GestureDetector(
+                                                    onTap: (){
+                                                      if(count[index]>0){
+                                                        count[index]--;
+                                                        setState(() {
+                                                          count[index]=count[index];
+                                                        });
+                                                      }
+                                                    },
+                                                    child: Container(
+                                                      height:
+                                                      DimensionConstants
+                                                          .d30.h,
+                                                      width:
+                                                      DimensionConstants
+                                                          .d30.w,
+                                                      child:
+                                                      BottomNavigationBarShape(
+                                                        bgColor:
+                                                        ColorConstants
+                                                            .whiteColor,
+                                                        strokeColor:
+                                                        ColorConstants
+                                                            .strokecolor,
+                                                        topleftradius:
+                                                        DimensionConstants
+                                                            .d6
+                                                            .r,
+                                                        topRightradius:
+                                                        DimensionConstants
+                                                            .d6
+                                                            .r,
+                                                        bottomleftradius:
+                                                        DimensionConstants
+                                                            .d6
+                                                            .r,
+                                                        bottomRightradius:
+                                                        DimensionConstants
+                                                            .d6
+                                                            .r,
+                                                        child: Padding(
+                                                          padding: EdgeInsets.only(
+                                                              left:
+                                                              DimensionConstants
+                                                                  .d8.w,
+                                                              right:
+                                                              DimensionConstants
+                                                                  .d8
+                                                                  .w),
+                                                          child: ImageView(
+                                                            path: ImageConstants
+                                                                .ic_minus,
+                                                            height:
+                                                            DimensionConstants
+                                                                .d3.h,
+                                                            width:
+                                                            DimensionConstants
+                                                                .d12.w,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
                                                   ),
                                                   SizedBox(
                                                     width:
-                                                        DimensionConstants.d6.w,
+                                                    DimensionConstants
+                                                        .d10.w,
                                                   ),
-                                                  Text('20 mins, 10 EGP')
-                                                      .btnText(
+                                                  Text(count[index].toString()).mediumText(
+                                                      ColorConstants
+                                                          .darkblackcolor,
+                                                      DimensionConstants
+                                                          .d16.sp,
+                                                      TextAlign.center),
+                                                  SizedBox(
+                                                    width:
+                                                    DimensionConstants
+                                                        .d10.w,
+                                                  ),
+                                                  GestureDetector(
+                                                    onTap: (){
+                                                      count[index]++;
+                                                      setState(() {
+                                                        count[index]=count[index];
+                                                      });
+                                                    },
+                                                    child: Container(
+                                                      height:
+                                                      DimensionConstants
+                                                          .d30.h,
+                                                      width:
+                                                      DimensionConstants
+                                                          .d30.w,
+                                                      child:
+                                                      BottomNavigationBarShape(
+                                                        bgColor:
+                                                        ColorConstants
+                                                            .whiteColor,
+                                                        strokeColor:
+                                                        ColorConstants
+                                                            .strokecolor,
+                                                        topleftradius:
+                                                        DimensionConstants
+                                                            .d6
+                                                            .r,
+                                                        topRightradius:
+                                                        DimensionConstants
+                                                            .d6
+                                                            .r,
+                                                        bottomleftradius:
+                                                        DimensionConstants
+                                                            .d6
+                                                            .r,
+                                                        bottomRightradius:
+                                                        DimensionConstants
+                                                            .d6
+                                                            .r,
+                                                        child: Padding(
+                                                          padding: EdgeInsets.only(
+                                                              left:
+                                                              DimensionConstants
+                                                                  .d9.w,
+                                                              right:
+                                                              DimensionConstants
+                                                                  .d9
+                                                                  .w),
+                                                          child: ImageView(
+                                                            path:
+                                                            ImageConstants
+                                                                .ic_add,
+                                                            height:
+                                                            DimensionConstants
+                                                                .d11.h,
+                                                            width:
+                                                            DimensionConstants
+                                                                .d11.w,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              )
+                                            ],
+                                          ),
+                                        )),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: DimensionConstants.d20.h,
+                              )
+                            ],
+                          );
+                        }),
+                    Padding(
+                      padding:
+                      EdgeInsets.only(left: DimensionConstants.d19.w),
+                      child: Text('Pizza').btnText(
+                          ColorConstants.colorBlack,
+                          DimensionConstants.d16.sp),
+                    ),
+                    SizedBox(
+                      height: DimensionConstants.d11.h,
+                    ),
+                    ListView.builder(
+                        shrinkWrap: true,
+                        physics: ClampingScrollPhysics(),
+                        itemCount: 2,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Column(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    left: DimensionConstants.d20.w,
+                                    right: DimensionConstants.d20.w),
+                                child: GestureDetector(
+                                  onTap: (){
+                                    openModalSheet();
+                                  },
+                                  child: Container(
+                                    height: DimensionConstants.d138.h,
+                                    width: DimensionConstants.d372.w,
+                                    child: RoundCornerShape(
+                                        bgColor: ColorConstants.whiteColor,
+                                        radius: DimensionConstants.d6.r,
+                                        child: Padding(
+                                          padding: EdgeInsets.only(
+                                              left:
+                                              DimensionConstants.d10.w,
+                                              right:
+                                              DimensionConstants.d10.w),
+                                          child: Column(
+                                            children: [
+                                              Row(
+                                                children: [
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                    CrossAxisAlignment
+                                                        .start,
+                                                    children: [
+                                                      SizedBox(
+                                                        height:
+                                                        DimensionConstants
+                                                            .d11.h,
+                                                      ),
+                                                      Text('Chicken Zinger')
+                                                          .btnText(
                                                           ColorConstants
                                                               .colorBlack,
                                                           DimensionConstants
-                                                              .d13.sp),
-                                                  SizedBox(
-                                                    width: DimensionConstants
-                                                        .d24.w,
-                                                  ),
-                                                  Text('20 miles away').btnText(
-                                                      ColorConstants
-                                                          .colorButtonbgColor,
-                                                      DimensionConstants.d13.sp)
-                                                ],
-                                              ),
-                                            )
-                                          ],
-                                        )),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            height: DimensionConstants.d86.h,
-                          ),
-                          Padding(
-                            padding:
-                                EdgeInsets.only(left: DimensionConstants.d19.w),
-                            child: Text('Menu').btnText(
-                                ColorConstants.colorBlack,
-                                DimensionConstants.d16.sp),
-                          ),
-                          SizedBox(
-                            height: DimensionConstants.d10.h,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(
-                                left: DimensionConstants
-                                    .nametextfieldleftpadding.w,
-                                right: DimensionConstants
-                                    .nametextfieldleftpadding.w),
-                            child: Container(
-                              color: ColorConstants.whiteColor,
-                              height: DimensionConstants.d45.h,
-                              child: ListView.builder(
-                                  shrinkWrap: true,
-                                  scrollDirection: Axis.horizontal,
-                                  itemCount: menuitems.length,
-                                  itemBuilder:
-                                      (BuildContext context, int index) {
-                                    return Row(
-                                      children: [
-                                        GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              menuindex = index;
-                                            });
-                                          },
-                                          child: Container(
-                                            height: DimensionConstants.d32.h,
-                                            width: DimensionConstants.d79.w,
-                                            child: Material(
-                                              elevation: 4,
-                                              borderRadius:
-                                                  BorderRadius.circular(
-                                                      DimensionConstants
-                                                          .buttonradius.r),
-                                              child: RoundCornerShape(
-                                                  bgColor: menuindex == index
-                                                      ? ColorConstants
-                                                          .colorButtonbgColor
-                                                      : ColorConstants
-                                                          .whiteColor,
-                                                  radius: DimensionConstants
-                                                      .buttonradius.r,
-                                                  child: Column(
-                                                    children: [
-                                                      Padding(
-                                                        padding: EdgeInsets.only(
-                                                            top:
-                                                                DimensionConstants
-                                                                    .d7.h,
-                                                            left:
-                                                                DimensionConstants
-                                                                    .d20.w,
-                                                            right:
-                                                                DimensionConstants
-                                                                    .d20.w),
-                                                        child: Text(menuitems[index]).btnText(
-                                                            menuindex == index
-                                                                ? ColorConstants
-                                                                    .whiteColor
-                                                                : ColorConstants
-                                                                    .blackcolor,
+                                                              .d16.sp),
+                                                      SizedBox(
+                                                        height:
+                                                        DimensionConstants
+                                                            .d5.h,
+                                                      ),
+                                                      Text('Spicy & crispy with garlic')
+                                                          .btnText(
+                                                          ColorConstants
+                                                              .cartTextcolor,
+                                                          DimensionConstants
+                                                              .d14.sp),
+                                                      SizedBox(
+                                                        height:
+                                                        DimensionConstants
+                                                            .d9.h,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          ImageView(
+                                                            path:
+                                                            ImageConstants
+                                                                .ic_fire,
+                                                            height:
                                                             DimensionConstants
-                                                                .d12.sp),
+                                                                .d16.h,
+                                                            width:
+                                                            DimensionConstants
+                                                                .d16.w,
+                                                          ),
+                                                          SizedBox(
+                                                            width:
+                                                            DimensionConstants
+                                                                .d4.w,
+                                                          ),
+                                                          Text('195Cal').btnText(
+                                                              ColorConstants
+                                                                  .colorBlack,
+                                                              DimensionConstants
+                                                                  .d14.sp),
+                                                        ],
+                                                      ),
+                                                      SizedBox(
+                                                        height:
+                                                        DimensionConstants
+                                                            .d10.h,
+                                                      ),
+                                                      Text('7999 EGP')
+                                                          .btnText(
+                                                        ColorConstants
+                                                            .colorHintTextColor,
+                                                        DimensionConstants
+                                                            .d12.sp,
                                                       )
                                                     ],
-                                                  )),
-                                            ),
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 10.w,
-                                        )
-                                      ],
-                                    );
-                                  }),
-                            ),
-                          ),
-                          SizedBox(
-                            height: DimensionConstants.d20.h,
-                          ),
-                          Padding(
-                            padding:
-                                EdgeInsets.only(left: DimensionConstants.d19.w),
-                            child: Text('Soup').btnText(
-                                ColorConstants.colorBlack,
-                                DimensionConstants.d16.sp),
-                          ),
-                          SizedBox(
-                            height: DimensionConstants.d11.h,
-                          ),
-                          ListView.builder(
-                              shrinkWrap: true,
-                              physics: ClampingScrollPhysics(),
-                              itemCount: 2,
-                              itemBuilder: (BuildContext context, int index) {
-                                return Column(
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsets.only(
-                                          left: DimensionConstants.d20.w,
-                                          right: DimensionConstants.d20.w),
-                                      child: GestureDetector(
-                                        onTap: () {
-                                          openModalSheet();
-                                        },
-                                        child: Container(
-                                          height: DimensionConstants.d144.h,
-                                          width: DimensionConstants.d372.w,
-                                          child: BottomNavigationBarShape(
-                                              bgColor:
-                                                  ColorConstants.whiteColor,
-                                              topleftradius: DimensionConstants
-                                                  .buttonradius.r,
-                                              topRightradius: DimensionConstants
-                                                  .buttonradius.r,
-                                              bottomleftradius:
-                                                  DimensionConstants
-                                                      .buttonradius.r,
-                                              bottomRightradius:
-                                                  DimensionConstants
-                                                      .buttonradius.r,
-                                              child: Padding(
-                                                padding: EdgeInsets.only(
-                                                    left: DimensionConstants
-                                                        .d10.w,
-                                                    right: DimensionConstants
-                                                        .d10.w),
-                                                child: Column(
-                                                  children: [
-                                                    Row(
-                                                      children: [
-                                                        Column(
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            SizedBox(
-                                                              height:
-                                                                  DimensionConstants
-                                                                      .d11.h,
-                                                            ),
-                                                            Text('Chicken Zinger').btnText(
-                                                                ColorConstants
-                                                                    .colorBlack,
-                                                                DimensionConstants
-                                                                    .d16.sp),
-                                                            SizedBox(
-                                                              height:
-                                                                  DimensionConstants
-                                                                      .d5.h,
-                                                            ),
-                                                            Text('Spicy & crispy with garlic').btnText(
-                                                                ColorConstants
-                                                                    .cartTextcolor,
-                                                                DimensionConstants
-                                                                    .d14.sp),
-                                                            SizedBox(
-                                                              height:
-                                                                  DimensionConstants
-                                                                      .d9.h,
-                                                            ),
-                                                            Row(
-                                                              children: [
-                                                                ImageView(
-                                                                  path: ImageConstants
-                                                                      .ic_fire,
-                                                                  height:
-                                                                      DimensionConstants
-                                                                          .d16
-                                                                          .h,
-                                                                  width:
-                                                                      DimensionConstants
-                                                                          .d16
-                                                                          .w,
-                                                                ),
-                                                                SizedBox(
-                                                                  width:
-                                                                      DimensionConstants
-                                                                          .d4.w,
-                                                                ),
-                                                                Text('195Cal').btnText(
-                                                                    ColorConstants
-                                                                        .colorBlack,
-                                                                    DimensionConstants
-                                                                        .d14
-                                                                        .sp),
-                                                              ],
-                                                            ),
-                                                            SizedBox(
-                                                              height:
-                                                                  DimensionConstants
-                                                                      .d10.h,
-                                                            ),
-                                                            Text('7999 EGP')
-                                                                .btnText(
-                                                              ColorConstants
-                                                                  .colorHintTextColor,
-                                                              DimensionConstants
-                                                                  .d12.sp,
-                                                            )
-                                                          ],
-                                                        ),
-                                                        SizedBox(
-                                                          width:
-                                                              DimensionConstants
-                                                                  .d86.w,
-                                                        ),
-                                                        ImageView(
-                                                          path: ImageConstants
-                                                              .ic_cart_burger,
-                                                          height:
-                                                              DimensionConstants
-                                                                  .d94.h,
-                                                          width:
-                                                              DimensionConstants
-                                                                  .d103.w,
-                                                        )
-                                                      ],
-                                                    ),
-                                                    SizedBox(
-                                                      height: DimensionConstants
-                                                          .d1.h,
-                                                    ),
-                                                    Row(
-                                                      children: [
-                                                        Text('7999 EGP').btnText(
-                                                            ColorConstants
-                                                                .colorButtonbgColor,
-                                                            DimensionConstants
-                                                                .d16.sp),
-                                                        SizedBox(
-                                                          width:
-                                                              DimensionConstants
-                                                                  .d12.w,
-                                                        ),
-                                                        ImageView(
-                                                          path: ImageConstants
-                                                              .ic_star,
-                                                          height:
-                                                              DimensionConstants
-                                                                  .d14.h,
-                                                          width:
-                                                              DimensionConstants
-                                                                  .d15.w,
-                                                        ),
-                                                        SizedBox(
-                                                          width:
-                                                              DimensionConstants
-                                                                  .d5.w,
-                                                        ),
-                                                        Text('4.5').btnText(
-                                                            ColorConstants
-                                                                .blackcolor,
-                                                            DimensionConstants
-                                                                .d15.sp),
-                                                        SizedBox(
-                                                          width:
-                                                              DimensionConstants
-                                                                  .d134.w,
-                                                        ),
-                                                        GestureDetector(
-                                                          onTap: (){
-                                                            if(count[index]>0){
-                                                              count[index]--;
-                                                              setState(() {
-                                                                count[index]=count[index];
-                                                              });
-                                                            }
-                                                          },
-                                                          child: Container(
-                                                            height:
-                                                                DimensionConstants
-                                                                    .d30.h,
-                                                            width:
-                                                                DimensionConstants
-                                                                    .d30.w,
-                                                            child:
-                                                                BottomNavigationBarShape(
-                                                              bgColor:
-                                                                  ColorConstants
-                                                                      .whiteColor,
-                                                              strokeColor:
-                                                                  ColorConstants
-                                                                      .strokecolor,
-                                                              topleftradius:
-                                                                  DimensionConstants
-                                                                      .buttonradius
-                                                                      .r,
-                                                              topRightradius:
-                                                                  DimensionConstants
-                                                                      .buttonradius
-                                                                      .r,
-                                                              bottomleftradius:
-                                                                  DimensionConstants
-                                                                      .buttonradius
-                                                                      .r,
-                                                              bottomRightradius:
-                                                                  DimensionConstants
-                                                                      .buttonradius
-                                                                      .r,
-                                                              child: Padding(
-                                                                padding: EdgeInsets.only(
-                                                                    left:
-                                                                        DimensionConstants
-                                                                            .d8.w,
-                                                                    right:
-                                                                        DimensionConstants
-                                                                            .d8
-                                                                            .w),
-                                                                child: ImageView(
-                                                                  path: ImageConstants
-                                                                      .ic_minus,
-                                                                  height:
-                                                                      DimensionConstants
-                                                                          .d3.h,
-                                                                  width:
-                                                                      DimensionConstants
-                                                                          .d12.w,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        SizedBox(
-                                                          width:
-                                                              DimensionConstants
-                                                                  .d10.w,
-                                                        ),
-                                                        Text(count[index].toString()).mediumText(
-                                                            ColorConstants
-                                                                .darkblackcolor,
-                                                            DimensionConstants
-                                                                .d16.sp,
-                                                            TextAlign.center),
-                                                        SizedBox(
-                                                          width:
-                                                              DimensionConstants
-                                                                  .d10.w,
-                                                        ),
-                                                        GestureDetector(
-                                                          onTap: (){
-                                                            count[index]++;
-                                                            setState(() {
-                                                              count[index]=count[index];
-                                                            });
-                                                          },
-                                                          child: Container(
-                                                            height:
-                                                                DimensionConstants
-                                                                    .d30.h,
-                                                            width:
-                                                                DimensionConstants
-                                                                    .d30.w,
-                                                            child:
-                                                                BottomNavigationBarShape(
-                                                              bgColor:
-                                                                  ColorConstants
-                                                                      .whiteColor,
-                                                              strokeColor:
-                                                                  ColorConstants
-                                                                      .strokecolor,
-                                                              topleftradius:
-                                                                  DimensionConstants
-                                                                      .buttonradius
-                                                                      .r,
-                                                              topRightradius:
-                                                                  DimensionConstants
-                                                                      .buttonradius
-                                                                      .r,
-                                                              bottomleftradius:
-                                                                  DimensionConstants
-                                                                      .buttonradius
-                                                                      .r,
-                                                              bottomRightradius:
-                                                                  DimensionConstants
-                                                                      .buttonradius
-                                                                      .r,
-                                                              child: Padding(
-                                                                padding: EdgeInsets.only(
-                                                                    left:
-                                                                        DimensionConstants
-                                                                            .d9.w,
-                                                                    right:
-                                                                        DimensionConstants
-                                                                            .d9
-                                                                            .w),
-                                                                child: ImageView(
-                                                                  path:
-                                                                      ImageConstants
-                                                                          .ic_add,
-                                                                  height:
-                                                                      DimensionConstants
-                                                                          .d11.h,
-                                                                  width:
-                                                                      DimensionConstants
-                                                                          .d11.w,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    )
-                                                  ],
-                                                ),
-                                              )),
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: DimensionConstants.d20.h,
-                                    )
-                                  ],
-                                );
-                              }),
-                          Padding(
-                            padding:
-                                EdgeInsets.only(left: DimensionConstants.d19.w),
-                            child: Text('Pizza').btnText(
-                                ColorConstants.colorBlack,
-                                DimensionConstants.d16.sp),
-                          ),
-                          SizedBox(
-                            height: DimensionConstants.d11.h,
-                          ),
-                          ListView.builder(
-                              shrinkWrap: true,
-                              physics: ClampingScrollPhysics(),
-                              itemCount: 2,
-                              itemBuilder: (BuildContext context, int index) {
-                                return Column(
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsets.only(
-                                          left: DimensionConstants.d20.w,
-                                          right: DimensionConstants.d20.w),
-                                      child: GestureDetector(
-                                        onTap: (){
-                                          openModalSheet();
-                                        },
-                                        child: Container(
-                                          height: DimensionConstants.d144.h,
-                                          width: DimensionConstants.d372.w,
-                                          child: BottomNavigationBarShape(
-                                              bgColor: ColorConstants.whiteColor,
-                                              topleftradius: DimensionConstants
-                                                  .buttonradius.r,
-                                              topRightradius: DimensionConstants
-                                                  .buttonradius.r,
-                                              bottomleftradius: DimensionConstants
-                                                  .buttonradius.r,
-                                              bottomRightradius:
-                                                  DimensionConstants
-                                                      .buttonradius.r,
-                                              child: Padding(
-                                                padding: EdgeInsets.only(
-                                                    left:
-                                                        DimensionConstants.d10.w,
-                                                    right:
-                                                        DimensionConstants.d10.w),
-                                                child: Column(
-                                                  children: [
-                                                    Row(
-                                                      children: [
-                                                        Column(
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            SizedBox(
-                                                              height:
-                                                                  DimensionConstants
-                                                                      .d11.h,
-                                                            ),
-                                                            Text('Chicken Zinger')
-                                                                .btnText(
-                                                                    ColorConstants
-                                                                        .colorBlack,
-                                                                    DimensionConstants
-                                                                        .d16.sp),
-                                                            SizedBox(
-                                                              height:
-                                                                  DimensionConstants
-                                                                      .d5.h,
-                                                            ),
-                                                            Text('Spicy & crispy with garlic')
-                                                                .btnText(
-                                                                    ColorConstants
-                                                                        .cartTextcolor,
-                                                                    DimensionConstants
-                                                                        .d14.sp),
-                                                            SizedBox(
-                                                              height:
-                                                                  DimensionConstants
-                                                                      .d9.h,
-                                                            ),
-                                                            Row(
-                                                              children: [
-                                                                ImageView(
-                                                                  path:
-                                                                      ImageConstants
-                                                                          .ic_fire,
-                                                                  height:
-                                                                      DimensionConstants
-                                                                          .d16.h,
-                                                                  width:
-                                                                      DimensionConstants
-                                                                          .d16.w,
-                                                                ),
-                                                                SizedBox(
-                                                                  width:
-                                                                      DimensionConstants
-                                                                          .d4.w,
-                                                                ),
-                                                                Text('195Cal').btnText(
-                                                                    ColorConstants
-                                                                        .colorBlack,
-                                                                    DimensionConstants
-                                                                        .d14.sp),
-                                                              ],
-                                                            ),
-                                                            SizedBox(
-                                                              height:
-                                                                  DimensionConstants
-                                                                      .d10.h,
-                                                            ),
-                                                            Text('7999 EGP')
-                                                                .btnText(
-                                                              ColorConstants
-                                                                  .colorHintTextColor,
-                                                              DimensionConstants
-                                                                  .d12.sp,
-                                                            )
-                                                          ],
-                                                        ),
-                                                        SizedBox(
-                                                          width:
-                                                              DimensionConstants
-                                                                  .d86.w,
-                                                        ),
-                                                        ImageView(
-                                                          path: ImageConstants
-                                                              .ic_cart_burger,
-                                                          height:
-                                                              DimensionConstants
-                                                                  .d94.h,
-                                                          width:
-                                                              DimensionConstants
-                                                                  .d103.w,
-                                                        )
-                                                      ],
-                                                    ),
-                                                    SizedBox(
-                                                      height:
-                                                          DimensionConstants.d1.h,
-                                                    ),
-                                                    Row(
-                                                      children: [
-                                                        Text('7999 EGP').btnText(
-                                                            ColorConstants
-                                                                .colorButtonbgColor,
-                                                            DimensionConstants
-                                                                .d16.sp),
-                                                        SizedBox(
-                                                          width:
-                                                              DimensionConstants
-                                                                  .d12.w,
-                                                        ),
-                                                        ImageView(
-                                                          path: ImageConstants
-                                                              .ic_star,
-                                                          height:
-                                                              DimensionConstants
-                                                                  .d14.h,
-                                                          width:
-                                                              DimensionConstants
-                                                                  .d15.w,
-                                                        ),
-                                                        SizedBox(
-                                                          width:
-                                                              DimensionConstants
-                                                                  .d3.w,
-                                                        ),
-                                                        Text('4.5').btnText(
-                                                            ColorConstants
-                                                                .blackcolor,
-                                                            DimensionConstants
-                                                                .d15.sp),
-                                                        SizedBox(
-                                                          width:
-                                                              DimensionConstants
-                                                                  .d134.w,
-                                                        ),
-                                                        GestureDetector(
-                                                          onTap: (){
-                                                            if(counter[index]>0){
-                                                              counter[index]--;
-                                                              setState(() {
-                                                                counter[index]=counter[index];
-                                                              });
-                                                            }
+                                                  ),
+                                                  SizedBox(
+                                                    width:
+                                                    DimensionConstants
+                                                        .d86.w,
+                                                  ),
+                                                  ImageView(
+                                                    path: ImageConstants
+                                                        .ic_cart_burger,
+                                                    height:
+                                                    DimensionConstants
+                                                        .d94.h,
+                                                    width:
+                                                    DimensionConstants
+                                                        .d103.w,
+                                                  )
+                                                ],
+                                              ),
+                                              SizedBox(
+                                                height:
+                                                DimensionConstants.d1.h,
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Text('7999 EGP').btnText(
+                                                      ColorConstants
+                                                          .colorButtonbgColor,
+                                                      DimensionConstants
+                                                          .d16.sp),
+                                                  SizedBox(
+                                                    width:
+                                                    DimensionConstants
+                                                        .d12.w,
+                                                  ),
+                                                  ImageView(
+                                                    path: ImageConstants
+                                                        .ic_star,
+                                                    height:
+                                                    DimensionConstants
+                                                        .d14.h,
+                                                    width:
+                                                    DimensionConstants
+                                                        .d15.w,
+                                                  ),
+                                                  SizedBox(
+                                                    width:
+                                                    DimensionConstants
+                                                        .d3.w,
+                                                  ),
+                                                  Text('4.5').btnText(
+                                                      ColorConstants
+                                                          .blackcolor,
+                                                      DimensionConstants
+                                                          .d15.sp),
+                                                  SizedBox(
+                                                    width:
+                                                    DimensionConstants
+                                                        .d134.w,
+                                                  ),
+                                                  GestureDetector(
+                                                    onTap: (){
+                                                      if(counter[index]>0){
+                                                        counter[index]--;
+                                                        setState(() {
+                                                          counter[index]=counter[index];
+                                                        });
+                                                      }
 
-                                                            print(count);
-                                                          },
-                                                          child: Container(
-                                                            height:
-                                                                DimensionConstants
-                                                                    .d30.h,
-                                                            width:
-                                                                DimensionConstants
-                                                                    .d30.w,
-                                                            child:
-                                                                BottomNavigationBarShape(
-                                                              bgColor:
-                                                                  ColorConstants
-                                                                      .whiteColor,
-                                                              strokeColor:
-                                                                  ColorConstants
-                                                                      .strokecolor,
-                                                              topleftradius:
-                                                                  DimensionConstants
-                                                                      .buttonradius
-                                                                      .r,
-                                                              topRightradius:
-                                                                  DimensionConstants
-                                                                      .buttonradius
-                                                                      .r,
-                                                              bottomleftradius:
-                                                                  DimensionConstants
-                                                                      .buttonradius
-                                                                      .r,
-                                                              bottomRightradius:
-                                                                  DimensionConstants
-                                                                      .buttonradius
-                                                                      .r,
-                                                              child: Padding(
-                                                                padding: EdgeInsets.only(
-                                                                    left:
-                                                                        DimensionConstants
-                                                                            .d8.w,
-                                                                    right:
-                                                                        DimensionConstants
-                                                                            .d8.w),
-                                                                child: ImageView(
-                                                                  path:
-                                                                      ImageConstants
-                                                                          .ic_minus,
-                                                                  height:
-                                                                      DimensionConstants
-                                                                          .d3.h,
-                                                                  width:
-                                                                      DimensionConstants
-                                                                          .d12.w,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        SizedBox(
-                                                          width:
+                                                      print(count);
+                                                    },
+                                                    child: Container(
+                                                      height:
+                                                      DimensionConstants
+                                                          .d30.h,
+                                                      width:
+                                                      DimensionConstants
+                                                          .d30.w,
+                                                      child:
+                                                      BottomNavigationBarShape(
+                                                        bgColor:
+                                                        ColorConstants
+                                                            .whiteColor,
+                                                        strokeColor:
+                                                        ColorConstants
+                                                            .strokecolor,
+                                                        topleftradius:
+                                                        DimensionConstants
+                                                            .d6
+                                                            .r,
+                                                        topRightradius:
+                                                        DimensionConstants
+                                                            .d6
+                                                            .r,
+                                                        bottomleftradius:
+                                                        DimensionConstants
+                                                            .d6
+                                                            .r,
+                                                        bottomRightradius:
+                                                        DimensionConstants
+                                                            .d6
+                                                            .r,
+                                                        child: Padding(
+                                                          padding: EdgeInsets.only(
+                                                              left:
                                                               DimensionConstants
-                                                                  .d10.w,
-                                                        ),
-                                                        Text(counter[index].toString()).mediumText(
-                                                            ColorConstants
-                                                                .darkblackcolor,
+                                                                  .d8.w,
+                                                              right:
+                                                              DimensionConstants
+                                                                  .d8.w),
+                                                          child: ImageView(
+                                                            path:
+                                                            ImageConstants
+                                                                .ic_minus,
+                                                            height:
                                                             DimensionConstants
-                                                                .d16.sp,
-                                                            TextAlign.center),
-                                                        SizedBox(
-                                                          width:
-                                                              DimensionConstants
-                                                                  .d10.w,
-                                                        ),
-                                                        GestureDetector(
-                                                          onTap: (){
-                                                            counter[index]++;
-                                                            setState(() {
-                                                              counter[index]=counter[index];
-                                                            });
-                                                          },
-                                                          child: Container(
-                                                            height:
-                                                                DimensionConstants
-                                                                    .d30.h,
+                                                                .d3.h,
                                                             width:
-                                                                DimensionConstants
-                                                                    .d30.w,
-                                                            child:
-                                                                BottomNavigationBarShape(
-                                                              bgColor:
-                                                                  ColorConstants
-                                                                      .whiteColor,
-                                                              strokeColor:
-                                                                  ColorConstants
-                                                                      .strokecolor,
-                                                              topleftradius:
-                                                                  DimensionConstants
-                                                                      .buttonradius
-                                                                      .r,
-                                                              topRightradius:
-                                                                  DimensionConstants
-                                                                      .buttonradius
-                                                                      .r,
-                                                              bottomleftradius:
-                                                                  DimensionConstants
-                                                                      .buttonradius
-                                                                      .r,
-                                                              bottomRightradius:
-                                                                  DimensionConstants
-                                                                      .buttonradius
-                                                                      .r,
-                                                              child: Padding(
-                                                                padding: EdgeInsets.only(
-                                                                    left:
-                                                                        DimensionConstants
-                                                                            .d9.w,
-                                                                    right:
-                                                                        DimensionConstants
-                                                                            .d9.w),
-                                                                child: ImageView(
-                                                                  path:
-                                                                      ImageConstants
-                                                                          .ic_add,
-                                                                  height:
-                                                                      DimensionConstants
-                                                                          .d11.h,
-                                                                  width:
-                                                                      DimensionConstants
-                                                                          .d11.w,
-                                                                ),
-                                                              ),
-                                                            ),
+                                                            DimensionConstants
+                                                                .d12.w,
                                                           ),
                                                         ),
-                                                      ],
-                                                    )
-                                                  ],
-                                                ),
-                                              )),
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: DimensionConstants.d20.h,
-                                    )
-                                  ],
-                                );
-                              })
-                        ],
-                      ),
-                    );
-                  },
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    width:
+                                                    DimensionConstants
+                                                        .d10.w,
+                                                  ),
+                                                  Text(counter[index].toString()).mediumText(
+                                                      ColorConstants
+                                                          .darkblackcolor,
+                                                      DimensionConstants
+                                                          .d16.sp,
+                                                      TextAlign.center),
+                                                  SizedBox(
+                                                    width:
+                                                    DimensionConstants
+                                                        .d10.w,
+                                                  ),
+                                                  GestureDetector(
+                                                    onTap: (){
+                                                      counter[index]++;
+                                                      setState(() {
+                                                        counter[index]=counter[index];
+                                                      });
+                                                    },
+                                                    child: Container(
+                                                      height:
+                                                      DimensionConstants
+                                                          .d30.h,
+                                                      width:
+                                                      DimensionConstants
+                                                          .d30.w,
+                                                      child:
+                                                      BottomNavigationBarShape(
+                                                        bgColor:
+                                                        ColorConstants
+                                                            .whiteColor,
+                                                        strokeColor:
+                                                        ColorConstants
+                                                            .strokecolor,
+                                                        topleftradius:
+                                                        DimensionConstants
+                                                            .d6
+                                                            .r,
+                                                        topRightradius:
+                                                        DimensionConstants
+                                                            .d6
+                                                            .r,
+                                                        bottomleftradius:
+                                                        DimensionConstants
+                                                            .d6
+                                                            .r,
+                                                        bottomRightradius:
+                                                        DimensionConstants
+                                                            .d6
+                                                            .r,
+                                                        child: Padding(
+                                                          padding: EdgeInsets.only(
+                                                              left:
+                                                              DimensionConstants
+                                                                  .d9.w,
+                                                              right:
+                                                              DimensionConstants
+                                                                  .d9.w),
+                                                          child: ImageView(
+                                                            path:
+                                                            ImageConstants
+                                                                .ic_add,
+                                                            height:
+                                                            DimensionConstants
+                                                                .d11.h,
+                                                            width:
+                                                            DimensionConstants
+                                                                .d11.w,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              )
+                                            ],
+                                          ),
+                                        )),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: DimensionConstants.d20.h,
+                              )
+                            ],
+                          );
+                        })
+                  ],
                 ),
               );
             },
@@ -1074,10 +1049,10 @@ class _RestaurantDetailsState extends State<RestaurantDetails> {
                       child: BottomNavigationBarShape(
                         bgColor: ColorConstants.whiteColor,
                         strokeColor: ColorConstants.strokecolor,
-                        topleftradius: DimensionConstants.buttonradius.r,
-                        topRightradius: DimensionConstants.buttonradius.r,
-                        bottomleftradius: DimensionConstants.buttonradius.r,
-                        bottomRightradius: DimensionConstants.buttonradius.r,
+                        topleftradius: DimensionConstants.d6.r,
+                        topRightradius: DimensionConstants.d6.r,
+                        bottomleftradius: DimensionConstants.d6.r,
+                        bottomRightradius: DimensionConstants.d6.r,
                         child: Padding(
                           padding: EdgeInsets.only(
                               left: DimensionConstants.d12.w,
@@ -1104,10 +1079,10 @@ class _RestaurantDetailsState extends State<RestaurantDetails> {
                       child: BottomNavigationBarShape(
                         bgColor: ColorConstants.whiteColor,
                         strokeColor: ColorConstants.strokecolor,
-                        topleftradius: DimensionConstants.buttonradius.r,
-                        topRightradius: DimensionConstants.buttonradius.r,
-                        bottomleftradius: DimensionConstants.buttonradius.r,
-                        bottomRightradius: DimensionConstants.buttonradius.r,
+                        topleftradius: DimensionConstants.d6.r,
+                        topRightradius: DimensionConstants.d6.r,
+                        bottomleftradius: DimensionConstants.d6.r,
+                        bottomRightradius: DimensionConstants.d6.r,
                         child: Padding(
                           padding: EdgeInsets.only(
                               left: DimensionConstants.d12.w,
@@ -1251,7 +1226,7 @@ class _RestaurantDetailsState extends State<RestaurantDetails> {
                           height: DimensionConstants.d12.h,
                         ),
                         Container(
-                          height: DimensionConstants.d124.h,
+                          height: DimensionConstants.d121.h,
                           child: ListView.builder(
                               shrinkWrap: true,
                               physics: ClampingScrollPhysics(),
@@ -1301,14 +1276,14 @@ class _RestaurantDetailsState extends State<RestaurantDetails> {
                                               strokeColor:
                                               ColorConstants.strokecolor,
                                               topleftradius: DimensionConstants
-                                                  .buttonradius.r,
+                                                  .d6.r,
                                               topRightradius: DimensionConstants
-                                                  .buttonradius.r,
+                                                  .d6.r,
                                               bottomleftradius: DimensionConstants
-                                                  .buttonradius.r,
+                                                  .d6.r,
                                               bottomRightradius:
                                               DimensionConstants
-                                                  .buttonradius.r,
+                                                  .d6.r,
                                               child: Padding(
                                                 padding: EdgeInsets.only(
                                                     left: DimensionConstants.d9.w,
@@ -1340,14 +1315,14 @@ class _RestaurantDetailsState extends State<RestaurantDetails> {
                                               strokeColor:
                                               ColorConstants.strokecolor,
                                               topleftradius: DimensionConstants
-                                                  .buttonradius.r,
+                                                  .d6.r,
                                               topRightradius: DimensionConstants
-                                                  .buttonradius.r,
+                                                  .d6.r,
                                               bottomleftradius: DimensionConstants
-                                                  .buttonradius.r,
+                                                  .d6.r,
                                               bottomRightradius:
                                               DimensionConstants
-                                                  .buttonradius.r,
+                                                  .d6.r,
                                               child: Padding(
                                                 padding: EdgeInsets.only(
                                                     left: DimensionConstants.d9.w,
@@ -1420,11 +1395,11 @@ class _RestaurantDetailsState extends State<RestaurantDetails> {
                 child: GestureDetector(
 
                   child: SizedBox(
-                    width: DimensionConstants.buttonwidth.w,
-                    height: DimensionConstants.buttonheight.h,
+                    width: DimensionConstants.d373.w,
+                    height: DimensionConstants.d52.h,
                     child: RoundCornerShape(
                         bgColor: ColorConstants.colorButtonbgColor,
-                        radius: DimensionConstants.buttonradius.r,
+                        radius: DimensionConstants.d6.r,
                         child: Center(
                           child: Row(
                             mainAxisAlignment:
@@ -1434,7 +1409,7 @@ class _RestaurantDetailsState extends State<RestaurantDetails> {
                                 'Add To Cart',
                               ).buttonText(
                                   ColorConstants.whiteColor,
-                                  DimensionConstants.buttontextsize.sp,
+                                  DimensionConstants.d16.sp,
                                   TextAlign.center),
 
                             ],

@@ -52,331 +52,359 @@ class _LoginState extends State<Login> {
             onModelReady: (provider) {},
             builder: (context, provider, _) {
               return SafeArea(
-                child: ScreenUtilInit(
-                  designSize: const Size(DimensionConstants.loginscreenwidth,DimensionConstants.loginscreenheight),
-                  builder: () {
-                    return Padding(
-                      padding: EdgeInsets.symmetric(horizontal: DimensionConstants.loginhorizontalpadding.w),
-                      child: SingleChildScrollView(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: DimensionConstants.d20.w),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: DimensionConstants.d143.h,
+                        ),
+
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(
-                              height: DimensionConstants.loginscreengap1.h,
-                            ),
+                            Text(
+                              "welcome_message".tr(),
+                            ).regularText(ColorConstants.headingColor, DimensionConstants.d22.sp),
 
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
+                          ],
+                        ) ,
+                        SizedBox(
+                          height: DimensionConstants.d51.h,
+                        ),
+                        Container(
+                          child: Form(
+
+                            child: Column(
                               children: [
-                                Text(
-                                  "welcome_message".tr(),
-                                ).regularText(ColorConstants.headingColor, DimensionConstants.welcomeTextSize.sp),
 
-                              ],
-                            ) ,
-                            SizedBox(
-                              height: DimensionConstants.loginscreengap2.h,
-                            ),
-                            Container(
-                              child: Form(
-
-                                child: Column(
-                                  children: [
-
-                                    Container(
-                                      height: DimensionConstants.buttonheight,
-
-                                      child: TextFormField(
-
-                                        textCapitalization:
-                                        TextCapitalization.sentences,
-                                        cursorColor:
-                                        ColorConstants.colorButtonbgColor,
-                                        controller: fnamecontroller,
-                                        style: ViewDecoration.textFieldStyle(
-                                            DimensionConstants.textfieldTextSize.sp),
-                                        decoration: ViewDecoration
-                                            .inputDecorationWithCurve(
-                                            "username".tr(),
-                                            prefixIcon: Padding(
-                                                padding: EdgeInsets.only(left: DimensionConstants.nametextfieldleftpadding.w,top: DimensionConstants.nametextfieldtoppadding.h,
-                                                    bottom: DimensionConstants.nametextfieldbottompadding.h,right: DimensionConstants.nametextfieldrightpadding.w),
-                                                child: ImageView(
-                                                  path: ImageConstants.ic_person,
-
-
-
-                                                )
-                                            )
-                                        ),
-                                        textInputAction: TextInputAction.next,
-                                        keyboardType: TextInputType.text,
-
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: DimensionConstants.textfieldgap.h,
-                                    ),
-
-                                    Container(
-                                      height: DimensionConstants.buttonheight,
-
-
-
-                                      child: TextFormField(
-
-                                        cursorColor:
-                                        ColorConstants.colorButtonbgColor,
-                                        controller: _passwordController,
-
-                                        style: ViewDecoration.textFieldStyle(
-                                            DimensionConstants.textfieldTextSize.sp),
-                                        decoration: ViewDecoration
-                                            .inputDecorationWithCurve(
-                                          "password".tr(),
+                                Container(
+                                  height: DimensionConstants.d52
+                                  .h,
+                                  child: RoundCornerShape(
+                                    bgColor: ColorConstants.whiteColor,
+                                    radius: DimensionConstants.d6.r,
+                                    child: TextFormField(
+                                      textCapitalization:
+                                      TextCapitalization.sentences,
+                                      cursorColor:
+                                      ColorConstants.colorButtonbgColor,
+                                      controller: fnamecontroller,
+                                      style: ViewDecoration.textFieldStyle(
+                                          DimensionConstants
+                                              .d16.sp),
+                                      decoration: ViewDecoration.inputDecorationWithCurve(
+                                          "username".tr(),
                                           prefixIcon: Padding(
-                                              padding: EdgeInsets.only(left: DimensionConstants.passwordtextfieldleftpadding.w,top: DimensionConstants.passwordtextfieldtoppadding.h,
-                                                  bottom: DimensionConstants.passwordtextfieldbottompadding.h,
-                                                  right: DimensionConstants.passwordtextfieldrightpadding.w),
-                                              child: const ImageView(
-                                                path: ImageConstants.ic_password,
+                                              padding: EdgeInsets.only(
+                                                  left: DimensionConstants
+                                                      .d20
+                                                      .w,
+                                                  top: DimensionConstants
+                                                      .d16
+                                                      .h,
+                                                  bottom: DimensionConstants
+                                                      .d16
+                                                      .h,
+                                                  right: DimensionConstants
+                                                      .d10
+                                                      .w),
+                                              child:  ImageView(
+                                                path:
+                                                ImageConstants.ic_person,
+                                                width: DimensionConstants.d18.w,
+                                                height: DimensionConstants.d20.h,
+                                              ))),
+                                      textInputAction: TextInputAction.next,
+                                      keyboardType: TextInputType.text,
 
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: DimensionConstants.d15.h,
+                                ),
 
-                                              )
+                                Container(
+                                  height: DimensionConstants.d52
+                                  .h,
+                                  child: RoundCornerShape(
+                                    bgColor: ColorConstants.whiteColor,
+                                    radius: DimensionConstants.d6.r,
+
+                                    child: TextFormField(
+                                      controller: _passwordController,
+                                      textCapitalization:
+                                      TextCapitalization.sentences,
+                                      cursorColor:
+                                      ColorConstants.colorButtonbgColor,
+                                      style: ViewDecoration.textFieldStyle(
+                                          DimensionConstants
+                                              .d16.sp),
+                                      decoration: ViewDecoration
+                                          .inputDecorationWithCurve(
+                                        "password".tr(),
+                                        prefixIcon: Padding(
+                                            padding: EdgeInsets.only(
+                                                left: DimensionConstants
+                                                    .d19
+                                                    .w,
+                                                top: DimensionConstants
+                                                    .d16
+                                                    .h,
+                                                bottom: DimensionConstants
+                                                    .d15
+                                                    .h,
+                                                right: DimensionConstants
+                                                    .d8
+                                                    .w),
+                                            child:  ImageView(
+                                              path:
+                                              ImageConstants.ic_password,
+                                              width: DimensionConstants.d19.w,
+                                              height: DimensionConstants.d19.h,
+                                            )),
+                                        suffixIcon: IconButton(
+                                          icon: Icon(
+                                            // Based on passwordVisible state choose the icon
+                                            _passwordVisible
+                                                ? Icons.visibility
+                                                : Icons.visibility_off,
+                                            color: ColorConstants
+                                                .colorHintTextColor,
+                                            size: DimensionConstants
+                                                .d15,
                                           ),
-                                          suffixIcon: IconButton(
-                                            icon: Icon(
-                                              // Based on passwordVisible state choose the icon
-                                              _passwordVisible
-                                                  ? Icons.visibility
-                                                  : Icons.visibility_off,
-                                              color: ColorConstants.colorHintTextColor,
-                                              size: DimensionConstants.eyeiconsize,
-                                            ),
-                                            onPressed: () {
-                                              // Update the state i.e. toogle the state of passwordVisible variable
-                                              setState(() {
-                                                _passwordVisible = !_passwordVisible;
-                                              });
-                                            },
-                                          ),
+                                          onPressed: () {
+                                            // Update the state i.e. toogle the state of passwordVisible variable
+                                            setState(() {
+                                              _passwordVisible =
+                                              !_passwordVisible;
+                                            });
+                                          },
                                         ),
-                                        textInputAction: TextInputAction.next,
-                                        keyboardType: TextInputType.text,
-
                                       ),
-                                    ),
-                                    SizedBox(
-                                      height: DimensionConstants.forgotpasswordpadding.h,
-                                    ),
-                                    GestureDetector(
-                                      onTap: () {
-                                        Navigator.of(context)
-                                            .pushNamed(RoutesConstants.forgot);
-                                      },
-                                      child: Padding(
-                                        padding: EdgeInsets.symmetric(horizontal: 4.w),
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.end,
-                                          children: [
+                                      textInputAction: TextInputAction.done,
+                                      keyboardType: TextInputType.text,
 
-                                            Column(
-                                              children: [
-                                                Text(
-                                                  'forgot_password'.tr(),
-                                                ).regularText(
-                                                    ColorConstants.colorBlack,
-                                                   DimensionConstants.noaccounttextsize.sp,
-                                                    ),
-                                              ],
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: DimensionConstants.d9.h,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(context)
+                                        .pushNamed(RoutesConstants.forgot);
+                                  },
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: DimensionConstants.d4.w),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+
+                                        Column(
+                                          children: [
+                                            Text(
+                                              'forgot_password'.tr(),
+                                            ).regularText(
+                                              ColorConstants.colorBlack,
+                                              DimensionConstants.d14.sp,
                                             ),
                                           ],
                                         ),
-                                      ),
+                                      ],
                                     ),
+                                  ),
+                                ),
 
-                                    SizedBox(
-                                      height: DimensionConstants.loginbtntoppadding.h,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                               if(fnamecontroller.text==''){
-                                 DialogHelper.showMessage(context, 'Username cannot be empty');
-                                 return;
-                               }
-                               if(_passwordController.text==''){
-                                 DialogHelper.showMessage(context, 'Password cannot be empty');
-                                 return;
-                               }
-
-                               if(_passwordController.text.length<6){
-                                 DialogHelper.showMessage(context, 'Password should be of atleast 6 letters');
-                                 return;
-                               }
-                               Navigator.pushNamedAndRemoveUntil(context, "home_page", (Route<dynamic> route) => false);
-
-                              },
-                              child: SizedBox(
-                                width: DimensionConstants.buttonwidth.w,
-                                height: DimensionConstants.buttonheight.h,
-                                child: RoundCornerShape(
-                                    bgColor: ColorConstants.colorButtonbgColor,
-                                    radius: DimensionConstants.buttonradius.r,
-                                    child: Center(
-                                      child: Row(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                              'login'.tr(),
-                                            ).buttonText(
-                                                ColorConstants.whiteColor,
-                                                DimensionConstants.buttontextsize.sp,
-                                                TextAlign.center),
-
-                                        ],
-                                      ),
-                                    )
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: DimensionConstants.buttongap1.h,
-                            ),
-                            Row(
-                              children: [
                                 SizedBox(
-                                  width: DimensionConstants.dividerleftpadding.w,
-                                ),
-                                const Expanded(
-                                    child: Divider(
-                                      color: ColorConstants.dividerColor,
-                                      thickness: DimensionConstants.dividerthickness,
-                                    )),
-                                SizedBox(
-                                  width: DimensionConstants.dividerpadding1.w,
-                                ),
-                                Text(
-                                    "or".tr()
-                                ).btnText(ColorConstants.colorBlack, DimensionConstants.dividertextsize.sp),
-                                SizedBox(
-                                  width: DimensionConstants.dividerpadding2.w,
-                                ),
-                                const Expanded(
-                                    child: Divider(
-                                      color: ColorConstants.dividerColor,
-                                      thickness: DimensionConstants.dividerthickness,
-                                    )),
-                                SizedBox(
-                                  width: DimensionConstants.dividerrightpadding.w,
+                                  height: DimensionConstants.d28.h,
                                 ),
                               ],
                             ),
-                            SizedBox(
-                              height: DimensionConstants.buttongap1.h,
-                            ),
-                            Container(
-                              width: DimensionConstants.buttonwidth.w,
-                              height: DimensionConstants.buttonheight.h,
-                              child: RoundCornerShape(
-                                  bgColor: ColorConstants.fbbuttonColor,
-                                  radius: DimensionConstants.buttonradius.r,
-                                  child: Center(
-                                    child: Padding(
-                                      padding: EdgeInsets.only(left: DimensionConstants.buttoniconpadding.w),
-                                      child: Row(
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            if(fnamecontroller.text==''){
+                              DialogHelper.showMessage(context, 'Username cannot be empty');
+                              return;
+                            }
+                            if(_passwordController.text==''){
+                              DialogHelper.showMessage(context, 'Password cannot be empty');
+                              return;
+                            }
 
+                            if(_passwordController.text.length<6){
+                              DialogHelper.showMessage(context, 'Password should be of atleast 6 letters');
+                              return;
+                            }
+                            Navigator.pushNamedAndRemoveUntil(context, "dashboard", (Route<dynamic> route) => false);
 
-                                        children: [
-                                          ImageView(
-                                            path: ImageConstants.ic_facebook,
-                                            height: DimensionConstants.fbiconheight.h,
-                                            width: DimensionConstants.fbiconwidth.w,
-                                          ),
-                                          SizedBox(
-                                            width: DimensionConstants.icongap.w,
-                                          ),
-                                          Text(
-                                            'fb_login'.tr(),
-                                          ).btnText(
-                                            ColorConstants.whiteColor,
-                                            DimensionConstants.buttontextsize.sp,
-                                          ),
+                          },
+                          child: SizedBox(
+                            width: DimensionConstants.d373.w,
+                            height: DimensionConstants.d52.h,
+                            child: RoundCornerShape(
+                                bgColor: ColorConstants.colorButtonbgColor,
+                                radius: DimensionConstants.d6.r,
+                                child: Center(
+                                  child: Row(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'login'.tr(),
+                                      ).buttonText(
+                                          ColorConstants.whiteColor,
+                                          DimensionConstants.d16.sp,
+                                          TextAlign.center),
 
-                                        ],
-                                      ),
-                                    ),
-                                  )
-                              ),
-                            ),
-                            SizedBox(
-                              height: DimensionConstants.googlebutongap.h,
-                            ),
-                            Container(
-                              width: DimensionConstants.buttonwidth.w,
-                              height: DimensionConstants.buttonheight.h,
-                              child: RoundCornerShape(
-                                  bgColor: Colors.white,
-                                  radius: DimensionConstants.buttonradius.r,
-                                  child: Center(
-                                    child: Padding(
-                                      padding: EdgeInsets.only(left: DimensionConstants.googleicongap.w),
-                                      child: Row(
-
-                                        children: [
-                                          ImageView(
-                                            path: ImageConstants.ic_google,
-                                            height: DimensionConstants.googleiconheight.h,
-                                            width: DimensionConstants.googleiconwidth.w,
-                                          ),
-                                          SizedBox(
-                                            width: DimensionConstants.googletextgap.w,
-                                          ),
-                                          Text(
-                                            'google_login'.tr(),
-                                          ).btnText(
-                                            ColorConstants.googleTextColor,
-                                            DimensionConstants.buttontextsize.sp,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  )
-                              ),
-                            ),
-                            SizedBox(
-                              height: DimensionConstants.noaccountsizegap.h,
-                            ),
-                            GestureDetector(
-                              onTap: (){
-                                Navigator.pushNamedAndRemoveUntil(context, "signup", (Route<dynamic> route) => false);
-
-                              },
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    "dont_have_account".tr(),
-
-                                  ).btnText(ColorConstants.googleTextColor, DimensionConstants.noaccounttextsize.sp),
-                                  SizedBox(
-                                    width: DimensionConstants.noaccounttextgap.w,
+                                    ],
                                   ),
-                                  Text(
-                                    "sign_up".tr(),
-                                  ).btnText(ColorConstants.colorButtonbgColor, DimensionConstants.noaccounttextsize.sp)
-                                ],
-                              ),
+                                )
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: DimensionConstants.d17.h,
+                        ),
+                        Row(
+                          children: [
+                            SizedBox(
+                              width:
+                              DimensionConstants.d114.w,
+                            ),
+                            const Expanded(
+                                child: Divider(
+                                  color: ColorConstants.dividerColor,
+                                  thickness: DimensionConstants.d1,
+                                )),
+                            SizedBox(
+                              width: DimensionConstants.d6.w,
+                            ),
+                            Text(
+                                "or".tr()
+                            ).btnText(ColorConstants.colorBlack, DimensionConstants.d12.sp),
+                            SizedBox(
+                              width: DimensionConstants.d4.w,
+                            ),
+                            const Expanded(
+                                child: Divider(
+                                  color: ColorConstants.dividerColor,
+                                  thickness: DimensionConstants.d1,
+                                )),
+                            SizedBox(
+                              width:
+                              DimensionConstants.d115.w,
                             ),
                           ],
                         ),
-                      ),
-                    );
-                  },
+                        SizedBox(
+                          height: DimensionConstants.d13.h,
+                        ),
+                        Container(
+                          width: DimensionConstants.d373.w,
+                          height: DimensionConstants.d52.h,
+                          child: RoundCornerShape(
+                              bgColor: ColorConstants.fbbuttonColor,
+                              radius: DimensionConstants.d6.r,
+                              child: Center(
+                                child: Padding(
+                                  padding: EdgeInsets.only(left: DimensionConstants.d83.w),
+                                  child: Row(
+
+
+                                    children: [
+                                      ImageView(
+                                        path: ImageConstants.ic_facebook,
+                                        height: DimensionConstants
+                                            .d21.h,
+                                        width: DimensionConstants
+                                            .d12.w,
+                                      ),
+                                      SizedBox(
+                                        width: DimensionConstants.d15.w,
+                                      ),
+                                      Text(
+                                        'fb_login'.tr(),
+                                      ).btnText(
+                                        ColorConstants.whiteColor,
+                                        DimensionConstants.d16.sp,
+                                      ),
+
+                                    ],
+                                  ),
+                                ),
+                              )
+                          ),
+                        ),
+                        SizedBox(
+                          height: DimensionConstants.d19.h,
+                        ),
+                        Container(
+                          width: DimensionConstants.d373.w,
+                          height: DimensionConstants.d52.h,
+                          child: RoundCornerShape(
+                              bgColor: Colors.white,
+                              radius: DimensionConstants.d6.r,
+                              child: Center(
+                                child: Padding(
+                                  padding: EdgeInsets.only(left: DimensionConstants.d81.w),
+                                  child: Row(
+
+                                    children: [
+                                      ImageView(
+                                        path: ImageConstants.ic_google,
+                                        height: DimensionConstants.d21.h,
+                                        width: DimensionConstants.d21.w,
+                                      ),
+                                      SizedBox(
+                                        width: DimensionConstants.d10.w,
+                                      ),
+                                      Text(
+                                        'google_login'.tr(),
+                                      ).btnText(
+                                        ColorConstants.googleTextColor,
+                                        DimensionConstants.d16.sp,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              )
+                          ),
+                        ),
+                        SizedBox(
+                          height: DimensionConstants.d21.h,
+                        ),
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.pushNamedAndRemoveUntil(context, "signup", (Route<dynamic> route) => false);
+
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "dont_have_account".tr(),
+
+                              ).btnText(ColorConstants.googleTextColor, DimensionConstants.d14.sp),
+                              SizedBox(
+                                width: DimensionConstants.d3.w,
+                              ),
+                              Text(
+                                "sign_up".tr(),
+                              ).btnText(ColorConstants.colorButtonbgColor, DimensionConstants.d14.sp)
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               );
             },

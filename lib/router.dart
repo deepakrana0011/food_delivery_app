@@ -4,12 +4,16 @@ import 'package:food_delivery_app/view/auth/login.dart';
 import 'package:food_delivery_app/view/auth/sign_up.dart';
 import 'package:food_delivery_app/view/cart/my_cart.dart';
 import 'package:food_delivery_app/view/checkout/checkout.dart';
-import 'package:food_delivery_app/view/dashboard/home_page.dart';
+import 'package:food_delivery_app/view/dashboard/dashboard.dart';
+import 'package:food_delivery_app/view/home_page/home_page.dart';
+import 'package:food_delivery_app/view/maps/address_search.dart';
 import 'package:food_delivery_app/view/maps/map.dart';
 import 'package:food_delivery_app/view/onboarding/onboardingview.dart';
+import 'package:food_delivery_app/view/products/products.dart';
 import 'package:food_delivery_app/view/profile/profile.dart';
 import 'package:food_delivery_app/view/restaurant_details/restaurant_details.dart';
 import 'package:food_delivery_app/view/summary/summary.dart';
+import 'package:food_delivery_app/view/wishlist/wishlist.dart';
 
 import 'constants/route_constants.dart';
 
@@ -70,6 +74,23 @@ class Router {
       case RoutesConstants.maps:
         return MaterialPageRoute(
             builder: (_) => Maps(), settings: settings);
+
+
+      case RoutesConstants.autoComplete:
+        return MaterialPageRoute(
+            builder: (_) => CustomSearchScaffold(), settings: settings);
+
+      case RoutesConstants.wishlist:
+        return MaterialPageRoute(
+            builder: (_) => WishList(), settings: settings);
+
+      case RoutesConstants.dashboard:
+        return MaterialPageRoute(
+            builder: (_) => DashBoard(), settings: settings);
+
+      case RoutesConstants.products:
+        return MaterialPageRoute(
+            builder: (_) => Products(), settings: settings);
 
 
 

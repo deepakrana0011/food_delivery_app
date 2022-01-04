@@ -51,23 +51,19 @@ class _ForgotPasswordState extends State<ForgotPassword> {
           body: BaseView<SignUpProvider>(
             onModelReady: (provider) {},
             builder: (context, provider, _) {
-              return SafeArea(
-                child: ScreenUtilInit(
-                  designSize: const Size(DimensionConstants.loginscreenwidth, DimensionConstants.loginscreenheight),
-                  builder: () {
-                    return Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20.93.w),
-                      child: SingleChildScrollView(
-                        child: Column(
+              return Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.93.w),
+                  child: SingleChildScrollView(
+                      child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(height: DimensionConstants.arrowtoppadding.h,),
+                            SizedBox(height: DimensionConstants.d36.h,),
                             GestureDetector(onTap: (){
                               Navigator.pop(context);
                             },
-                                child: Icon(Icons.arrow_back_ios,color: ColorConstants.colorBlack,size: 20,)),
+                                child: Icon(Icons.arrow_back_ios,color: ColorConstants.colorBlack,size: DimensionConstants.d20,)),
                             SizedBox(
-                              height: DimensionConstants.forgotpassowrdtoppadding.h,
+                              height: DimensionConstants.d89.h,
                             ),
 
                             Row(
@@ -75,12 +71,12 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                               children: [
                                 Text(
                                   "welcome_message".tr(),
-                                ).regularText(ColorConstants.headingColor, DimensionConstants.welcomeTextSize.sp),
+                                ).regularText(ColorConstants.headingColor, DimensionConstants.d22.sp),
 
                               ],
                             ) ,
                             SizedBox(
-                              height: DimensionConstants.loginscreengap2.h,
+                              height: DimensionConstants.d51.h,
                             ),
                             SizedBox(
                               child: Form(
@@ -90,80 +86,81 @@ class _ForgotPasswordState extends State<ForgotPassword> {
 
 
                                     SizedBox(
-                                      height: DimensionConstants.buttonheight,
-                                      child: TextFormField(
-                                        cursorColor:
-                                        ColorConstants.colorButtonbgColor,
-                                        controller: _emailController,
-                                        style: ViewDecoration.textFieldStyle(
-                                            DimensionConstants.textfieldTextSize.sp),
-                                        decoration: ViewDecoration
-                                            .inputDecorationWithCurve(
-                                            "enter_email".tr(),
-                                            prefixIcon: Padding(
-                                                padding: EdgeInsets.only(left: DimensionConstants.nametextfieldleftpadding.w,top: DimensionConstants.nametextfieldtoppadding.h,
-                                                    bottom: DimensionConstants.nametextfieldbottompadding.h,right: DimensionConstants.nametextfieldrightpadding.w),
-                                                child: const ImageView(
-                                                  path: ImageConstants.ic_email,
-                                                )
-                                            )
-                                        ),
-                                        textInputAction: TextInputAction.next,
-                                        keyboardType:
-                                        TextInputType.emailAddress,
+                                      height: DimensionConstants.d52.h,
+                                      child: RoundCornerShape(
+                                        bgColor: ColorConstants.whiteColor,
+                                        radius: DimensionConstants.d6.r,
+                                        child: TextFormField(
+                                          cursorColor:
+                                          ColorConstants.colorButtonbgColor,
+                                          controller: _emailController,
+                                          style: ViewDecoration.textFieldStyle(
+                                              DimensionConstants.d16.sp),
+                                          decoration: ViewDecoration
+                                              .inputDecorationWithCurve(
+                                              "enter_email".tr(),
+                                              prefixIcon: Padding(
+                                                  padding: EdgeInsets.only(left: DimensionConstants.d20.w,top: DimensionConstants.d16.h,
+                                                      bottom: DimensionConstants.d16.h,right: DimensionConstants.d10.w),
+                                                  child: const ImageView(
+                                                    path: ImageConstants.ic_email,
+                                                  )
+                                              )
+                                          ),
+                                          textInputAction: TextInputAction.next,
+                                          keyboardType:
+                                          TextInputType.emailAddress,
 
+                                        ),
                                       ),
                                     ),
 
 
 
                                     SizedBox(
-                                      height: DimensionConstants.loginscreengap3.h,
+                                      height: DimensionConstants.d37.h,
                                     ),
                                   ],
                                 ),
                               ),
                             ),
                             GestureDetector(
-                              onTap: () {
-                                if (_emailController.text == '') {
-                                  DialogHelper.showMessage(
-                                      context, 'Email cannot be empty');
-                                  return;
-                                }
-                                if (!Validations.emailValidation(_emailController.text)) {
-                                  DialogHelper.showMessage(
-                                      context, 'Invalid email');
-                                  return;
-                                }
-                              },
-                              child: SizedBox(
-                                width: DimensionConstants.buttonwidth.w,
-                                height: DimensionConstants.buttonheight.h,
-                                child: RoundCornerShape(
-                                    bgColor: ColorConstants.colorButtonbgColor,
-                                    radius: DimensionConstants.buttonradius.r,
-                                    child: Center(
-                                      child: Row(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                              'submit'.tr(),
-                                            ).buttonText(
-                                                ColorConstants.whiteColor,
-                                                DimensionConstants.buttontextsize.sp,
-                                                TextAlign.center),
+                                onTap: () {
+                                  if (_emailController.text == '') {
+                                    DialogHelper.showMessage(
+                                        context, 'Email cannot be empty');
+                                    return;
+                                  }
+                                  if (!Validations.emailValidation(_emailController.text)) {
+                                    DialogHelper.showMessage(
+                                        context, 'Invalid email');
+                                    return;
+                                  }
+                                },
+                                child: SizedBox(
+                                    width: DimensionConstants.d373.w,
+                                    height: DimensionConstants.d52.h,
+                                    child: RoundCornerShape(
+                                        bgColor: ColorConstants.colorButtonbgColor,
+                                        radius: DimensionConstants.d6.r,
+                                        child: Center(
+                                          child: Row(
+                                            mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                'submit'.tr(),
+                                              ).buttonText(
+                                                  ColorConstants.whiteColor,
+                                                  DimensionConstants.d16.sp,
+                                                  TextAlign.center),
 
-                                        ],
+                                            ],
 
-                      ),
-                    ))))
+                                          ),
+                                        ))))
                           ]
-                                          )));
-                  },
-                ),
-              );
+                      )));
             },
           )),
     );

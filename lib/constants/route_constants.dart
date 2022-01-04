@@ -10,6 +10,12 @@ class RoutesConstants {
   static const cart = "cart";
   static const restaurant_details = "restaurant_details";
   static const maps = "maps";
+  static const wishlist = "wishlist";
+  static const dashboard = "dashboard";
+  static const autoComplete = "autoComplete";
+  static const products = "products";
+
+
 
 
 

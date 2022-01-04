@@ -2,7 +2,7 @@ class ImageConstants {
   static const ic_logo = "images/ic_app_logo.png";
   static const ic_person = "images/ic_person.svg";
   static const ic_email = "images/ic_email.svg";
-  static const ic_phone = "images/ic_phone.svg";
+  static const ic_phone = "images/ic_phone_logo.svg";
   static const ic_eye = "images/ic_eye.svg";
   static const ic_password = "images/ic_password.svg";
   static const ic_facebook = "images/ic_facebook.svg";

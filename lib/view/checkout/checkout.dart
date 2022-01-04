@@ -73,514 +73,506 @@ class _CheckoutState extends State<Checkout> {
           body: BaseView<SignUpProvider>(
             onModelReady: (provider) {},
             builder: (context, provider, _) {
-              return SafeArea(
-                child: ScreenUtilInit(
-                  designSize: const Size(DimensionConstants.loginscreenwidth,
-                      DimensionConstants.loginscreenheight),
-                  builder: () {
-                    return  SingleChildScrollView(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              height: DimensionConstants.d59.h,
-                            ),
-                            Padding(
-                                padding: EdgeInsets.only(left: DimensionConstants.d19.w),
-                            child: Text('Delivery').btnText(ColorConstants.headingColor, DimensionConstants.d20.sp)),
-                            SizedBox(
-                              height: DimensionConstants.d15.h,
-                            ),
-                            Padding(
-                              padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
-                              child: Container(
-                                height: DimensionConstants.d52.h,
-                                child: RoundCornerShape(
-                                  bgColor: ColorConstants.whiteColor,
-                                  radius: DimensionConstants.buttonradius.r,
-                                  child: TextFormField(
-                                    controller: addresscontroller,
-                                    textCapitalization:
-                                    TextCapitalization.sentences,
-                                    cursorColor:
-                                    ColorConstants.colorButtonbgColor,
-                                    style: ViewDecoration.textFieldStyle(
-                                        DimensionConstants
-                                            .textfieldTextSize.sp),
-                                    decoration: ViewDecoration
-                                        .inputDecorationWithCurve(
-                                      "address".tr(),
-                                      prefixIcon: Padding(
-                                          padding: EdgeInsets.only(
-                                              left: DimensionConstants
-                                                  .d22
-                                                  .w,
-                                              top: DimensionConstants
-                                                  .d17
-                                                  .h,
-                                              bottom: DimensionConstants
-                                                  .d17
-                                                  .h,
-                                              right: DimensionConstants
-                                                  .d11
-                                                  .w),
-                                          child:  ImageView(
-                                            path: ImageConstants.ic_map,
-                                            height: DimensionConstants.d20.h,
-                                            width: DimensionConstants.d20.w,
-                                          )),
-                                      suffixIcon: Padding(
-                                        padding:  EdgeInsets.only( top: DimensionConstants
+              return SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: DimensionConstants.d59.h,
+                    ),
+                    Padding(
+                        padding: EdgeInsets.only(left: DimensionConstants.d19.w),
+                        child: Text('Delivery').btnText(ColorConstants.headingColor, DimensionConstants.d20.sp)),
+                    SizedBox(
+                      height: DimensionConstants.d15.h,
+                    ),
+                    Padding(
+                      padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
+                      child: Container(
+                        height: DimensionConstants.d52.h,
+                        child: RoundCornerShape(
+                          bgColor: ColorConstants.whiteColor,
+                          radius: DimensionConstants.d6.r,
+                          child: TextFormField(
+                            controller: addresscontroller,
+
+                            cursorColor:
+                            ColorConstants.colorButtonbgColor,
+                            style: ViewDecoration.textFieldStyle(
+                                DimensionConstants
+                                    .d16.sp),
+                            decoration: ViewDecoration
+                                .inputDecorationWithCurve(
+                                "address".tr(),
+                                prefixIcon: Padding(
+                                    padding: EdgeInsets.only(
+                                        left: DimensionConstants
+                                            .d22
+                                            .w,
+                                        top: DimensionConstants
                                             .d17
                                             .h,
-                                            bottom: DimensionConstants
-                                                .d17
-                                                .h,
-                                            right: DimensionConstants
-                                                .d11
-                                                .w),
-                                        child: ImageView(
-                                          path: ImageConstants.ic_address,
-                                          height: DimensionConstants.d19.h,
-                                          width: DimensionConstants.d19.w,
-                                        ),
-                                      )
+                                        bottom: DimensionConstants
+                                            .d17
+                                            .h,
+                                        right: DimensionConstants
+                                            .d11
+                                            .w
                                     ),
-                                    textInputAction: TextInputAction.next,
-                                    keyboardType: TextInputType.text,
-
+                                    child:  ImageView(
+                                      path: ImageConstants.ic_map,
+                                      height: DimensionConstants.d18.h,
+                                      width: DimensionConstants.d14.w,
+                                    )),
+                                suffixIcon: Padding(
+                                  padding:  EdgeInsets.only( top: DimensionConstants
+                                      .d17
+                                      .h,
+                                      bottom: DimensionConstants
+                                          .d17
+                                          .h,
+                                      right: DimensionConstants
+                                          .d16
+                                          .w),
+                                  child: ImageView(
+                                    path: ImageConstants.ic_address,
+                                    height: DimensionConstants.d19.h,
+                                    width: DimensionConstants.d19.w,
                                   ),
-                                ),
-                              ),
+                                )
                             ),
-                            SizedBox(
-                              height: DimensionConstants.d15.h,
-                            ),
-                            Padding(
-                              padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
-                              child: Container(
-                                height: DimensionConstants.d52.h,
-                                child: RoundCornerShape(
-                                  bgColor: ColorConstants.whiteColor,
-                                  radius: DimensionConstants.buttonradius.r,
-                                  child: TextFormField(
-                                    controller: phonecontroller,
-                                    textCapitalization:
-                                    TextCapitalization.sentences,
-                                    cursorColor:
-                                    ColorConstants.colorButtonbgColor,
-                                    style: ViewDecoration.textFieldStyle(
-                                        DimensionConstants
-                                            .textfieldTextSize.sp),
-                                    decoration: ViewDecoration
-                                        .inputDecorationWithCurve(
-                                      "phone_number".tr(),
-                                      prefixIcon: Padding(
-                                          padding: EdgeInsets.only(
-                                              left: DimensionConstants
-                                                  .phonetextfieldleftpadding
-                                                  .w,
-                                              top: DimensionConstants
-                                                  .phonetextfieldtoppadding
-                                                  .h,
-                                              bottom: DimensionConstants
-                                                  .phonetextfieldbottompadding
-                                                  .h,
-                                              right: DimensionConstants
-                                                  .phonetextfieldrightpadding
-                                                  .w),
-                                          child: const ImageView(
-                                            path: ImageConstants.ic_phone,
-                                          )),
+                            textInputAction: TextInputAction.next,
+                            keyboardType: TextInputType.text,
 
-                                    ),
-                                    textInputAction: TextInputAction.next,
-                                    keyboardType: TextInputType.text,
-
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: DimensionConstants.d20.h,
-                            ),
-                            Padding(
-                                padding: EdgeInsets.only(left: DimensionConstants.d18.w),
-                            child: Transform.scale(
-                              scale: 1,
-                              child:
-                              CupertinoSwitch(
-                                activeColor:
-                                ColorConstants.colorButtonbgColor,
-                                value: status,
-                                onChanged:
-                                    (value) {
-                                  setState(() {
-                                    status =
-                                        value;
-                                  });
-                                },
-                              ),
-                            ),),
-                            SizedBox(
-                              height: DimensionConstants.d20.h,
-                            ),
-                            Padding(padding: EdgeInsets.only(left: DimensionConstants.d19.w),
-                            child: Text('Payment').btnText(ColorConstants.colorTextAppBar, DimensionConstants.d20.sp)),
-                            Padding(
-                              padding: EdgeInsets.only(left: DimensionConstants.d18.w),
-                              child: Row(
-
-                                children: [
-
-                                  Radio(
-
-
-                                    splashRadius: DimensionConstants.d25.r,
-                                    value: 1,
-                                    groupValue: _radioSelected,
-                                    activeColor: ColorConstants.colorButtonbgColor,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        _radioSelected = value!;
-                                        _radioVal = 'Credit Card';
-                                      });
-                                    },
-                                  ),
-
-                                  Text('Credit Card').btnText(ColorConstants.colorTextAppBar, DimensionConstants.d16.sp),
-                                  SizedBox(
-                                    width: DimensionConstants.d92.w,
-                                  ),
-
-                                  Radio(
-                                    splashRadius: DimensionConstants.d25.r,
-                                    value: 2,
-                                    groupValue: _radioSelected,
-                                    activeColor: ColorConstants.colorButtonbgColor,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        _radioSelected = value!;
-                                        _radioVal = 'Cash on delivery';
-                                      });
-                                    },
-                                  ),
-                                  Text('Cash on delivery').btnText(ColorConstants.colorTextAppBar, DimensionConstants.d16.sp),
-                                ],
-                              ),
-                            ),
-                            SizedBox(
-                              height: DimensionConstants.d18.h,
-                            ),
-                            Padding(
-                              padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
-                              child: Container(
-                                height: DimensionConstants.d52.h,
-                                child: RoundCornerShape(
-                                  bgColor: ColorConstants.whiteColor,
-                                  radius: DimensionConstants.buttonradius.r,
-                                  child: TextFormField(
-                                    controller: cardholder,
-
-                                    textCapitalization:
-                                    TextCapitalization.sentences,
-                                    cursorColor:
-                                    ColorConstants.colorButtonbgColor,
-                                    style: ViewDecoration.textFieldStyle(
-                                        DimensionConstants
-                                            .textfieldTextSize.sp),
-                                    decoration: ViewDecoration
-                                        .inputDecorationWithCurve(
-                                        "card_holder".tr(),
-                                        prefixIcon: Padding(
-                                            padding: EdgeInsets.only(
-                                                left: DimensionConstants
-                                                    .d22
-                                                    .w,
-                                                top: DimensionConstants
-                                                    .d17
-                                                    .h,
-                                                bottom: DimensionConstants
-                                                    .d17
-                                                    .h,
-                                                right: DimensionConstants
-                                                    .d11
-                                                    .w),
-                                            child:  ImageView(
-                                              path: ImageConstants.ic_profile,
-                                              height: DimensionConstants.d20.h,
-                                              width: DimensionConstants.d18.w,
-                                              color: ColorConstants.colorHintTextColor,
-                                            )
-                                        ),
-
-                                    ),
-                                    textInputAction: TextInputAction.next,
-                                    keyboardType: TextInputType.text,
-                                    validator: (value) {
-                                      if (value!.trim().isEmpty) {
-                                        return 'empty_phone'.tr();
-                                      } else {
-                                        return null;
-                                      }
-                                    },
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: DimensionConstants.d15.h,
-                            ),
-                            Padding(
-                              padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
-                              child: Container(
-                                height: DimensionConstants.d52.h,
-                                child: RoundCornerShape(
-                                  bgColor: ColorConstants.whiteColor,
-                                  radius: DimensionConstants.buttonradius.r,
-                                  child: TextFormField(
-                                    controller: cardnumber,
-
-                                    textCapitalization:
-                                    TextCapitalization.sentences,
-                                    cursorColor:
-                                    ColorConstants.colorButtonbgColor,
-                                    style: ViewDecoration.textFieldStyle(
-                                        DimensionConstants
-                                            .textfieldTextSize.sp),
-                                    decoration: ViewDecoration
-                                        .inputDecorationWithCurve(
-                                      "card_number".tr(),
-                                      prefixIcon: Padding(
-                                          padding: EdgeInsets.only(
-                                              left: DimensionConstants
-                                                  .d22
-                                                  .w,
-                                              top: DimensionConstants
-                                                  .d17
-                                                  .h,
-                                              bottom: DimensionConstants
-                                                  .d17
-                                                  .h,
-                                              right: DimensionConstants
-                                                  .d11
-                                                  .w),
-                                          child:  ImageView(
-                                            path: ImageConstants.ic_card_holder,
-                                            color: ColorConstants.colorHintTextColor,
-                                            height: DimensionConstants.d20.h,
-                                            width: DimensionConstants.d18.w,
-                                          )),
-
-                                    ),
-                                    textInputAction: TextInputAction.next,
-                                    keyboardType: TextInputType.text,
-
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: DimensionConstants.d15.h,
-                            ),
-                            Padding(
-                              padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
-                              child: Row(
-                                children: [
-                                  Container(
-                                    height: DimensionConstants.d52.h,
-                                    width: DimensionConstants.d179.w,
-                                    child: RoundCornerShape(
-                                      bgColor: ColorConstants.whiteColor,
-                                      radius: DimensionConstants.buttonradius.r,
-                                      child: TextFormField(
-                                        controller: expirydate,
-
-                                        textCapitalization:
-                                        TextCapitalization.sentences,
-                                        cursorColor:
-                                        ColorConstants.colorButtonbgColor,
-                                        style: ViewDecoration.textFieldStyle(
-                                            DimensionConstants
-                                                .textfieldTextSize.sp),
-                                        decoration: ViewDecoration
-                                            .inputDecorationWithCurve(
-                                          "expiry".tr(),
-                                          prefixIcon: Padding(
-                                              padding: EdgeInsets.only(
-                                                  left: DimensionConstants
-                                                      .d22
-                                                      .w,
-                                                  top: DimensionConstants
-                                                      .d17
-                                                      .h,
-                                                  bottom: DimensionConstants
-                                                      .d17
-                                                      .h,
-                                                  right: DimensionConstants
-                                                      .d11
-                                                      .w),
-                                              child:  ImageView(
-                                                path: ImageConstants.ic_expiry,
-                                                color: ColorConstants.colorHintTextColor,
-                                                height: DimensionConstants.d20.h,
-                                                width: DimensionConstants.d18.w,
-                                              )),
-
-                                        ),
-                                        textInputAction: TextInputAction.next,
-                                        keyboardType: TextInputType.text,
-
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: DimensionConstants.d13.w,
-                                  ),
-                                  Container(
-                                    height: DimensionConstants.d52.h,
-                                    width: DimensionConstants.d179.w,
-                                    child: RoundCornerShape(
-                                      bgColor: ColorConstants.whiteColor,
-                                      radius: DimensionConstants.buttonradius.r,
-                                      child: TextFormField(
-                                        controller: cvv,
-
-                                        textCapitalization:
-                                        TextCapitalization.sentences,
-                                        cursorColor:
-                                        ColorConstants.colorButtonbgColor,
-                                        style: ViewDecoration.textFieldStyle(
-                                            DimensionConstants
-                                                .textfieldTextSize.sp),
-                                        decoration: ViewDecoration
-                                            .inputDecorationWithCurve(
-                                          "cvv".tr(),
-                                          prefixIcon: Padding(
-                                              padding: EdgeInsets.only(
-                                                  left: DimensionConstants
-                                                      .d22
-                                                      .w,
-                                                  top: DimensionConstants
-                                                      .d17
-                                                      .h,
-                                                  bottom: DimensionConstants
-                                                      .d17
-                                                      .h,
-                                                  right: DimensionConstants
-                                                      .d11
-                                                      .w),
-                                              child:  ImageView(
-                                                path: ImageConstants.ic_cvv,
-                                                color: ColorConstants.colorHintTextColor,
-                                                height: DimensionConstants.d20.h,
-                                                width: DimensionConstants.d18.w,
-                                              )),
-
-                                        ),
-                                        textInputAction: TextInputAction.next,
-                                        keyboardType: TextInputType.text,
-
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            SizedBox(
-                              height: DimensionConstants.d20.h,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: DimensionConstants.d18.w),
-                              child: Transform.scale(
-                                scale: 1,
-                                child:
-                                CupertinoSwitch(
-                                  activeColor:
-                                  ColorConstants.colorButtonbgColor,
-                                  value: status1,
-                                  onChanged:
-                                      (value) {
-                                    setState(() {
-                                      status1 =
-                                          value;
-                                    });
-                                  },
-                                ),
-                              ),),
-                            SizedBox(
-                              height: DimensionConstants.d124.h,
-                            ),
-                            Padding(
-                              padding:  EdgeInsets.only(left: DimensionConstants.d21.w,right: DimensionConstants.d21.w),
-                              child: GestureDetector(
-                                onTap: (){
-                                  if(addresscontroller.text==''){
-                                    DialogHelper.showMessage(context, 'Address cannot be empty');
-                                    return;
-                                  }
-
-                                  if(phonecontroller.text==''){
-                                    DialogHelper.showMessage(context, 'Phone number cannot be empty');
-                                    return;
-                                  }
-
-                                  if(cardholder.text==''){
-                                    DialogHelper.showMessage(context, 'Card Holder cannot be empty');
-                                    return;
-                                  }
-
-                                  if(cardnumber.text==''){
-                                    DialogHelper.showMessage(context, 'Card Number cannot be empty');
-                                    return;
-                                  }
-
-                                  if(expirydate.text==''){
-                                    DialogHelper.showMessage(context, 'Please enter expiry date');
-                                    return;
-                                  }
-                                  if(cvv.text==''){
-                                    DialogHelper.showMessage(context, 'Please enter CVV');
-                                    return;
-                                  }
-                                  Navigator.of(context).pushNamed(RoutesConstants.maps);
-                                },
-                                child: SizedBox(
-                                  width: DimensionConstants.buttonwidth.w,
-                                  height: DimensionConstants.buttonheight.h,
-                                  child: RoundCornerShape(
-                                      bgColor: ColorConstants.colorButtonbgColor,
-                                      radius: DimensionConstants.buttonradius.r,
-                                      child: Center(
-                                        child: Row(
-                                          mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                          children: [
-                                            Text(
-                                              'done'.tr(),
-                                            ).buttonText(
-                                                ColorConstants.whiteColor,
-                                                DimensionConstants.buttontextsize.sp,
-                                                TextAlign.center),
-
-                                          ],
-                                        ),
-                                      )
-                                  ),
-                                ),
-                              ),
-                            ),
-
-
-
-
-
-                          ],
+                          ),
                         ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: DimensionConstants.d15.h,
+                    ),
+                    Padding(
+                      padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
+                      child: Container(
+                        height: DimensionConstants.d52.h,
+                        child: RoundCornerShape(
+                          bgColor: ColorConstants.whiteColor,
+                          radius: DimensionConstants.d6.r,
+                          child: TextFormField(
+                            controller: phonecontroller,
+                            textCapitalization:
+                            TextCapitalization.sentences,
+                            cursorColor:
+                            ColorConstants.colorButtonbgColor,
+                            style: ViewDecoration.textFieldStyle(
+                                DimensionConstants
+                                    .d16.sp),
+                            decoration: ViewDecoration
+                                .inputDecorationWithCurve(
+                              "phone_number".tr(),
+                              prefixIcon: Padding(
+                                  padding: EdgeInsets.only(
+                                      left: DimensionConstants
+                                          .d22
+                                          .w,
+                                      top: DimensionConstants
+                                          .d16
+                                          .h,
+                                      bottom: DimensionConstants
+                                          .d16
+                                          .h,
+                                      right: DimensionConstants
+                                          .d11
+                                          .w),
+                                  child:  ImageView(
+                                    path: ImageConstants.ic_phone,
+                                    height: DimensionConstants.d20.h,
+                                    width: DimensionConstants.d12.w,
+                                  )),
 
-                    );
-                  },
+                            ),
+                            textInputAction: TextInputAction.next,
+                            keyboardType: TextInputType.text,
+
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: DimensionConstants.d20.h,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: DimensionConstants.d18.w),
+                      child: Transform.scale(
+                        scale: 1,
+                        child:
+                        CupertinoSwitch(
+                          activeColor:
+                          ColorConstants.colorButtonbgColor,
+                          value: status,
+                          onChanged:
+                              (value) {
+                            setState(() {
+                              status =
+                                  value;
+                            });
+                          },
+                        ),
+                      ),),
+                    SizedBox(
+                      height: DimensionConstants.d20.h,
+                    ),
+                    Padding(padding: EdgeInsets.only(left: DimensionConstants.d19.w),
+                        child: Text('Payment').btnText(ColorConstants.colorTextAppBar, DimensionConstants.d20.sp)),
+                    Padding(
+                      padding: EdgeInsets.only(left: DimensionConstants.d18.w),
+                      child: Row(
+
+                        children: [
+
+                          Radio(
+
+
+                            splashRadius: DimensionConstants.d25.r,
+                            value: 1,
+                            groupValue: _radioSelected,
+                            activeColor: ColorConstants.colorButtonbgColor,
+                            onChanged: (value) {
+                              setState(() {
+                                _radioSelected = value!;
+                                _radioVal = 'Credit Card';
+                              });
+                            },
+                          ),
+
+                          Text('Credit Card').btnText(ColorConstants.colorTextAppBar, DimensionConstants.d16.sp),
+                          SizedBox(
+                            width: DimensionConstants.d52.w,
+                          ),
+
+                          Radio(
+                            splashRadius: DimensionConstants.d25.r,
+                            value: 2,
+                            groupValue: _radioSelected,
+                            activeColor: ColorConstants.colorButtonbgColor,
+                            onChanged: (value) {
+                              setState(() {
+                                _radioSelected = value!;
+                                _radioVal = 'Cash on delivery';
+                              });
+                            },
+                          ),
+                          Text('Cash on delivery').btnText(ColorConstants.colorTextAppBar, DimensionConstants.d16.sp),
+                        ],
+                      ),
+                    ),
+
+                    Padding(
+                      padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
+                      child: Container(
+                        height: DimensionConstants.d52.h,
+                        child: RoundCornerShape(
+                          bgColor: ColorConstants.whiteColor,
+                          radius: DimensionConstants.d6.r,
+                          child: TextFormField(
+                            controller: cardholder,
+
+                            textCapitalization:
+                            TextCapitalization.sentences,
+                            cursorColor:
+                            ColorConstants.colorButtonbgColor,
+                            style: ViewDecoration.textFieldStyle(
+                                DimensionConstants
+                                    .d16.sp),
+                            decoration: ViewDecoration
+                                .inputDecorationWithCurve(
+                              "card_holder".tr(),
+                              prefixIcon: Padding(
+                                  padding: EdgeInsets.only(
+                                      left: DimensionConstants
+                                          .d20
+                                          .w,
+                                      top: DimensionConstants
+                                          .d16
+                                          .h,
+                                      bottom: DimensionConstants
+                                          .d16
+                                          .h,
+                                      right: DimensionConstants
+                                          .d10
+                                          .w),
+                                  child:  ImageView(
+                                    path: ImageConstants.ic_person,
+                                    height: DimensionConstants.d20.h,
+                                    width: DimensionConstants.d18.w,
+                                    color: ColorConstants.colorHintTextColor,
+                                  )
+                              ),
+
+                            ),
+                            textInputAction: TextInputAction.next,
+                            keyboardType: TextInputType.text,
+                            validator: (value) {
+                              if (value!.trim().isEmpty) {
+                                return 'empty_phone'.tr();
+                              } else {
+                                return null;
+                              }
+                            },
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: DimensionConstants.d15.h,
+                    ),
+                    Padding(
+                      padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
+                      child: Container(
+                        height: DimensionConstants.d52.h,
+                        child: RoundCornerShape(
+                          bgColor: ColorConstants.whiteColor,
+                          radius: DimensionConstants.d6.r,
+                          child: TextFormField(
+                            controller: cardnumber,
+
+                            textCapitalization:
+                            TextCapitalization.sentences,
+                            cursorColor:
+                            ColorConstants.colorButtonbgColor,
+                            style: ViewDecoration.textFieldStyle(
+                                DimensionConstants
+                                    .d16.sp),
+                            decoration: ViewDecoration
+                                .inputDecorationWithCurve(
+                              "card_number".tr(),
+                              prefixIcon: Padding(
+                                  padding: EdgeInsets.only(
+                                      left: DimensionConstants
+                                          .d18
+                                          .w,
+                                      top: DimensionConstants
+                                          .d18
+                                          .h,
+                                      bottom: DimensionConstants
+                                          .d18
+                                          .h,
+                                      right: DimensionConstants
+                                          .d8
+                                          .w),
+                                  child:  ImageView(
+                                    path: ImageConstants.ic_card_holder,
+                                    color: ColorConstants.colorHintTextColor,
+                                    height: DimensionConstants.d16.h,
+                                    width: DimensionConstants.d21.w,
+                                  )),
+
+                            ),
+                            textInputAction: TextInputAction.next,
+                            keyboardType: TextInputType.text,
+
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: DimensionConstants.d15.h,
+                    ),
+                    Padding(
+                      padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
+                      child: Row(
+                        children: [
+                          Container(
+                            height: DimensionConstants.d52.h,
+                            width: DimensionConstants.d179.w,
+                            child: RoundCornerShape(
+                              bgColor: ColorConstants.whiteColor,
+                              radius: DimensionConstants.d6.r,
+                              child: TextFormField(
+                                controller: expirydate,
+
+                                textCapitalization:
+                                TextCapitalization.sentences,
+                                cursorColor:
+                                ColorConstants.colorButtonbgColor,
+                                style: ViewDecoration.textFieldStyle(
+                                    DimensionConstants
+                                        .d16.sp),
+                                decoration: ViewDecoration
+                                    .inputDecorationWithCurve(
+                                  "expiry".tr(),
+                                  prefixIcon: Padding(
+                                      padding: EdgeInsets.only(
+                                          left: DimensionConstants
+                                              .d19
+                                              .w,
+                                          top: DimensionConstants
+                                              .d16
+                                              .h,
+                                          bottom: DimensionConstants
+                                              .d16
+                                              .h,
+                                          right: DimensionConstants
+                                              .d9
+                                              .w),
+                                      child:  ImageView(
+                                        path: ImageConstants.ic_expiry,
+                                        color: ColorConstants.colorHintTextColor,
+                                        height: DimensionConstants.d20.h,
+                                        width: DimensionConstants.d18.w,
+                                      )),
+
+                                ),
+                                textInputAction: TextInputAction.next,
+                                keyboardType: TextInputType.text,
+
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: DimensionConstants.d13.w,
+                          ),
+                          Container(
+                            height: DimensionConstants.d52.h,
+                            width: DimensionConstants.d179.w,
+                            child: RoundCornerShape(
+                              bgColor: ColorConstants.whiteColor,
+                              radius: DimensionConstants.d6.r,
+                              child: TextFormField(
+                                controller: cvv,
+
+                                textCapitalization:
+                                TextCapitalization.sentences,
+                                cursorColor:
+                                ColorConstants.colorButtonbgColor,
+                                style: ViewDecoration.textFieldStyle(
+                                    DimensionConstants
+                                        .d16.sp),
+                                decoration: ViewDecoration
+                                    .inputDecorationWithCurve(
+                                  "cvv".tr(),
+                                  prefixIcon: Padding(
+                                      padding: EdgeInsets.only(
+                                          left: DimensionConstants
+                                              .d18
+                                              .w,
+                                          top: DimensionConstants
+                                              .d18
+                                              .h,
+                                          bottom: DimensionConstants
+                                              .d17
+                                              .h,
+                                          right: DimensionConstants
+                                              .d8
+                                              .w),
+                                      child:  ImageView(
+                                        path: ImageConstants.ic_cvv,
+                                        color: ColorConstants.colorHintTextColor,
+                                        height: DimensionConstants.d16.h,
+                                        width: DimensionConstants.d22.w,
+                                      )),
+
+                                ),
+                                textInputAction: TextInputAction.next,
+                                keyboardType: TextInputType.text,
+
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: DimensionConstants.d20.h,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: DimensionConstants.d18.w),
+                      child: Transform.scale(
+                        scale: 1,
+                        child:
+                        CupertinoSwitch(
+                          activeColor:
+                          ColorConstants.colorButtonbgColor,
+                          value: status1,
+                          onChanged:
+                              (value) {
+                            setState(() {
+                              status1 =
+                                  value;
+                            });
+                          },
+                        ),
+                      ),),
+                    SizedBox(
+                      height: DimensionConstants.d88.h,
+                    ),
+                    Padding(
+                      padding:  EdgeInsets.only(left: DimensionConstants.d21.w,right: DimensionConstants.d21.w),
+                      child: GestureDetector(
+                        onTap: (){
+                          if(addresscontroller.text==''){
+                            DialogHelper.showMessage(context, 'Address cannot be empty');
+                            return;
+                          }
+
+                          if(phonecontroller.text==''){
+                            DialogHelper.showMessage(context, 'Phone number cannot be empty');
+                            return;
+                          }
+
+                          if(cardholder.text==''){
+                            DialogHelper.showMessage(context, 'Card Holder cannot be empty');
+                            return;
+                          }
+
+                          if(cardnumber.text==''){
+                            DialogHelper.showMessage(context, 'Card Number cannot be empty');
+                            return;
+                          }
+
+                          if(expirydate.text==''){
+                            DialogHelper.showMessage(context, 'Please enter expiry date');
+                            return;
+                          }
+                          if(cvv.text==''){
+                            DialogHelper.showMessage(context, 'Please enter CVV');
+                            return;
+                          }
+                          Navigator.of(context).pushNamed(RoutesConstants.maps);
+                        },
+                        child: SizedBox(
+                          width: DimensionConstants.d373.w,
+                          height: DimensionConstants.d52.h,
+                          child: RoundCornerShape(
+                              bgColor: ColorConstants.colorButtonbgColor,
+                              radius: DimensionConstants.d6.r,
+                              child: Center(
+                                child: Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'done'.tr(),
+                                    ).buttonText(
+                                        ColorConstants.whiteColor,
+                                        DimensionConstants.d16.sp,
+                                        TextAlign.center),
+
+                                  ],
+                                ),
+                              )
+                          ),
+                        ),
+                      ),
+                    ),
+
+
+
+
+
+                  ],
                 ),
+
               );
             },
           )),
