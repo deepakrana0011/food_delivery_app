@@ -18,6 +18,7 @@ import 'package:food_delivery_app/provider/signup_provider.dart';
 import 'package:food_delivery_app/view/base_view.dart';
 import 'package:food_delivery_app/widgets/bottom_bar_Container_shape.dart';
 import 'package:food_delivery_app/widgets/image_view.dart';
+import 'package:food_delivery_app/widgets/list_view.dart';
 import 'package:food_delivery_app/widgets/roundCornerShape.dart';
 
 class MyCart extends StatefulWidget {
@@ -52,17 +53,9 @@ class _MyCartState extends State<MyCart> {
           appBar: AppBar(
             elevation: 0,
             backgroundColor: ColorConstants.colorbackground,
-            title: Text('My Cart').btnText(
+            title: Text('My Cart').normalText(
                 ColorConstants.colorTextAppBar, DimensionConstants.d20.sp),
-            /*leading: IconButton(
-              icon: Icon(
-                Icons.arrow_back_ios_outlined,
-                color: ColorConstants.colorTextAppBar,
-              ),
-              onPressed: () {
-                Navigator.of(context).pushNamed(RoutesConstants.dashboard);
-              },
-            ),*/
+
             centerTitle: true,
           ),
 
@@ -78,7 +71,8 @@ class _MyCartState extends State<MyCart> {
                     SizedBox(
                       height: DimensionConstants.d28.h,
                     ),
-                    ListView.builder(
+                    Listview(
+                      scrollDirection: Axis.vertical,
                       physics: ClampingScrollPhysics(),
                         shrinkWrap: true,
                         itemCount: 3,
@@ -91,7 +85,7 @@ class _MyCartState extends State<MyCart> {
                               children: [
                                 Container(
                                   height: DimensionConstants.d147.h,
-                                  width: DimensionConstants.d372.w,
+                                  width: DimensionConstants.d373.w,
                                   child: RoundCornerShape(
                                       bgColor: ColorConstants.whiteColor,
                                       radius:
@@ -110,7 +104,7 @@ class _MyCartState extends State<MyCart> {
                                             child: Row(
                                               children: [
                                                 Text('Chicken Zinger')
-                                                    .btnText(
+                                                    .normalText(
                                                     ColorConstants
                                                         .darkblackcolor,
                                                     DimensionConstants
@@ -119,7 +113,7 @@ class _MyCartState extends State<MyCart> {
                                                   width: DimensionConstants
                                                       .d70.w,
                                                 ),
-                                                Text('7999 EGP').btnText(
+                                                Text('7999 EGP').normalText(
                                                     ColorConstants
                                                         .colorButtonbgColor,
                                                     DimensionConstants
@@ -131,6 +125,8 @@ class _MyCartState extends State<MyCart> {
                                                 ImageView(
                                                   path: ImageConstants
                                                       .ic_cancel,
+                                                  height: DimensionConstants.d12.h,
+                                                  width: DimensionConstants.d12.h,
                                                 )
                                               ],
                                             ),
@@ -158,7 +154,7 @@ class _MyCartState extends State<MyCart> {
                                                     Row(
                                                       children: [
                                                         Text('Spicy & crispy with garlic')
-                                                            .btnText(
+                                                            .normalText(
                                                             ColorConstants
                                                                 .cartTextcolor,
                                                             DimensionConstants
@@ -184,7 +180,7 @@ class _MyCartState extends State<MyCart> {
                                                           DimensionConstants
                                                               .d4.w,
                                                         ),
-                                                        Text('195Cal').btnText(
+                                                        Text('195Cal').normalText(
                                                             ColorConstants
                                                                 .colorBlack,
                                                             DimensionConstants
@@ -334,10 +330,10 @@ class _MyCartState extends State<MyCart> {
                                                                       .ic_add,
                                                                   height:
                                                                   DimensionConstants
-                                                                      .d3.h,
+                                                                      .d15.h,
                                                                   width:
                                                                   DimensionConstants
-                                                                      .d17
+                                                                      .d15
                                                                       .w,
                                                                 ),
                                                               ),
@@ -364,7 +360,7 @@ class _MyCartState extends State<MyCart> {
                                                           DimensionConstants
                                                               .d5.w,
                                                         ),
-                                                        Text('20 mins').btnText(
+                                                        Text('20 mins').normalText(
                                                             ColorConstants
                                                                 .colorBlack,
                                                             DimensionConstants
@@ -398,7 +394,8 @@ class _MyCartState extends State<MyCart> {
                             ),
                           );
                         }),
-                    Padding(padding: EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
+                    Padding(
+                      padding: EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
                       child: Container(
                         height: DimensionConstants.d110.h,
                         width: DimensionConstants.d372.w,
@@ -416,11 +413,11 @@ class _MyCartState extends State<MyCart> {
                                   SizedBox(
                                     width: DimensionConstants.d18.w,
                                   ),
-                                  Text('Total Items').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d15.sp),
+                                  Text('Total Items').normalText(ColorConstants.colorHintTextColor, DimensionConstants.d15.sp),
                                   SizedBox(
                                     width: DimensionConstants.d187.w,
                                   ),
-                                  Text('134.99 EGP').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d15.sp)
+                                  Text('134.99 EGP').normalText(ColorConstants.colorHintTextColor, DimensionConstants.d15.sp)
 
                                 ],
                               ),
@@ -430,7 +427,7 @@ class _MyCartState extends State<MyCart> {
                               Padding(padding: EdgeInsets.only(left:DimensionConstants.d18.w ),
                                 child:Row(
                                   children: [
-                                    Text('Shipping').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d15.sp),
+                                    Text('Shipping').normalText(ColorConstants.colorHintTextColor, DimensionConstants.d15.sp),
                                     SizedBox(
                                       width: DimensionConstants.d227.w,
                                     ),
@@ -453,12 +450,12 @@ class _MyCartState extends State<MyCart> {
                               Padding(padding: EdgeInsets.only(left:DimensionConstants.d18.w ),
                                 child:Row(
                                   children: [
-                                    Text('Total Cost').btnText(ColorConstants.darkblackcolor, DimensionConstants.d15.sp),
+                                    Text('Total Cost').normalText(ColorConstants.darkblackcolor, DimensionConstants.d15.sp),
                                     SizedBox(
                                       width: DimensionConstants.d200.w,
                                     ),
 
-                                    Text('14.99 EGP').btnText(ColorConstants.colorButtonbgColor, DimensionConstants.d15.sp),
+                                    Text('14.99 EGP').normalText(ColorConstants.colorButtonbgColor, DimensionConstants.d15.sp),
 
 
 
@@ -477,7 +474,7 @@ class _MyCartState extends State<MyCart> {
                       height: DimensionConstants.d14.h,
                     ),
                     Padding(
-                      padding:  EdgeInsets.only(left: DimensionConstants.d21.w,right: DimensionConstants.d21.w,bottom: DimensionConstants.d25.h),
+                      padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d21.w,bottom: DimensionConstants.d25.h),
                       child: GestureDetector(
                         onTap: (){
                           Navigator.of(context).pushNamed(RoutesConstants.checkout);

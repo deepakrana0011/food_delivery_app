@@ -35,6 +35,7 @@ class _SignUpState extends State<SignUp> {
   final _passwordController = TextEditingController();
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   bool _passwordVisible = false;
+  bool _phoneVisible =false;
 
   @override
   void initState() {
@@ -51,34 +52,32 @@ class _SignUpState extends State<SignUp> {
           body: BaseView<SignUpProvider>(
             onModelReady: (provider) {},
             builder: (context, provider, _) {
-              return  Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal:
-                    DimensionConstants.d20.w),
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: DimensionConstants.d143.h,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "welcome_message".tr(),
-                          ).regularText(ColorConstants.headingColor,
-                              DimensionConstants.d22.sp),
-                        ],
-                      ),
-                      SizedBox(
-                        height: DimensionConstants.d51.h,
-                      ),
-                      Container(
-                        child: Form(
-                          child: Column(
-                            children: [
-                              Container(
+              return  SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: DimensionConstants.d143.h,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "welcome_message".tr(),
+                        ).regularText(ColorConstants.headingColor,
+                            DimensionConstants.d22.sp),
+                      ],
+                    ),
+                    SizedBox(
+                      height: DimensionConstants.d51.h,
+                    ),
+                    Container(
+                      child: Form(
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
+                              child: Container(
                                 height: DimensionConstants.d52
                                     .h,
                                 child: RoundCornerShape(
@@ -127,10 +126,13 @@ class _SignUpState extends State<SignUp> {
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                height: DimensionConstants.d15.h,
-                              ),
-                              Container(
+                            ),
+                            SizedBox(
+                              height: DimensionConstants.d15.h,
+                            ),
+                            Padding(
+                              padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
+                              child: Container(
                                 height: DimensionConstants.d52
                                     .h,
                                 child: RoundCornerShape(
@@ -181,16 +183,20 @@ class _SignUpState extends State<SignUp> {
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                height: DimensionConstants.d15.h,
-                              ),
-                              Container(
+                            ),
+                            SizedBox(
+                              height: DimensionConstants.d15.h,
+                            ),
+                            Padding(
+                              padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
+                              child: Container(
                                 height: DimensionConstants.d52
                                     .h,
                                 child: RoundCornerShape(
                                   bgColor: ColorConstants.whiteColor,
                                   radius: DimensionConstants.d6.r,
                                   child: TextFormField(
+                                    obscureText: !_phoneVisible,
                                     controller: phonecontroller,
                                     textCapitalization:
                                     TextCapitalization.sentences,
@@ -224,7 +230,7 @@ class _SignUpState extends State<SignUp> {
                                       suffixIcon: IconButton(
                                         icon: Icon(
                                           // Based on passwordVisible state choose the icon
-                                          _passwordVisible
+                                          _phoneVisible
                                               ? Icons.visibility
                                               : Icons.visibility_off,
                                           color: ColorConstants
@@ -235,8 +241,8 @@ class _SignUpState extends State<SignUp> {
                                         onPressed: () {
                                           // Update the state i.e. toogle the state of passwordVisible variable
                                           setState(() {
-                                            _passwordVisible =
-                                            !_passwordVisible;
+                                            _phoneVisible =
+                                            !_phoneVisible;
                                           });
                                         },
                                       ),
@@ -253,15 +259,19 @@ class _SignUpState extends State<SignUp> {
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                height: DimensionConstants.d15.h,
-                              ),
-                              Container(
+                            ),
+                            SizedBox(
+                              height: DimensionConstants.d15.h,
+                            ),
+                            Padding(
+                              padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
+                              child: Container(
                                 height: DimensionConstants.d52.h,
                                 child: RoundCornerShape(
                                   bgColor: ColorConstants.whiteColor,
                                   radius: DimensionConstants.d6.r,
                                   child: TextFormField(
+                                    obscureText: !_passwordVisible,
                                     controller: _passwordController,
                                     textCapitalization:
                                     TextCapitalization.sentences,
@@ -325,49 +335,52 @@ class _SignUpState extends State<SignUp> {
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                height:
-                                DimensionConstants.d37.h,
-                              ),
-                            ],
-                          ),
+                            ),
+                            SizedBox(
+                              height:
+                              DimensionConstants.d37.h,
+                            ),
+                          ],
                         ),
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          if (fnamecontroller.text == '') {
-                            DialogHelper.showMessage(
-                                context, 'Name cannot be empty');
-                            return;
-                          }
-                          if (_emailController.text == '') {
-                            DialogHelper.showMessage(
-                                context, 'Email cannot be empty');
-                            return;
-                          }
-                          if (!Validations.emailValidation(_emailController.text)) {
-                            DialogHelper.showMessage(
-                                context, 'Invalid email');
-                            return;
-                          }
-                          if (phonecontroller.text == '') {
-                            DialogHelper.showMessage(
-                                context, 'Phone number cannot be empty');
-                            return;
-                          }
-                          if (_passwordController.text == '') {
-                            DialogHelper.showMessage(
-                                context, 'Password cannot be empty');
-                            return;
-                          }
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        if (fnamecontroller.text == '') {
+                          DialogHelper.showMessage(
+                              context, 'Name cannot be empty');
+                          return;
+                        }
+                        if (_emailController.text == '') {
+                          DialogHelper.showMessage(
+                              context, 'Email cannot be empty');
+                          return;
+                        }
+                        if (!Validations.emailValidation(_emailController.text)) {
+                          DialogHelper.showMessage(
+                              context, 'Invalid email');
+                          return;
+                        }
+                        if (phonecontroller.text == '') {
+                          DialogHelper.showMessage(
+                              context, 'Phone number cannot be empty');
+                          return;
+                        }
+                        if (_passwordController.text == '') {
+                          DialogHelper.showMessage(
+                              context, 'Password cannot be empty');
+                          return;
+                        }
 
-                          if (_passwordController.text.length < 6) {
-                            DialogHelper.showMessage(context,
-                                'Password should be of atleast 6 letters');
-                            return;
-                          }
-                          Navigator.pushNamedAndRemoveUntil(context, "home_page", (Route<dynamic> route) => false);
-                        },
+                        if (_passwordController.text.length < 6) {
+                          DialogHelper.showMessage(context,
+                              'Password should be of atleast 6 letters');
+                          return;
+                        }
+                        Navigator.pushNamedAndRemoveUntil(context, "home_page", (Route<dynamic> route) => false);
+                      },
+                      child: Padding(
+                        padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
                         child: Container(
                           width: DimensionConstants.d373.w,
                           height: DimensionConstants.d52.h,
@@ -391,46 +404,49 @@ class _SignUpState extends State<SignUp> {
                               )),
                         ),
                       ),
-                      SizedBox(
-                        height: DimensionConstants.d17.h,
-                      ),
-                      Row(
-                        children: [
-                          SizedBox(
-                            width:
-                            DimensionConstants.d114.w,
-                          ),
-                          const Expanded(
-                              child: Divider(
-                                color: ColorConstants.dividerColor,
-                                thickness:
-                                DimensionConstants.d1,
-                              )),
-                          SizedBox(
-                            width: DimensionConstants.d6.w,
-                          ),
-                          Text("or".tr()).btnText(
-                              ColorConstants.colorBlack,
-                              DimensionConstants.d12.sp),
-                          SizedBox(
-                            width: DimensionConstants.d3.w,
-                          ),
-                          const Expanded(
-                              child: Divider(
-                                color: ColorConstants.dividerColor,
-                                thickness:
-                                DimensionConstants.d1,
-                              )),
-                          SizedBox(
-                            width:
-                            DimensionConstants.d115.w,
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: DimensionConstants.d17.h,
-                      ),
-                      Container(
+                    ),
+                    SizedBox(
+                      height: DimensionConstants.d17.h,
+                    ),
+                    Row(
+                      children: [
+                        SizedBox(
+                          width:
+                          DimensionConstants.d134.w,
+                        ),
+                        const Expanded(
+                            child: Divider(
+                              color: ColorConstants.dividerColor,
+                              thickness:
+                              DimensionConstants.d1,
+                            )),
+                        SizedBox(
+                          width: DimensionConstants.d6.w,
+                        ),
+                        Text("or".tr()).normalText(
+                            ColorConstants.colorBlack,
+                            DimensionConstants.d12.sp),
+                        SizedBox(
+                          width: DimensionConstants.d3.w,
+                        ),
+                        const Expanded(
+                            child: Divider(
+                              color: ColorConstants.dividerColor,
+                              thickness:
+                              DimensionConstants.d1,
+                            )),
+                        SizedBox(
+                          width:
+                          DimensionConstants.d134.w,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: DimensionConstants.d17.h,
+                    ),
+                    Padding(
+                      padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
+                      child: Container(
                         width: DimensionConstants.d373.w,
                         height: DimensionConstants.d52.h,
                         child: RoundCornerShape(
@@ -455,7 +471,7 @@ class _SignUpState extends State<SignUp> {
                                     ),
                                     Text(
                                       'fb_login'.tr(),
-                                    ).btnText(
+                                    ).normalText(
                                       ColorConstants.whiteColor,
                                       DimensionConstants
                                           .d16.sp,
@@ -465,10 +481,13 @@ class _SignUpState extends State<SignUp> {
                               ),
                             )),
                       ),
-                      SizedBox(
-                        height: DimensionConstants.d19.h,
-                      ),
-                      SizedBox(
+                    ),
+                    SizedBox(
+                      height: DimensionConstants.d19.h,
+                    ),
+                    Padding(
+                      padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
+                      child: SizedBox(
                         width: DimensionConstants.d373.w,
                         height: DimensionConstants.d52.h,
                         child: RoundCornerShape(
@@ -494,7 +513,7 @@ class _SignUpState extends State<SignUp> {
                                     ),
                                     Text(
                                       'google_login'.tr(),
-                                    ).btnText(
+                                    ).normalText(
                                       ColorConstants.googleTextColor,
                                       DimensionConstants
                                           .d16.sp,
@@ -504,34 +523,34 @@ class _SignUpState extends State<SignUp> {
                               ),
                             )),
                       ),
-                      SizedBox(
-                        height: DimensionConstants.d21.h,
+                    ),
+                    SizedBox(
+                      height: DimensionConstants.d21.h,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamedAndRemoveUntil(context,
+                            "login", (Route<dynamic> route) => false);
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "already_account".tr(),
+                          ).normalText(ColorConstants.googleTextColor,
+                              DimensionConstants.d14.sp),
+                          SizedBox(
+                            width:
+                            DimensionConstants.d3.w,
+                          ),
+                          Text(
+                            "sign_in".tr(),
+                          ).normalText(ColorConstants.colorButtonbgColor,
+                              DimensionConstants.d14.sp)
+                        ],
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pushNamedAndRemoveUntil(context,
-                              "login", (Route<dynamic> route) => false);
-                        },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "already_account".tr(),
-                            ).btnText(ColorConstants.googleTextColor,
-                                DimensionConstants.d14.sp),
-                            SizedBox(
-                              width:
-                              DimensionConstants.d3.w,
-                            ),
-                            Text(
-                              "sign_in".tr(),
-                            ).btnText(ColorConstants.colorButtonbgColor,
-                                DimensionConstants.d14.sp)
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               );
             },

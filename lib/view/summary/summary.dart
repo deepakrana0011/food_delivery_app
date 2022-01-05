@@ -51,7 +51,7 @@ class _SummaryState extends State<Summary> {
             elevation: 0,
             backgroundColor: ColorConstants.colorbackground,
             title:
-            Text('Summary').btnText(ColorConstants.colorTextAppBar, DimensionConstants.d20.sp),
+            Text('Summary').normalText(ColorConstants.colorTextAppBar, DimensionConstants.d20.sp),
             leading: IconButton(
               icon: Icon(
                 Icons.arrow_back_ios_outlined,
@@ -93,11 +93,11 @@ class _SummaryState extends State<Summary> {
                                   SizedBox(
                                     width: DimensionConstants.d18.w,
                                   ),
-                                  Text('Address').btnText(ColorConstants.colorBlack, DimensionConstants.d14.sp),
+                                  Text('Address').normalText(ColorConstants.colorBlack, DimensionConstants.d14.sp),
                                   SizedBox(
                                     width: DimensionConstants.d250.w,
                                   ),
-                                  Text('Edit').btnText(ColorConstants.percentagecolor, DimensionConstants.d14.sp)
+                                  Text('Edit').normalText(ColorConstants.percentagecolor, DimensionConstants.d14.sp)
 
                                 ],
                               ),
@@ -105,7 +105,7 @@ class _SummaryState extends State<Summary> {
                                 height: DimensionConstants.d2.h,
                               ),
                               Padding(padding: EdgeInsets.only(left:DimensionConstants.d18.w ),
-                                child:Text('4517 Washington Ave. Manchester, Kentucky 39495').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp)
+                                child:Text('4517 Washington Ave. Manchester, Kentucky 39495').normalText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp)
                                 ,)
                             ],
                           ),
@@ -132,11 +132,11 @@ class _SummaryState extends State<Summary> {
                                   SizedBox(
                                     width: DimensionConstants.d18.w,
                                   ),
-                                  Text('Phone Number').btnText(ColorConstants.colorBlack, DimensionConstants.d14.sp),
+                                  Text('Phone Number').normalText(ColorConstants.colorBlack, DimensionConstants.d14.sp),
                                   SizedBox(
                                     width: DimensionConstants.d207.w,
                                   ),
-                                  Text('Edit').btnText(ColorConstants.percentagecolor, DimensionConstants.d14.sp)
+                                  Text('Edit').normalText(ColorConstants.percentagecolor, DimensionConstants.d14.sp)
 
                                 ],
                               ),
@@ -144,7 +144,7 @@ class _SummaryState extends State<Summary> {
                                 height: DimensionConstants.d2.h,
                               ),
                               Padding(padding: EdgeInsets.only(left:DimensionConstants.d18.w ),
-                                child:Text('01 102 0512 02566').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp)
+                                child:Text('01 102 0512 02566').normalText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp)
                                 ,)
                             ],
                           ),
@@ -171,11 +171,11 @@ class _SummaryState extends State<Summary> {
                                   SizedBox(
                                     width: DimensionConstants.d18.w,
                                   ),
-                                  Text('Payment').btnText(ColorConstants.colorBlack, DimensionConstants.d14.sp),
+                                  Text('Payment').normalText(ColorConstants.colorBlack, DimensionConstants.d14.sp),
                                   SizedBox(
                                     width: DimensionConstants.d245.w,
                                   ),
-                                  Text('Edit').btnText(ColorConstants.percentagecolor, DimensionConstants.d14.sp)
+                                  Text('Edit').normalText(ColorConstants.percentagecolor, DimensionConstants.d14.sp)
 
                                 ],
                               ),
@@ -183,7 +183,7 @@ class _SummaryState extends State<Summary> {
                                 height: DimensionConstants.d2.h,
                               ),
                               Padding(padding: EdgeInsets.only(left:DimensionConstants.d18.w ),
-                                child:Text('Visa: 365-254-2415-1240').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp)
+                                child:Text('Visa: 365-254-2415-1240').normalText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp)
                                 ,)
                             ],
                           ),
@@ -210,11 +210,11 @@ class _SummaryState extends State<Summary> {
                                   SizedBox(
                                     width: DimensionConstants.d18.w,
                                   ),
-                                  Text('Order').btnText(ColorConstants.colorBlack, DimensionConstants.d14.sp),
+                                  Text('Order').normalText(ColorConstants.colorBlack, DimensionConstants.d14.sp),
                                   SizedBox(
                                     width: DimensionConstants.d264.w,
                                   ),
-                                  Text('Edit').btnText(ColorConstants.percentagecolor, DimensionConstants.d14.sp)
+                                  Text('Edit').normalText(ColorConstants.percentagecolor, DimensionConstants.d14.sp)
 
                                 ],
                               ),
@@ -224,7 +224,7 @@ class _SummaryState extends State<Summary> {
                               Padding(padding: EdgeInsets.only(left:DimensionConstants.d18.w ),
                                 child:Row(
                                   children: [
-                                    Text('Chicken Zinger, Size (S)').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp),
+                                    Text('Chicken Zinger, Size (S)').normalText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp),
                                     SizedBox(
                                       width: DimensionConstants.d86.w,
                                     ),
@@ -252,7 +252,7 @@ class _SummaryState extends State<Summary> {
                                     SizedBox(
                                       width: DimensionConstants.d4.w,
                                     ),
-                                    Text('1 X 79.99 EGP').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp),
+                                    Text('1 X 79.99 EGP').normalText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp),
                                     SizedBox(
                                       width: DimensionConstants.d4.w,
                                     ),
@@ -287,7 +287,7 @@ class _SummaryState extends State<Summary> {
                               Padding(padding: EdgeInsets.only(left:DimensionConstants.d18.w ),
                                 child:Row(
                                   children: [
-                                    Text('Pizza Marina, Size (L)').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp),
+                                    Text('Pizza Marina, Size (L)').normalText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp),
                                     SizedBox(
                                       width: DimensionConstants.d108.w,
                                     ),
@@ -315,7 +315,7 @@ class _SummaryState extends State<Summary> {
                                     SizedBox(
                                       width: DimensionConstants.d4.w,
                                     ),
-                                    Text('2 X 50 EGP').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp),
+                                    Text('2 X 50 EGP').normalText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp),
                                     SizedBox(
                                       width: DimensionConstants.d4.w,
                                     ),
@@ -350,12 +350,12 @@ class _SummaryState extends State<Summary> {
                               Padding(padding: EdgeInsets.only(left:DimensionConstants.d18.w ),
                                 child:Row(
                                   children: [
-                                    Text('Exter Fries').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp),
+                                    Text('Exter Fries').normalText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp),
                                     SizedBox(
                                       width: DimensionConstants.d218.w,
                                     ),
 
-                                    Text('1 X 5 EGP').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp),
+                                    Text('1 X 5 EGP').normalText(ColorConstants.colorHintTextColor, DimensionConstants.d12.sp),
 
 
 
@@ -372,7 +372,7 @@ class _SummaryState extends State<Summary> {
                     Padding(padding: EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
                       child: Container(
                         height: DimensionConstants.d110.h,
-                        width: DimensionConstants.d372.w,
+                        width: DimensionConstants.d373.w,
                         child: RoundCornerShape(
                           bgColor: ColorConstants.whiteColor,
                           radius: DimensionConstants.d6.r,
@@ -387,21 +387,22 @@ class _SummaryState extends State<Summary> {
                                   SizedBox(
                                     width: DimensionConstants.d18.w,
                                   ),
-                                  Text('Total Items').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d15.sp),
+                                  Text('Total Items').normalText(ColorConstants.colorHintTextColor, DimensionConstants.d15.sp),
                                   SizedBox(
                                     width: DimensionConstants.d187.w,
                                   ),
-                                  Text('134.99 EGP').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d15.sp)
+                                  Text('134.99 EGP').normalText(ColorConstants.colorHintTextColor, DimensionConstants.d15.sp)
 
                                 ],
                               ),
                               SizedBox(
                                 height: DimensionConstants.d8.h,
                               ),
-                              Padding(padding: EdgeInsets.only(left:DimensionConstants.d18.w ),
+                              Padding(
+                                padding: EdgeInsets.only(left:DimensionConstants.d18.w ),
                                 child:Row(
                                   children: [
-                                    Text('Shipping').btnText(ColorConstants.colorHintTextColor, DimensionConstants.d15.sp),
+                                    Text('Shipping').normalText(ColorConstants.colorHintTextColor, DimensionConstants.d15.sp),
                                     SizedBox(
                                       width: DimensionConstants.d227.w,
                                     ),
@@ -421,34 +422,34 @@ class _SummaryState extends State<Summary> {
                                 ),
                               ),
 
-                              Padding(padding: EdgeInsets.only(left:DimensionConstants.d18.w ),
+                              Padding(
+                                padding: EdgeInsets.only(left:DimensionConstants.d18.w ),
                                 child:Row(
                                   children: [
-                                    Text('Total Cost').btnText(ColorConstants.darkblackcolor, DimensionConstants.d15.sp),
+
+                                    Text('Total Cost').normalText(ColorConstants.darkblackcolor, DimensionConstants.d15.sp),
+
                                     SizedBox(
                                       width: DimensionConstants.d200.w,
                                     ),
 
-                                    Text('14.99 EGP').btnText(ColorConstants.colorButtonbgColor, DimensionConstants.d15.sp),
-
-
+                                    Text('14.99 EGP').normalText(ColorConstants.colorButtonbgColor, DimensionConstants.d15.sp),
 
                                   ],
                                 )
-                                ,),
 
-
-
+                              ),
 
                             ],
                           ),
                         ),
-                      ),),
+                      ),
+                    ),
                     SizedBox(
-                      height: DimensionConstants.d260.h,
+                      height: DimensionConstants.d158.h,
                     ),
                     Padding(
-                      padding:  EdgeInsets.only(left: DimensionConstants.d21.w,right: DimensionConstants.d21.w),
+                      padding:  EdgeInsets.only(left: DimensionConstants.d21.w,right: DimensionConstants.d21.w,bottom: DimensionConstants.d24.h),
                       child: SizedBox(
                         width: DimensionConstants.d373.w,
                         height: DimensionConstants.d52.h,

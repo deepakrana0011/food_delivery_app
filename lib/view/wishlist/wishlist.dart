@@ -56,7 +56,7 @@ class _WishListState extends State<WishList> {
             elevation: 0,
             backgroundColor: ColorConstants.colorbackground,
             title:
-            Text('WishList').btnText(ColorConstants.colorTextAppBar, DimensionConstants.d20.sp),
+            Text('WishList').normalText(ColorConstants.colorTextAppBar, DimensionConstants.d20.sp),
             /*leading: IconButton(
               icon: Icon(
                 Icons.arrow_back_ios_outlined,

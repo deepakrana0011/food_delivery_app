@@ -24,6 +24,7 @@ import 'package:food_delivery_app/view/profile/profile.dart';
 import 'package:food_delivery_app/view/wishlist/wishlist.dart';
 import 'package:food_delivery_app/widgets/bottom_bar_Container_shape.dart';
 import 'package:food_delivery_app/widgets/image_view.dart';
+import 'package:food_delivery_app/widgets/list_view.dart';
 import 'package:food_delivery_app/widgets/roundCornerShape.dart';
 import 'package:provider/provider.dart';
 
@@ -92,71 +93,73 @@ class _DashBoardState extends State<DashBoard> {
                     right: DimensionConstants.d20.w,
                     top: DimensionConstants.d11.h,
                     bottom: DimensionConstants.d22.h),
-                child: ListView.builder(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: navigationitems.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return Row(
-                        children: [
-                          GestureDetector(
-                            onTap: () {
+                child: Listview(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  itemCount: navigationitems.length,
+                  itemBuilder: (BuildContext , int index ) {
+                   return Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
 
-                              setState(() {
-                                currentindex=index;
-                              });
-                              //onItemTapped(index);
-                            },
-                            child: Container(
-                              height: DimensionConstants
-                                  .d43.h,
-                              width:
-                              DimensionConstants.d43.w,
-                              child: BottomNavigationBarShape(
-                                bgColor:
-                                currentindex==index? ColorConstants.bottomcontainercolor:ColorConstants.whiteColor,
-                                topRightradius:  DimensionConstants.d6.r,
-                                topleftradius: DimensionConstants.d6.r,
-                                bottomRightradius: DimensionConstants.d6.r,
-                                bottomleftradius: DimensionConstants.d6.r,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    SizedBox(
-                                      height: DimensionConstants.d4.h,
-                                    ),
-                                    ImageView(
-                                      path: navigationicons[index],
-                                      height: DimensionConstants.d20.h,
-                                      width: DimensionConstants.d19.w,
-                                      color: currentindex==index?ColorConstants.colorButtonbgColor:ColorConstants.colorBlack,
-                                    ),
-                                    SizedBox(
-                                      height: 1.h,
-                                    ),
+                            setState(() {
+                              currentindex=index;
+                            });
+                            //onItemTapped(index);
+                          },
+                          child: Container(
+                            height: DimensionConstants
+                                .d43.h,
+                            width:
+                            DimensionConstants.d43.w,
+                            child: BottomNavigationBarShape(
+                              bgColor:
+                              currentindex==index? ColorConstants.bottomcontainercolor:ColorConstants.whiteColor,
+                              topRightradius:  DimensionConstants.d6.r,
+                              topleftradius: DimensionConstants.d6.r,
+                              bottomRightradius: DimensionConstants.d6.r,
+                              bottomleftradius: DimensionConstants.d6.r,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SizedBox(
+                                    height: DimensionConstants.d4.h,
+                                  ),
+                                  ImageView(
+                                    path: navigationicons[index],
+                                    height: DimensionConstants.d20.h,
+                                    width: DimensionConstants.d19.w,
+                                    color: currentindex==index?ColorConstants.colorButtonbgColor:ColorConstants.colorBlack,
+                                  ),
+                                  SizedBox(
+                                    height: 1.h,
+                                  ),
 
 
-                                    Text(navigationitems[index]).btnText(
-                                        currentindex==index?   ColorConstants.colorButtonbgColor:ColorConstants.whiteColor,
-                                        DimensionConstants.d10.sp,maxLines: 2),
-                                    SizedBox(
-                                      height: 1.h,
-                                    )
-                                  ],
-                                ),
+                                  Text(navigationitems[index]).normalText(
+                                      currentindex==index?   ColorConstants.colorButtonbgColor:ColorConstants.whiteColor,
+                                      DimensionConstants.d10.sp,maxLines: 2),
+                                  SizedBox(
+                                    height: 1.h,
+                                  )
+                                ],
                               ),
                             ),
                           ),
-                          SizedBox(
-                            width: DimensionConstants.d35.w,
-                          ),
-                        ],
-                      );
-                    }))),
+                        ),
+                        SizedBox(
+                          width: DimensionConstants.d35.w,
+                        ),
+                      ],
+                    );
+                  },
+
+                )
+
+            )),
       )
     );
   }
-
 }
-
-//

@@ -56,7 +56,7 @@ class _ProductsState extends State<Products> {
             elevation: 0,
             backgroundColor: ColorConstants.colorbackground,
             title:
-            Text('Products').btnText(ColorConstants.colorTextAppBar, DimensionConstants.d20.sp),
+            Text('Products').normalText(ColorConstants.colorTextAppBar, DimensionConstants.d20.sp),
             /*leading: IconButton(
               icon: Icon(
                 Icons.arrow_back_ios_outlined,

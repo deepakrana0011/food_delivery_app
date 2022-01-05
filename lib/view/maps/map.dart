@@ -195,12 +195,12 @@ class _MapsState extends State<Maps> {
 
                         )),
                     Positioned(
-                        top: DimensionConstants.d774.h,
+                        top: DimensionConstants.d624.h,
                         left: DimensionConstants.d20.w,
 
                         child: Container(
                           height: DimensionConstants.d76.h,
-                          width: DimensionConstants.d372.w,
+                          width: DimensionConstants.d373.w,
                           child: RoundCornerShape(
                             bgColor: ColorConstants.whiteColor,
                             radius: DimensionConstants.d6.r,
@@ -208,10 +208,10 @@ class _MapsState extends State<Maps> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 SizedBox(
-                                  height: DimensionConstants.d8.h,
+                                  height: DimensionConstants.d11.h,
                                 ),
                                 Padding(padding: EdgeInsets.only(left: DimensionConstants.d13.w),
-                                child:  Text('Delivery Location').btnText(
+                                child:  Text('Delivery Location').normalText(
                                     ColorConstants.colorHintTextColor,DimensionConstants.d15.sp
                                 )),
                                 SizedBox(
@@ -231,7 +231,7 @@ class _MapsState extends State<Maps> {
                                         SizedBox(
                                           width: DimensionConstants.d6.w,
                                         ),
-                                        Text('Assuit, Main City - AL Gomhuria').btnText(ColorConstants.darkblackcolor,DimensionConstants.d15.sp)
+                                        Text('Assuit, Main City - AL Gomhuria').normalText(ColorConstants.darkblackcolor,DimensionConstants.d15.sp)
                                       ],
                                     )),
 
@@ -241,7 +241,7 @@ class _MapsState extends State<Maps> {
                         )
                     ),
                     Positioned(
-                        top: DimensionConstants.d784.h,
+                        top: DimensionConstants.d704.h,
                         left: DimensionConstants.d20.w,
 
                         child: GestureDetector(

@@ -32,20 +32,7 @@ extension ExtendText on Text {
     );
   }
 
-  menuItemText(Color color, double textSize, {maxLines, overflow,textAlign}) {
-    return Text(
-      this.data!,
-      maxLines: maxLines,
-      overflow: overflow,
-      textAlign: textAlign,
 
-      style: TextStyle(
-          color: color,
-          fontFamily: "montserrat",
-          fontWeight: FontWeight.w400,
-          fontSize: textSize),
-    );
-  }
 
 
   regularText(Color color, double textSize, {maxLines, overflow,textAlign}) {
@@ -62,7 +49,7 @@ extension ExtendText on Text {
     );
   }
 
-  btnText(Color color, double textSize, {maxLines, overflow,textAlign}) {
+  normalText(Color color, double textSize, {maxLines, overflow,textAlign,TextDecoration? decoration}) {
     return Text(
       this.data!,
       maxLines: maxLines,
@@ -76,9 +63,13 @@ extension ExtendText on Text {
           fontFamily: "Gilroy",
           fontWeight: FontWeight.w500,
           fontSize: textSize,
+        decoration: decoration
+
       ),
     );
   }
+
+
 
   mediumText(Color color, double textSize, TextAlign alignment,
       

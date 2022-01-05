@@ -18,6 +18,7 @@ import 'package:food_delivery_app/provider/signup_provider.dart';
 import 'package:food_delivery_app/view/base_view.dart';
 import 'package:food_delivery_app/widgets/bottom_bar_Container_shape.dart';
 import 'package:food_delivery_app/widgets/image_view.dart';
+import 'package:food_delivery_app/widgets/list_view.dart';
 import 'package:food_delivery_app/widgets/roundCornerShape.dart';
 
 class Profile extends StatefulWidget {
@@ -129,9 +130,9 @@ class _ProfileState extends State<Profile> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('Noha Osama').btnText(ColorConstants.colorBlack, DimensionConstants.d16.sp),
+                              Text('Noha Osama').normalText(ColorConstants.colorBlack, DimensionConstants.d16.sp),
                               SizedBox(height: DimensionConstants.d8.h,),
-                              Text('+201238837328').menuItemText(ColorConstants.colorBlack, DimensionConstants.d14.sp)
+                              Text('+201238837328').normalText(ColorConstants.colorBlack, DimensionConstants.d14.sp)
 
                             ],
                           )
@@ -147,7 +148,7 @@ class _ProfileState extends State<Profile> {
                         children: [
                           Icon(Icons.mail,color: Colors.grey,),
                           SizedBox(width: DimensionConstants.d4.w,),
-                          Text('Noha.haraz207@gmail.com').btnText(ColorConstants.colorBlack, DimensionConstants.d15.sp),
+                          Text('Noha.haraz207@gmail.com').normalText(ColorConstants.colorBlack, DimensionConstants.d15.sp),
                           SizedBox(width: DimensionConstants.d4.w,),
                           Icon(Icons.edit,color: ColorConstants.colorButtonbgColor,),
 
@@ -160,7 +161,8 @@ class _ProfileState extends State<Profile> {
                     Padding(
                       padding:EdgeInsets.only( left: DimensionConstants.d20.w,
                         right: DimensionConstants.d20.w),
-                      child: ListView.builder(
+                      child: Listview(
+                        scrollDirection: Axis.vertical,
                         physics: ClampingScrollPhysics(),
                           shrinkWrap: true,
                           itemCount: profileLinks.length,
@@ -181,7 +183,7 @@ class _ProfileState extends State<Profile> {
                                               SizedBox(
                                                 width: DimensionConstants.d15.w,
                                               ),
-                                              Text(profileLinks[index]).btnText(ColorConstants.colorBlack, DimensionConstants.d16.sp),
+                                              Text(profileLinks[index]).normalText(ColorConstants.colorBlack, DimensionConstants.d16.sp),
                                               Spacer(),
                                               index == 0 ||
                                                   index == 1 ||
@@ -190,13 +192,13 @@ class _ProfileState extends State<Profile> {
                                                   ? Icon(Icons.arrow_forward_ios,color: ColorConstants.colorHintTextColor,size: DimensionConstants.d20.sp,)
                                                   : index == 4
                                                   ? Text('English')
-                                                  .btnText(
+                                                  .normalText(
                                                 ColorConstants.colorButtonbgColor,
                                                 DimensionConstants.d14.sp,
                                               )
                                                   : index == 5
                                                   ? Text('Egypt')
-                                                  .btnText(
+                                                  .normalText(
                                                 ColorConstants.colorButtonbgColor,
                                                 DimensionConstants.d14.sp,
                                               )

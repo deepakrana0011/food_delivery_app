@@ -21,6 +21,7 @@ import 'package:food_delivery_app/provider/signup_provider.dart';
 import 'package:food_delivery_app/view/base_view.dart';
 import 'package:food_delivery_app/widgets/bottom_bar_Container_shape.dart';
 import 'package:food_delivery_app/widgets/image_view.dart';
+import 'package:food_delivery_app/widgets/list_view.dart';
 import 'package:food_delivery_app/widgets/roundCornerShape.dart';
 
 class HomePage extends StatefulWidget {
@@ -60,6 +61,15 @@ class _HomePageState extends State<HomePage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
  int ind=0;
   int pageIndex=0;
+  int currentPos = 0;
+  List listPaths = [
+    ImageConstants.ic_restaurant_promo,
+    ImageConstants.ic_restaurant_promo,
+    ImageConstants.ic_restaurant_promo,
+    ImageConstants.ic_restaurant_promo
+
+
+  ];
 
 
 
@@ -107,7 +117,7 @@ class _HomePageState extends State<HomePage> {
                           SizedBox(
                             width: DimensionConstants.d7.w,
                           ),
-                          Text('4517 Washington Ave. Manchester').btnText(
+                          Text('4517 Washington Ave. Manchester').normalText(
                               ColorConstants.colorHintTextColor,
                               DimensionConstants.d12.sp)
                         ],
@@ -122,10 +132,10 @@ class _HomePageState extends State<HomePage> {
                               .d19.w),
                       child: Row(
                         children: [
-                          Text('Hi Noha').btnText(
+                          Text('Hi Noha').normalText(
                               ColorConstants.headingColor,
                               DimensionConstants.d16.sp),
-                          Text('!').btnText(
+                          Text('!').normalText(
                               ColorConstants.colorButtonbgColor,
                               DimensionConstants.d16.sp),
                           SizedBox(
@@ -163,7 +173,7 @@ class _HomePageState extends State<HomePage> {
                               .d19.w),
                       child: Row(
                         children: [
-                          Text('Find Your Favorit dish').btnText(
+                          Text('Find Your Favorit dish').normalText(
                               ColorConstants.headingColor,
                               DimensionConstants.d14.sp),
                         ],
@@ -267,57 +277,55 @@ class _HomePageState extends State<HomePage> {
                             right: DimensionConstants.d20.w),
                         child: Column(
                             children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 8.0,right: 8),
-                                child: Container(
-                                    height: DimensionConstants.d150.h,
-                                    width: DimensionConstants.d372.w,
-                                    child: PageView.builder(
-                                      controller: pageController,
-                                      itemCount: 4,
-                                      onPageChanged: (index){
+                              Container(
+                                height: DimensionConstants.d150.h,
+                                width: DimensionConstants.d373.w,
+                                child:  CarouselSlider.builder(
+                                  itemCount: listPaths.length,
+                                  options: CarouselOptions(
+                                    reverse: false,
+                                      enlargeCenterPage: true,
+                                      viewportFraction: 0.79,
+                                      aspectRatio:3.5,
+                                      initialPage: 1,
+                                      onPageChanged: (index, reason) {
                                         setState(() {
-                                          pageIndex=index;
+                                          currentPos = index;
                                         });
-                                      },
-                                      itemBuilder: (BuildContext context, int index) {
-                                        return FractionallySizedBox(
-                                          widthFactor: 1 / pageController.viewportFraction,
-                                          child: Container(height: DimensionConstants.d150.h,color: ColorConstants.whiteColor,
-                                            child: ClipRRect(
-                                              borderRadius: BorderRadius.circular(DimensionConstants.d6.r),
-                                              child: ImageView(
-                                                path: ImageConstants.ic_promo,
-                                                height: DimensionConstants.d150.h,
-                                                width: DimensionConstants.d372.w,
-                                                fit: BoxFit.cover,
-                                              ),
-                                            ),
-                                          ),
-                                        );
-
-                                      },
-                                    )
-
+                                      }
+                                  ), itemBuilder: (BuildContext context, int index, int realIndex) {
+                                    return Container(height: DimensionConstants.d150.h,color: ColorConstants.whiteColor,
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(DimensionConstants.d6.r),
+                                        child: ImageView(
+                                          path: ImageConstants.ic_promo,
+                                          height: DimensionConstants.d150.h,
+                                          width: DimensionConstants.d372.w,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    );
+                                },
                                 ),
                               ),
+
+
                               CarouselIndicator(
                                 cornerRadius: DimensionConstants.d20.r,
                                 activeColor: ColorConstants.colorButtonbgColor,
-                                color: ColorConstants.gray,
-                                count: 4,
-                                index: pageIndex,
-
+                                color: ColorConstants.colorHintTextColor,
+                                count: listPaths.length,
+                                index: currentPos,
                               ),
                             ])),
                     SizedBox(
-                      height: DimensionConstants.d20.h,
+                      height: DimensionConstants.d23.h,
                     ),
                     Padding(
                         padding: EdgeInsets.only(
                             left: DimensionConstants
                                 .d20.w),
-                        child: Text('Categories').btnText(
+                        child: Text('Categories').normalText(
                             ColorConstants.colorBlack,
                             DimensionConstants.d16)),
 
@@ -327,25 +335,25 @@ class _HomePageState extends State<HomePage> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            Text('Show all').btnText(
+                            Text('Show all').normalText(
                                 ColorConstants.colorHintTextColor,
                                 DimensionConstants.d14)
                           ],
                         )),
                     SizedBox(
-                      height: DimensionConstants.d12.h,
+                      height: DimensionConstants.d6.h,
                     ),
-
                     Padding(
                       padding: EdgeInsets.only(
                           left: DimensionConstants
-                              .d20.w,
+                              .d18.w,
                           right: DimensionConstants
                               .d20.w),
                       child: Container(
                         color: ColorConstants.whiteColor,
                         height: DimensionConstants.d67.h,
-                        child: ListView.builder(
+                        child: Listview(
+                          physics: ClampingScrollPhysics(),
                             shrinkWrap: true,
                             scrollDirection: Axis.horizontal,
                             itemCount: categories.length,
@@ -353,6 +361,9 @@ class _HomePageState extends State<HomePage> {
                                 (BuildContext context, int index) {
                               return Row(
                                 children: [
+                                  SizedBox(
+                                    width: DimensionConstants.d2.w,
+                                  ),
                                   Container(
                                     color: ColorConstants.whiteColor,
                                     height: DimensionConstants.d60.h,
@@ -384,7 +395,7 @@ class _HomePageState extends State<HomePage> {
                                                 DimensionConstants.d4.h,
                                               ),
                                               Text(categories[index])
-                                                  .btnText(
+                                                  .normalText(
                                                   ColorConstants
                                                       .colorBlack,
                                                   DimensionConstants
@@ -394,7 +405,7 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   ),
                                   SizedBox(
-                                    width: 10.w,
+                                    width: DimensionConstants.d8.w,
                                   )
                                 ],
                               );
@@ -402,13 +413,13 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     SizedBox(
-                      height: DimensionConstants.d15.h,
+                      height: DimensionConstants.d18.h,
                     ),
                     Padding(
                         padding: EdgeInsets.only(
                             left: DimensionConstants
                                 .d20.w),
-                        child: Text('Restaurant nearby').btnText(
+                        child: Text('Restaurant nearby').normalText(
                             ColorConstants.colorBlack,
                             DimensionConstants.d16)),
                     SizedBox(
@@ -420,7 +431,7 @@ class _HomePageState extends State<HomePage> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            Text('Show all').btnText(
+                            Text('Show all').normalText(
                                 ColorConstants.colorHintTextColor,
                                 DimensionConstants.d14)
                           ],
@@ -478,7 +489,7 @@ class _HomePageState extends State<HomePage> {
                                         SizedBox(
                                           height: DimensionConstants.d5.h,
                                         ),
-                                        Text(restauranttimings[index]).btnText(
+                                        Text(restauranttimings[index]).normalText(
                                           ColorConstants.colorBlack,
                                           DimensionConstants.d13.sp,
                                         ),
@@ -503,7 +514,7 @@ class _HomePageState extends State<HomePage> {
                         padding: EdgeInsets.only(
                             left: DimensionConstants
                                 .d20.w),
-                        child: Text('Recomended').btnText(
+                        child: Text('Recomended').normalText(
                             ColorConstants.colorBlack,
                             DimensionConstants.d16)),
                     SizedBox(
@@ -515,7 +526,7 @@ class _HomePageState extends State<HomePage> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            Text('Show all').btnText(
+                            Text('Show all').normalText(
                                 ColorConstants.colorHintTextColor,
                                 DimensionConstants.d14)
                           ],
@@ -527,7 +538,8 @@ class _HomePageState extends State<HomePage> {
                         padding: EdgeInsets.only(
                             left: DimensionConstants.d20.w,
                             right: DimensionConstants.d20.w),
-                        child: ListView.builder(
+                        child: Listview(
+                          scrollDirection: Axis.vertical,
                             shrinkWrap: true,
                             physics: ClampingScrollPhysics(),
                             itemCount: 3,
@@ -581,7 +593,7 @@ class _HomePageState extends State<HomePage> {
                                                               .d25.h),
                                                       child: Row(
                                                         children: [
-                                                          Text('Spacy fresh crab').btnText(
+                                                          Text('Spacy fresh crab').normalText(
                                                               ColorConstants
                                                                   .colorBlack,
                                                               DimensionConstants
@@ -591,7 +603,7 @@ class _HomePageState extends State<HomePage> {
                                                             DimensionConstants
                                                                 .d102.w,
                                                           ),
-                                                          Text('15% off').btnText(
+                                                          Text('15% off').normalText(
                                                               ColorConstants
                                                                   .percentagecolor,
                                                               DimensionConstants
@@ -630,7 +642,7 @@ class _HomePageState extends State<HomePage> {
                                                                 top: DimensionConstants
                                                                     .d1
                                                                     .h),
-                                                            child: Text('4.5').btnText(
+                                                            child: Text('4.5').normalText(
                                                                 ColorConstants
                                                                     .colorBlack,
                                                                 DimensionConstants
@@ -657,7 +669,7 @@ class _HomePageState extends State<HomePage> {
                                                             DimensionConstants
                                                                 .d7.w,
                                                           ),
-                                                          Text('20 mins, 10 EGP').btnText(
+                                                          Text('20 mins, 10 EGP').normalText(
                                                               ColorConstants
                                                                   .colorBlack,
                                                               DimensionConstants

@@ -56,7 +56,7 @@ class _CheckoutState extends State<Checkout> {
             elevation: 0,
             backgroundColor: ColorConstants.colorbackground,
             title:
-            Text('Checkout').btnText(ColorConstants.colorTextAppBar, DimensionConstants.d20.sp),
+            Text('Checkout').normalText(ColorConstants.colorTextAppBar, DimensionConstants.d20.sp),
             leading: IconButton(
               icon: Icon(
                 Icons.arrow_back_ios_outlined,
@@ -78,11 +78,11 @@ class _CheckoutState extends State<Checkout> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: DimensionConstants.d59.h,
+                      height: DimensionConstants.d49.h,
                     ),
                     Padding(
                         padding: EdgeInsets.only(left: DimensionConstants.d19.w),
-                        child: Text('Delivery').btnText(ColorConstants.headingColor, DimensionConstants.d20.sp)),
+                        child: Text('Delivery').normalText(ColorConstants.headingColor, DimensionConstants.d20.sp)),
                     SizedBox(
                       height: DimensionConstants.d15.h,
                     ),
@@ -107,22 +107,22 @@ class _CheckoutState extends State<Checkout> {
                                 prefixIcon: Padding(
                                     padding: EdgeInsets.only(
                                         left: DimensionConstants
-                                            .d22
+                                            .d19
                                             .w,
                                         top: DimensionConstants
-                                            .d17
+                                            .d16
                                             .h,
                                         bottom: DimensionConstants
-                                            .d17
+                                            .d16
                                             .h,
                                         right: DimensionConstants
-                                            .d11
+                                            .d8
                                             .w
                                     ),
                                     child:  ImageView(
                                       path: ImageConstants.ic_map,
-                                      height: DimensionConstants.d18.h,
-                                      width: DimensionConstants.d14.w,
+                                      height: DimensionConstants.d20.h,
+                                      width: DimensionConstants.d20.w,
                                     )),
                                 suffixIcon: Padding(
                                   padding:  EdgeInsets.only( top: DimensionConstants
@@ -173,7 +173,7 @@ class _CheckoutState extends State<Checkout> {
                               prefixIcon: Padding(
                                   padding: EdgeInsets.only(
                                       left: DimensionConstants
-                                          .d22
+                                          .d19
                                           .w,
                                       top: DimensionConstants
                                           .d16
@@ -182,7 +182,7 @@ class _CheckoutState extends State<Checkout> {
                                           .d16
                                           .h,
                                       right: DimensionConstants
-                                          .d11
+                                          .d8
                                           .w),
                                   child:  ImageView(
                                     path: ImageConstants.ic_phone,
@@ -202,11 +202,12 @@ class _CheckoutState extends State<Checkout> {
                       height: DimensionConstants.d20.h,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(left: DimensionConstants.d18.w),
+                      padding: EdgeInsets.only(left: DimensionConstants.d15.w),
                       child: Transform.scale(
-                        scale: 1,
+                        scale: 0.8,
                         child:
                         CupertinoSwitch(
+
                           activeColor:
                           ColorConstants.colorButtonbgColor,
                           value: status,
@@ -222,8 +223,9 @@ class _CheckoutState extends State<Checkout> {
                     SizedBox(
                       height: DimensionConstants.d20.h,
                     ),
-                    Padding(padding: EdgeInsets.only(left: DimensionConstants.d19.w),
-                        child: Text('Payment').btnText(ColorConstants.colorTextAppBar, DimensionConstants.d20.sp)),
+                    Padding(
+                        padding: EdgeInsets.only(left: DimensionConstants.d19.w),
+                        child: Text('Payment').normalText(ColorConstants.colorTextAppBar, DimensionConstants.d20.sp)),
                     Padding(
                       padding: EdgeInsets.only(left: DimensionConstants.d18.w),
                       child: Row(
@@ -245,7 +247,7 @@ class _CheckoutState extends State<Checkout> {
                             },
                           ),
 
-                          Text('Credit Card').btnText(ColorConstants.colorTextAppBar, DimensionConstants.d16.sp),
+                          Text('Credit Card').normalText(ColorConstants.colorTextAppBar, DimensionConstants.d16.sp),
                           SizedBox(
                             width: DimensionConstants.d52.w,
                           ),
@@ -262,7 +264,7 @@ class _CheckoutState extends State<Checkout> {
                               });
                             },
                           ),
-                          Text('Cash on delivery').btnText(ColorConstants.colorTextAppBar, DimensionConstants.d16.sp),
+                          Text('Cash on delivery').normalText(ColorConstants.colorTextAppBar, DimensionConstants.d16.sp),
                         ],
                       ),
                     ),
@@ -486,9 +488,9 @@ class _CheckoutState extends State<Checkout> {
                       height: DimensionConstants.d20.h,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(left: DimensionConstants.d18.w),
+                      padding: EdgeInsets.only(left: DimensionConstants.d15.w),
                       child: Transform.scale(
-                        scale: 1,
+                        scale: 0.8,
                         child:
                         CupertinoSwitch(
                           activeColor:
@@ -504,10 +506,10 @@ class _CheckoutState extends State<Checkout> {
                         ),
                       ),),
                     SizedBox(
-                      height: DimensionConstants.d88.h,
+                      height: DimensionConstants.d79.h,
                     ),
                     Padding(
-                      padding:  EdgeInsets.only(left: DimensionConstants.d21.w,right: DimensionConstants.d21.w),
+                      padding:  EdgeInsets.only(left: DimensionConstants.d21.w,right: DimensionConstants.d21.w,bottom: DimensionConstants.d24.h),
                       child: GestureDetector(
                         onTap: (){
                           if(addresscontroller.text==''){
