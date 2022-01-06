@@ -16,8 +16,8 @@ class DialogHelper {
   static Future showDialogWithTwoButtons(
     BuildContext context,
     String title,
-    String positiveButtonText,
-    String negativeButtonText,
+    String positiveGilroySemiBoldText,
+    String negativeGilroySemiBoldText,
     String content, {
     required VoidCallback positiveButtonPress,
     required VoidCallback negativeButtonPress,
@@ -33,7 +33,7 @@ class DialogHelper {
           shape: border,
           actions: <Widget>[
             FlatButton(
-              child: Text(negativeButtonText).mediumText(
+              child: Text(negativeGilroySemiBoldText).mediumText(
                   ColorConstants.colorButtonbgColor, 18, TextAlign.center),
               textColor: Colors.black87,
               onPressed: () {
@@ -45,7 +45,7 @@ class DialogHelper {
               },
             ),
             FlatButton(
-              child: Text(positiveButtonText).mediumText(
+              child: Text(positiveGilroySemiBoldText).mediumText(
                   ColorConstants.colorButtonbgColor, 18, TextAlign.center),
               onPressed: () {
                 if (positiveButtonPress != null) {

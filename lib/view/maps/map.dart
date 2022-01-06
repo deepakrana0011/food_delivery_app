@@ -92,7 +92,10 @@ class _MapsState extends State<Maps> {
                                 width: DimensionConstants.d45.w,
                                 child: RoundCornerShape(
                                   bgColor: ColorConstants.whiteColor,
-                                  radius: DimensionConstants.d6.r,
+                                  topRightradius: DimensionConstants.d6.r,
+                                  topleftradius: DimensionConstants.d6.r,
+                                  bottomRightradius: DimensionConstants.d6.r,
+                                  bottomleftradius: DimensionConstants.d6.r,
                                   child: Padding(
                                     padding:  EdgeInsets.only(top: DimensionConstants.d13.h,left: DimensionConstants.d18.w,bottom: DimensionConstants.d13.h,
                                     right: DimensionConstants.d18.w),
@@ -113,7 +116,10 @@ class _MapsState extends State<Maps> {
                               width: DimensionConstants.d319.w,
                               child: RoundCornerShape(
                                 bgColor: ColorConstants.whiteColor,
-                                radius: DimensionConstants.d6.r,
+                                topRightradius: DimensionConstants.d6.r,
+                                topleftradius: DimensionConstants.d6.r,
+                                bottomRightradius: DimensionConstants.d6.r,
+                                bottomleftradius: DimensionConstants.d6.r,
                                 child: TextFormField(
                                   readOnly: true,
                                   onTap: (){
@@ -198,47 +204,60 @@ class _MapsState extends State<Maps> {
                         top: DimensionConstants.d624.h,
                         left: DimensionConstants.d20.w,
 
-                        child: Container(
+                        child: RoundCornerShape(
+                          decoration: BoxDecoration(
+
+                              boxShadow: [
+                                BoxShadow(
+                                  offset: Offset(0.0, 0.75),
+                                  blurRadius: 12,
+                                  color: ColorConstants.borderColor,
+                                )
+                              ]
+                          ),
                           height: DimensionConstants.d76.h,
                           width: DimensionConstants.d373.w,
-                          child: RoundCornerShape(
-                            bgColor: ColorConstants.whiteColor,
-                            radius: DimensionConstants.d6.r,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  height: DimensionConstants.d11.h,
-                                ),
-                                Padding(padding: EdgeInsets.only(left: DimensionConstants.d13.w),
-                                child:  Text('Delivery Location').normalText(
-                                    ColorConstants.colorHintTextColor,DimensionConstants.d15.sp
-                                )),
-                                SizedBox(
-                                  height: DimensionConstants.d6.h,
-                                ),
-                                Padding(padding: EdgeInsets.only(left: DimensionConstants.d13.w,bottom: DimensionConstants.d8.h),
-                                    child:  Row(
-                                      children: [
-                                        Padding(
-                                          padding:  EdgeInsets.only(bottom:DimensionConstants.d6.h ),
-                                          child: ImageView(
-                                            path: ImageConstants.ic_location,
-                                            height: DimensionConstants.d25.h,
-                                            width: DimensionConstants.d25.w,
-                                          ),
+                          bgColor: ColorConstants.whiteColor,
+                          topRightradius: DimensionConstants.d6.r,
+                          topleftradius: DimensionConstants.d6.r,
+                          bottomRightradius: DimensionConstants.d6.r,
+                          bottomleftradius: DimensionConstants.d6.r,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                height: DimensionConstants.d11.h,
+                              ),
+                              Padding(padding: EdgeInsets.only(left: DimensionConstants.d13.w),
+                                  child:  Text('Delivery Location').mediumText(
+                                      ColorConstants.colorHintTextColor,DimensionConstants.d15.sp,
+                                      TextAlign.center
+                                  )),
+                              SizedBox(
+                                height: DimensionConstants.d6.h,
+                              ),
+                              Padding(padding: EdgeInsets.only(left: DimensionConstants.d13.w,bottom: DimensionConstants.d8.h),
+                                  child:  Row(
+                                    children: [
+                                      Padding(
+                                        padding:  EdgeInsets.only(bottom:DimensionConstants.d6.h ),
+                                        child: ImageView(
+                                          path: ImageConstants.ic_location,
+                                          height: DimensionConstants.d25.h,
+                                          width: DimensionConstants.d25.w,
                                         ),
-                                        SizedBox(
-                                          width: DimensionConstants.d6.w,
-                                        ),
-                                        Text('Assuit, Main City - AL Gomhuria').normalText(ColorConstants.darkblackcolor,DimensionConstants.d15.sp)
-                                      ],
-                                    )),
+                                      ),
+                                      SizedBox(
+                                        width: DimensionConstants.d6.w,
+                                      ),
+                                      Text('Assuit, Main City - AL Gomhuria').mediumText(ColorConstants.darkblackcolor,DimensionConstants.d15.sp,
+                                          TextAlign.center)
+                                    ],
+                                  )),
 
-                              ],
-                            ),
+                            ],
                           ),
-                        )
+                        ),
                     ),
                     Positioned(
                         top: DimensionConstants.d704.h,
@@ -248,28 +267,39 @@ class _MapsState extends State<Maps> {
                           onTap: (){
                             Navigator.of(context).pushNamed(RoutesConstants.summary);
                           },
-                          child: SizedBox(
-                            width: DimensionConstants.d373.w,
-                            height: DimensionConstants.d52.h,
-                            child: RoundCornerShape(
-                                bgColor: ColorConstants.colorButtonbgColor,
-                                radius: DimensionConstants.d6.r,
-                                child: Center(
-                                  child: Row(
-                                    mainAxisAlignment:
-                                    MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        'Deliver Here',
-                                      ).buttonText(
-                                          ColorConstants.whiteColor,
-                                          DimensionConstants.d16.sp,
-                                          TextAlign.center),
+                          child: RoundCornerShape(
+                              decoration: const BoxDecoration(
 
-                                    ],
-                                  ),
-                                )
-                            ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      offset: Offset(0.0, 0.75),
+                                      blurRadius: 12,
+                                      color: ColorConstants.borderColor,
+                                    )
+                                  ]
+                              ),
+                              width: DimensionConstants.d373.w,
+                              height: DimensionConstants.d52.h,
+                              bgColor: ColorConstants.colorButtonbgColor,
+                              topRightradius: DimensionConstants.d6.r,
+                              topleftradius: DimensionConstants.d6.r,
+                              bottomRightradius: DimensionConstants.d6.r,
+                              bottomleftradius: DimensionConstants.d6.r,
+                              child: Center(
+                                child: Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.center,
+                                  children: [
+                                    const Text(
+                                      'Deliver Here',
+                                    ).boldText(
+                                        ColorConstants.whiteColor,
+                                        DimensionConstants.d16.sp,
+                                        TextAlign.center),
+
+                                  ],
+                                ),
+                              )
                           ),
                         ),
                     ),

@@ -52,33 +52,45 @@ class _LoginState extends State<Login> {
             onModelReady: (provider) {},
             builder: (context, provider, _) {
               return SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: DimensionConstants.d143.h,
-                    ),
+                child: Padding(
+                  padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: DimensionConstants.d143.h,
+                      ),
 
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "welcome_message".tr(),
-                        ).regularText(ColorConstants.headingColor, DimensionConstants.d22.sp),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "welcome_message".tr(),
+                          ).mediumText(ColorConstants.headingColor, DimensionConstants.d22.sp,TextAlign.center),
 
-                      ],
-                    ) ,
-                    SizedBox(
-                      height: DimensionConstants.d51.h,
-                    ),
-                    Padding(
-                      padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
-                      child: SizedBox(
-                        height: DimensionConstants.d52
-                            .h,
-                        child: RoundCornerShape(
-                          bgColor: ColorConstants.whiteColor,
-                          radius: DimensionConstants.d6.r,
+                        ],
+                      ) ,
+                      SizedBox(
+                        height: DimensionConstants.d51.h,
+                      ),
+                      RoundCornerShape(
+                        height: DimensionConstants.d52.h,
+                        bgColor: ColorConstants.whiteColor,
+                        topRightradius: DimensionConstants.d6.r,
+                        topleftradius: DimensionConstants.d6.r,
+                        bottomRightradius: DimensionConstants.d6.r,
+                        bottomleftradius: DimensionConstants.d6.r,
+                        decoration: BoxDecoration(
+
+                            boxShadow: [
+                              BoxShadow(
+                                offset: Offset(0.0, 0.75),
+                                blurRadius: 12,
+                                color: ColorConstants.borderColor,
+                              )
+                            ]
+                        ),
+                        child: Center(
                           child: TextFormField(
                             textCapitalization:
                             TextCapitalization.sentences,
@@ -95,12 +107,6 @@ class _LoginState extends State<Login> {
                                         left: DimensionConstants
                                             .d20
                                             .w,
-                                        top: DimensionConstants
-                                            .d16
-                                            .h,
-                                        bottom: DimensionConstants
-                                            .d16
-                                            .h,
                                         right: DimensionConstants
                                             .d10
                                             .w),
@@ -116,20 +122,29 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: DimensionConstants.d15.h,
-                    ),
 
-                    Padding(
-                      padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
-                      child: SizedBox(
-                        height: DimensionConstants.d52
-                            .h,
-                        child: RoundCornerShape(
-                          bgColor: ColorConstants.whiteColor,
-                          radius: DimensionConstants.d6.r,
+                      SizedBox(
+                        height: DimensionConstants.d15.h,
+                      ),
 
+                      RoundCornerShape(
+                        height: DimensionConstants.d52.h,
+                        bgColor: ColorConstants.whiteColor,
+                        topRightradius: DimensionConstants.d6.r,
+                        topleftradius: DimensionConstants.d6.r,
+                        bottomRightradius: DimensionConstants.d6.r,
+                        bottomleftradius: DimensionConstants.d6.r,
+                        decoration: BoxDecoration(
+
+                            boxShadow: [
+                              BoxShadow(
+                                offset: Offset(0.0, 0.75),
+                                blurRadius: 12,
+                                color: ColorConstants.borderColor,
+                              )
+                            ]
+                        ),
+                        child: Center(
                           child: TextFormField(
                             obscureText: !_passwordVisible,
                             controller: _passwordController,
@@ -144,25 +159,19 @@ class _LoginState extends State<Login> {
                                 .inputDecorationWithCurve(
                               "password".tr(),
                               prefixIcon: Padding(
-                                  padding: EdgeInsets.only(
-                                      left: DimensionConstants
-                                          .d19
-                                          .w,
-                                      top: DimensionConstants
-                                          .d16
-                                          .h,
-                                      bottom: DimensionConstants
-                                          .d15
-                                          .h,
-                                      right: DimensionConstants
-                                          .d8
-                                          .w),
-                                  child:  ImageView(
-                                    path:
-                                    ImageConstants.ic_password,
-                                    width: DimensionConstants.d19.w,
-                                    height: DimensionConstants.d19.h,
-                                  )),
+                                padding: EdgeInsets.only(
+                                    left: DimensionConstants
+                                        .d19
+                                        .w,
+                                    right: DimensionConstants
+                                        .d8
+                                        .w),
+                                child:  ImageView(
+                                  path:
+                                  ImageConstants.ic_password,
+                                  width: DimensionConstants.d19.w,
+                                  height: DimensionConstants.d19.h,
+                                ),),
                               suffixIcon: IconButton(
                                 icon: Icon(
                                   // Based on passwordVisible state choose the icon
@@ -189,224 +198,220 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: DimensionConstants.d9.h,
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.of(context)
-                            .pushNamed(RoutesConstants.forgot);
-                      },
-                      child: Padding(
-                        padding: EdgeInsets.only(right: DimensionConstants.d20.w),
-                        child: Row(
+                      SizedBox(
+                        height: DimensionConstants.d9.h,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context)
+                              .pushNamed(RoutesConstants.forgot);
+                        },
+                        child:  Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
 
-                            Column(
-                              children: [
-                                Text(
-                                  'forgot_password'.tr(),
-                                ).regularText(
-                                  ColorConstants.colorBlack,
-                                  DimensionConstants.d14.sp,
-                                ),
-                              ],
+                            Text(
+                              'forgot_password'.tr(),
+                            ).mediumText(
+                                ColorConstants.colorBlack,
+                                DimensionConstants.d14.sp,
+                                TextAlign.center
                             ),
                           ],
                         ),
                       ),
-                    ),
 
-                    SizedBox(
-                      height: DimensionConstants.d28.h,
-                    ),
-
-                    GestureDetector(
-                      onTap: () {
-                        if(fnamecontroller.text==''){
-                          DialogHelper.showMessage(context, 'Username cannot be empty');
-                          return;
-                        }
-                        if(_passwordController.text==''){
-                          DialogHelper.showMessage(context, 'Password cannot be empty');
-                          return;
-                        }
-
-                        if(_passwordController.text.length<6){
-                          DialogHelper.showMessage(context, 'Password should be of atleast 6 letters');
-                          return;
-                        }
-                        Navigator.pushNamedAndRemoveUntil(context, "dashboard", (Route<dynamic> route) => false);
-
-                      },
-                      child: Padding(
-                        padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
-                        child: SizedBox(
-                          width: DimensionConstants.d373.w,
-                          height: DimensionConstants.d52.h,
-                          child: RoundCornerShape(
-                              bgColor: ColorConstants.colorButtonbgColor,
-                              radius: DimensionConstants.d6.r,
-                              child: Center(
-                                child: Row(
-                                  mainAxisAlignment:
-                                  MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'login'.tr(),
-                                    ).buttonText(
-                                        ColorConstants.whiteColor,
-                                        DimensionConstants.d16.sp,
-                                        TextAlign.center),
-
-                                  ],
-                                ),
-                              )
-                          ),
-                        ),
+                      SizedBox(
+                        height: DimensionConstants.d28.h,
                       ),
-                    ),
-                    SizedBox(
-                      height: DimensionConstants.d17.h,
-                    ),
-                    Row(
-                      children: [
-                        SizedBox(
-                          width:
-                          DimensionConstants.d134.w,
-                        ),
-                        const Expanded(
-                            child: Divider(
-                              color: ColorConstants.dividerColor,
-                              thickness: DimensionConstants.d1,
-                            )),
-                        SizedBox(
-                          width: DimensionConstants.d6.w,
-                        ),
-                        Text(
-                            "or".tr()
-                        ).normalText(ColorConstants.colorBlack, DimensionConstants.d12.sp),
-                        SizedBox(
-                          width: DimensionConstants.d4.w,
-                        ),
-                        const Expanded(
-                            child: Divider(
-                              color: ColorConstants.dividerColor,
-                              thickness: DimensionConstants.d1,
-                            )),
-                        SizedBox(
-                          width:
-                          DimensionConstants.d134.w,
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: DimensionConstants.d13.h,
-                    ),
-                    Padding(
-                      padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
-                      child: Container(
-                        width: DimensionConstants.d373.w,
-                        height: DimensionConstants.d52.h,
+
+                      GestureDetector(
+                        onTap: () {
+                          if(fnamecontroller.text==''){
+                            DialogHelper.showMessage(context, 'Username cannot be empty');
+                          }
+                         else if(_passwordController.text==''){
+                            DialogHelper.showMessage(context, 'Password cannot be empty');
+
+                          }
+
+                         else if(_passwordController.text.length<6){
+                            DialogHelper.showMessage(context, 'Password should be of atleast 6 letters');
+                            return;
+                          }
+                         else{
+                            Navigator.pushNamedAndRemoveUntil(context, "dashboard", (Route<dynamic> route) => false);
+                          }
+
+
+                        },
                         child: RoundCornerShape(
-                            bgColor: ColorConstants.fbbuttonColor,
-                            radius: DimensionConstants.d6.r,
+                            height: DimensionConstants.d52.h,
+                            bgColor: ColorConstants.colorButtonbgColor,
+                            topRightradius: DimensionConstants.d6.r,
+                            topleftradius: DimensionConstants.d6.r,
+                            bottomRightradius: DimensionConstants.d6.r,
+                            bottomleftradius: DimensionConstants.d6.r,
                             child: Center(
-                              child: Padding(
-                                padding: EdgeInsets.only(left: DimensionConstants.d83.w),
-                                child: Row(
-
-
-                                  children: [
-                                    ImageView(
-                                      path: ImageConstants.ic_facebook,
-                                      height: DimensionConstants
-                                          .d21.h,
-                                      width: DimensionConstants
-                                          .d12.w,
-                                    ),
-                                    SizedBox(
-                                      width: DimensionConstants.d15.w,
-                                    ),
-                                    Text(
-                                      'fb_login'.tr(),
-                                    ).normalText(
+                              child: Row(
+                                mainAxisAlignment:
+                                MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'login'.tr(),
+                                  ).boldText(
                                       ColorConstants.whiteColor,
                                       DimensionConstants.d16.sp,
-                                    ),
+                                      TextAlign.center),
 
-                                  ],
-                                ),
+                                ],
                               ),
                             )
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: DimensionConstants.d19.h,
-                    ),
-                    Padding(
-                      padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
-                      child: Container(
-                        width: DimensionConstants.d373.w,
-                        height: DimensionConstants.d52.h,
-                        child: RoundCornerShape(
-                            bgColor: Colors.white,
-                            radius: DimensionConstants.d6.r,
-                            child: Center(
-                              child: Padding(
-                                padding: EdgeInsets.only(left: DimensionConstants.d81.w),
-                                child: Row(
-
-                                  children: [
-                                    ImageView(
-                                      path: ImageConstants.ic_google,
-                                      height: DimensionConstants.d21.h,
-                                      width: DimensionConstants.d21.w,
-                                    ),
-                                    SizedBox(
-                                      width: DimensionConstants.d10.w,
-                                    ),
-                                    Text(
-                                      'google_login'.tr(),
-                                    ).normalText(
-                                      ColorConstants.googleTextColor,
-                                      DimensionConstants.d16.sp,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            )
-                        ),
+                      SizedBox(
+                        height: DimensionConstants.d17.h,
                       ),
-                    ),
-                    SizedBox(
-                      height: DimensionConstants.d21.h,
-                    ),
-                    GestureDetector(
-                      onTap: (){
-                        Navigator.pushNamedAndRemoveUntil(context, "signup", (Route<dynamic> route) => false);
-
-                      },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                      Row(
                         children: [
-                          Text(
-                            "dont_have_account".tr(),
-
-                          ).normalText(ColorConstants.googleTextColor, DimensionConstants.d14.sp),
                           SizedBox(
-                            width: DimensionConstants.d3.w,
+                            width:
+                            DimensionConstants.d134.w,
+                          ),
+                          const Expanded(
+                              child: Divider(
+                                color: ColorConstants.dividerColor,
+                                thickness: DimensionConstants.d1,
+                              )),
+                          SizedBox(
+                            width: DimensionConstants.d6.w,
                           ),
                           Text(
-                            "sign_up".tr(),
-                          ).normalText(ColorConstants.colorButtonbgColor, DimensionConstants.d14.sp)
+                              "or".tr()
+                          ).mediumText(ColorConstants.colorBlack, DimensionConstants.d12.sp,TextAlign.center),
+                          SizedBox(
+                            width: DimensionConstants.d4.w,
+                          ),
+                          const Expanded(
+                              child: Divider(
+                                color: ColorConstants.dividerColor,
+                                thickness: DimensionConstants.d1,
+                              )),
+                          SizedBox(
+                            width:
+                            DimensionConstants.d134.w,
+                          ),
                         ],
                       ),
+                      SizedBox(
+                        height: DimensionConstants.d13.h,
+                      ),
+                    RoundCornerShape(
+                        height: DimensionConstants.d52.h,
+                        bgColor: ColorConstants.fbbuttonColor,
+                        topRightradius: DimensionConstants.d6.r,
+                        topleftradius: DimensionConstants.d6.r,
+                        bottomRightradius: DimensionConstants.d6.r,
+                        bottomleftradius: DimensionConstants.d6.r,
+                        child: Center(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              ImageView(
+                                path: ImageConstants.ic_facebook,
+                                height: DimensionConstants
+                                    .d21.h,
+                                width: DimensionConstants
+                                    .d12.w,
+                              ),
+                              SizedBox(
+                                width: DimensionConstants.d15.w,
+                              ),
+                              Text(
+                                'fb_login'.tr(),
+                              ).mediumText(
+                                  ColorConstants.whiteColor,
+                                  DimensionConstants.d16.sp,
+                                  TextAlign.center
+                              ),
+
+                            ],
+                          ),
+                        )
                     ),
-                  ],
+                      SizedBox(
+                        height: DimensionConstants.d19.h,
+                      ),
+                      RoundCornerShape(
+                          decoration: BoxDecoration(
+
+                              boxShadow: [
+                                BoxShadow(
+                                  offset: Offset(0.0, 0.75),
+                                  blurRadius: 12,
+                                  color: ColorConstants.borderColor,
+                                )
+                              ]
+                          ),
+
+                          height: DimensionConstants.d52.h,
+                          bgColor: Colors.white,
+                          topRightradius: DimensionConstants.d6.r,
+                          topleftradius: DimensionConstants.d6.r,
+                          bottomRightradius: DimensionConstants.d6.r,
+                          bottomleftradius: DimensionConstants.d6.r,
+                          child: Center(
+                            child: Padding(
+                              padding: EdgeInsets.only(left: DimensionConstants.d81.w),
+                              child: Row(
+
+                                children: [
+                                  ImageView(
+                                    path: ImageConstants.ic_google,
+                                    height: DimensionConstants.d21.h,
+                                    width: DimensionConstants.d21.w,
+                                  ),
+                                  SizedBox(
+                                    width: DimensionConstants.d10.w,
+                                  ),
+                                  Text(
+                                    'google_login'.tr(),
+                                  ).mediumText(
+                                      ColorConstants.googleTextColor,
+                                      DimensionConstants.d16.sp,
+                                      TextAlign.center
+                                  ),
+                                ],
+                              ),
+                            ),
+                          )
+                      ),
+                      SizedBox(
+                        height: DimensionConstants.d21.h,
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.pushNamedAndRemoveUntil(context, "signup", (Route<dynamic> route) => false);
+
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "dont_have_account".tr(),
+
+                            ).mediumText(ColorConstants.googleTextColor, DimensionConstants.d14.sp,TextAlign.center),
+                            SizedBox(
+                              width: DimensionConstants.d3.w,
+                            ),
+                            Text(
+                              "sign_up".tr(),
+                            ).mediumText(ColorConstants.colorButtonbgColor, DimensionConstants.d14.sp,TextAlign.center)
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               );
             },

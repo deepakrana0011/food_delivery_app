@@ -89,7 +89,11 @@ class DimensionConstants{
   static const double d150=150;
   static const double d624=624;
   static const double d704=714;
-  static const double d134=132;
+  static const double d134=130;
   static const double d34=34;
   static const double d35=35;
+  static const double d68=66;
+  static const double d400=400;
+
+
 }

@@ -6,8 +6,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_delivery_app/locator.dart';
 import 'package:food_delivery_app/router.dart' as router;
-
-
 import 'constants/color_constants.dart';
 import 'constants/dimension_constants.dart';
 import 'constants/route_constants.dart';

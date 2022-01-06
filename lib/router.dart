@@ -8,7 +8,6 @@ import 'package:food_delivery_app/view/dashboard/dashboard.dart';
 import 'package:food_delivery_app/view/home_page/home_page.dart';
 import 'package:food_delivery_app/view/maps/address_search.dart';
 import 'package:food_delivery_app/view/maps/map.dart';
-import 'package:food_delivery_app/view/onboarding/onboardingview.dart';
 import 'package:food_delivery_app/view/products/products.dart';
 import 'package:food_delivery_app/view/profile/profile.dart';
 import 'package:food_delivery_app/view/restaurant_details/restaurant_details.dart';
@@ -31,9 +30,7 @@ class Router {
             builder: (_) => SignUp(), settings: settings);
 
 
-      case RoutesConstants.onboarding:
-        return MaterialPageRoute(
-            builder: (_) => OnboardingScreen(), settings: settings);
+
 
       case RoutesConstants.home_page:
         return MaterialPageRoute(

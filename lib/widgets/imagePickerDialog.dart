@@ -1,7 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screen_scaler/flutter_screen_scaler.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_delivery_app/constants/color_constants.dart';
+import 'package:food_delivery_app/constants/dimension_constants.dart';
 import 'package:food_delivery_app/extensions/allExtensions.dart';
 import 'package:food_delivery_app/widgets/roundCornerShape.dart';
 
@@ -23,7 +25,11 @@ class CustomDialog extends StatelessWidget {
       backgroundColor: Colors.transparent,
       child: RoundCornerShape(
         bgColor: Colors.white,
-        radius: 16,
+        topleftradius: DimensionConstants.d16.r,
+        topRightradius: DimensionConstants.d16.r,
+        bottomleftradius: DimensionConstants.d16.r,
+        bottomRightradius: DimensionConstants.d16.r,
+
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,

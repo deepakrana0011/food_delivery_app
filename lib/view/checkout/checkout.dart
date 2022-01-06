@@ -54,9 +54,9 @@ class _CheckoutState extends State<Checkout> {
       child: Scaffold(
           appBar: AppBar(
             elevation: 0,
-            backgroundColor: ColorConstants.colorbackground,
+            backgroundColor: ColorConstants.whiteColor,
             title:
-            Text('Checkout').normalText(ColorConstants.colorTextAppBar, DimensionConstants.d20.sp),
+            Text('Checkout').mediumText(ColorConstants.colorTextAppBar, DimensionConstants.d20.sp,TextAlign.center),
             leading: IconButton(
               icon: Icon(
                 Icons.arrow_back_ios_outlined,
@@ -68,31 +68,44 @@ class _CheckoutState extends State<Checkout> {
             ),
             centerTitle: true,
           ),
-          backgroundColor: ColorConstants.colorbackground,
+          backgroundColor: ColorConstants.whiteColor,
           key: _scaffoldKey,
           body: BaseView<SignUpProvider>(
             onModelReady: (provider) {},
             builder: (context, provider, _) {
               return SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: DimensionConstants.d49.h,
-                    ),
-                    Padding(
-                        padding: EdgeInsets.only(left: DimensionConstants.d19.w),
-                        child: Text('Delivery').normalText(ColorConstants.headingColor, DimensionConstants.d20.sp)),
-                    SizedBox(
-                      height: DimensionConstants.d15.h,
-                    ),
-                    Padding(
-                      padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
-                      child: Container(
+                child: Padding(
+                  padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w,bottom: DimensionConstants.d24.h),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: DimensionConstants.d49.h,
+                      ),
+                      Padding(
+                          padding: EdgeInsets.only(left: DimensionConstants.d19.w),
+                          child: Text('Delivery').mediumText(ColorConstants.headingColor, DimensionConstants.d20.sp,TextAlign.center)),
+                      SizedBox(
+                        height: DimensionConstants.d15.h,
+                      ),
+                      RoundCornerShape(
+                        decoration: BoxDecoration(
+
+                            boxShadow: [
+                              BoxShadow(
+                                offset: Offset(0.0, 0.75),
+                                blurRadius: 12,
+                                color: ColorConstants.borderColor,
+                              )
+                            ]
+                        ),
                         height: DimensionConstants.d52.h,
-                        child: RoundCornerShape(
-                          bgColor: ColorConstants.whiteColor,
-                          radius: DimensionConstants.d6.r,
+                        bgColor: ColorConstants.whiteColor,
+                        topRightradius: DimensionConstants.d6.r,
+                        topleftradius: DimensionConstants.d6.r,
+                        bottomRightradius: DimensionConstants.d6.r,
+                        bottomleftradius: DimensionConstants.d6.r,
+                        child: Center(
                           child: TextFormField(
                             controller: addresscontroller,
 
@@ -109,12 +122,7 @@ class _CheckoutState extends State<Checkout> {
                                         left: DimensionConstants
                                             .d19
                                             .w,
-                                        top: DimensionConstants
-                                            .d16
-                                            .h,
-                                        bottom: DimensionConstants
-                                            .d16
-                                            .h,
+
                                         right: DimensionConstants
                                             .d8
                                             .w
@@ -147,17 +155,27 @@ class _CheckoutState extends State<Checkout> {
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: DimensionConstants.d15.h,
-                    ),
-                    Padding(
-                      padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
-                      child: Container(
+                      SizedBox(
+                        height: DimensionConstants.d15.h,
+                      ),
+                      RoundCornerShape(
+                        decoration: BoxDecoration(
+
+                            boxShadow: [
+                              BoxShadow(
+                                offset: Offset(0.0, 0.75),
+                                blurRadius: 12,
+                                color: ColorConstants.borderColor,
+                              )
+                            ]
+                        ),
                         height: DimensionConstants.d52.h,
-                        child: RoundCornerShape(
-                          bgColor: ColorConstants.whiteColor,
-                          radius: DimensionConstants.d6.r,
+                        bgColor: ColorConstants.whiteColor,
+                        topRightradius: DimensionConstants.d6.r,
+                        topleftradius: DimensionConstants.d6.r,
+                        bottomRightradius: DimensionConstants.d6.r,
+                        bottomleftradius: DimensionConstants.d6.r,
+                        child: Center(
                           child: TextFormField(
                             controller: phonecontroller,
                             textCapitalization:
@@ -175,12 +193,7 @@ class _CheckoutState extends State<Checkout> {
                                       left: DimensionConstants
                                           .d19
                                           .w,
-                                      top: DimensionConstants
-                                          .d16
-                                          .h,
-                                      bottom: DimensionConstants
-                                          .d16
-                                          .h,
+
                                       right: DimensionConstants
                                           .d8
                                           .w),
@@ -197,13 +210,10 @@ class _CheckoutState extends State<Checkout> {
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: DimensionConstants.d20.h,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: DimensionConstants.d15.w),
-                      child: Transform.scale(
+                      SizedBox(
+                        height: DimensionConstants.d20.h,
+                      ),
+                      Transform.scale(
                         scale: 0.8,
                         child:
                         CupertinoSwitch(
@@ -219,16 +229,12 @@ class _CheckoutState extends State<Checkout> {
                             });
                           },
                         ),
-                      ),),
-                    SizedBox(
-                      height: DimensionConstants.d20.h,
-                    ),
-                    Padding(
-                        padding: EdgeInsets.only(left: DimensionConstants.d19.w),
-                        child: Text('Payment').normalText(ColorConstants.colorTextAppBar, DimensionConstants.d20.sp)),
-                    Padding(
-                      padding: EdgeInsets.only(left: DimensionConstants.d18.w),
-                      child: Row(
+                      ),
+                      SizedBox(
+                        height: DimensionConstants.d20.h,
+                      ),
+                      Text('Payment').mediumText(ColorConstants.colorTextAppBar, DimensionConstants.d20.sp,TextAlign.center),
+                      Row(
 
                         children: [
 
@@ -247,7 +253,7 @@ class _CheckoutState extends State<Checkout> {
                             },
                           ),
 
-                          Text('Credit Card').normalText(ColorConstants.colorTextAppBar, DimensionConstants.d16.sp),
+                          Text('Credit Card').mediumText(ColorConstants.colorTextAppBar, DimensionConstants.d16.sp,TextAlign.center),
                           SizedBox(
                             width: DimensionConstants.d52.w,
                           ),
@@ -264,18 +270,28 @@ class _CheckoutState extends State<Checkout> {
                               });
                             },
                           ),
-                          Text('Cash on delivery').normalText(ColorConstants.colorTextAppBar, DimensionConstants.d16.sp),
+                          Text('Cash on delivery').mediumText(ColorConstants.colorTextAppBar, DimensionConstants.d16.sp,TextAlign.center),
                         ],
                       ),
-                    ),
 
-                    Padding(
-                      padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
-                      child: Container(
+                      RoundCornerShape(
+                        decoration: BoxDecoration(
+
+                            boxShadow: [
+                              BoxShadow(
+                                offset: Offset(0.0, 0.75),
+                                blurRadius: 12,
+                                color: ColorConstants.borderColor,
+                              )
+                            ]
+                        ),
                         height: DimensionConstants.d52.h,
-                        child: RoundCornerShape(
-                          bgColor: ColorConstants.whiteColor,
-                          radius: DimensionConstants.d6.r,
+                        bgColor: ColorConstants.whiteColor,
+                        topRightradius: DimensionConstants.d6.r,
+                        topleftradius: DimensionConstants.d6.r,
+                        bottomRightradius: DimensionConstants.d6.r,
+                        bottomleftradius: DimensionConstants.d6.r,
+                        child: Center(
                           child: TextFormField(
                             controller: cardholder,
 
@@ -294,12 +310,7 @@ class _CheckoutState extends State<Checkout> {
                                       left: DimensionConstants
                                           .d20
                                           .w,
-                                      top: DimensionConstants
-                                          .d16
-                                          .h,
-                                      bottom: DimensionConstants
-                                          .d16
-                                          .h,
+
                                       right: DimensionConstants
                                           .d10
                                           .w),
@@ -324,17 +335,27 @@ class _CheckoutState extends State<Checkout> {
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: DimensionConstants.d15.h,
-                    ),
-                    Padding(
-                      padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
-                      child: Container(
+                      SizedBox(
+                        height: DimensionConstants.d15.h,
+                      ),
+                      RoundCornerShape(
+                        decoration: BoxDecoration(
+
+                            boxShadow: [
+                              BoxShadow(
+                                offset: Offset(0.0, 0.75),
+                                blurRadius: 12,
+                                color: ColorConstants.borderColor,
+                              )
+                            ]
+                        ),
                         height: DimensionConstants.d52.h,
-                        child: RoundCornerShape(
-                          bgColor: ColorConstants.whiteColor,
-                          radius: DimensionConstants.d6.r,
+                        bgColor: ColorConstants.whiteColor,
+                        topRightradius: DimensionConstants.d6.r,
+                        topleftradius: DimensionConstants.d6.r,
+                        bottomRightradius: DimensionConstants.d6.r,
+                        bottomleftradius: DimensionConstants.d6.r,
+                        child: Center(
                           child: TextFormField(
                             controller: cardnumber,
 
@@ -353,12 +374,7 @@ class _CheckoutState extends State<Checkout> {
                                       left: DimensionConstants
                                           .d18
                                           .w,
-                                      top: DimensionConstants
-                                          .d18
-                                          .h,
-                                      bottom: DimensionConstants
-                                          .d18
-                                          .h,
+
                                       right: DimensionConstants
                                           .d8
                                           .w),
@@ -376,20 +392,30 @@ class _CheckoutState extends State<Checkout> {
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: DimensionConstants.d15.h,
-                    ),
-                    Padding(
-                      padding:  EdgeInsets.only(left: DimensionConstants.d20.w,right: DimensionConstants.d20.w),
-                      child: Row(
+                      SizedBox(
+                        height: DimensionConstants.d15.h,
+                      ),
+                      Row(
                         children: [
-                          Container(
+                          RoundCornerShape(
+                            decoration: BoxDecoration(
+
+                                boxShadow: [
+                                  BoxShadow(
+                                    offset: Offset(0.0, 0.75),
+                                    blurRadius: 12,
+                                    color: ColorConstants.borderColor,
+                                  )
+                                ]
+                            ),
                             height: DimensionConstants.d52.h,
                             width: DimensionConstants.d179.w,
-                            child: RoundCornerShape(
-                              bgColor: ColorConstants.whiteColor,
-                              radius: DimensionConstants.d6.r,
+                            bgColor: ColorConstants.whiteColor,
+                            topRightradius: DimensionConstants.d6.r,
+                            topleftradius: DimensionConstants.d6.r,
+                            bottomRightradius: DimensionConstants.d6.r,
+                            bottomleftradius: DimensionConstants.d6.r,
+                            child: Center(
                               child: TextFormField(
                                 controller: expirydate,
 
@@ -408,12 +434,7 @@ class _CheckoutState extends State<Checkout> {
                                           left: DimensionConstants
                                               .d19
                                               .w,
-                                          top: DimensionConstants
-                                              .d16
-                                              .h,
-                                          bottom: DimensionConstants
-                                              .d16
-                                              .h,
+
                                           right: DimensionConstants
                                               .d9
                                               .w),
@@ -434,12 +455,25 @@ class _CheckoutState extends State<Checkout> {
                           SizedBox(
                             width: DimensionConstants.d13.w,
                           ),
-                          Container(
+                          RoundCornerShape(
+                            decoration: BoxDecoration(
+
+                                boxShadow: [
+                                  BoxShadow(
+                                    offset: Offset(0.0, 0.75),
+                                    blurRadius: 12,
+                                    color: ColorConstants.borderColor,
+                                  )
+                                ]
+                            ),
                             height: DimensionConstants.d52.h,
                             width: DimensionConstants.d179.w,
-                            child: RoundCornerShape(
-                              bgColor: ColorConstants.whiteColor,
-                              radius: DimensionConstants.d6.r,
+                            bgColor: ColorConstants.whiteColor,
+                            topRightradius: DimensionConstants.d6.r,
+                            topleftradius: DimensionConstants.d6.r,
+                            bottomRightradius: DimensionConstants.d6.r,
+                            bottomleftradius: DimensionConstants.d6.r,
+                            child: Center(
                               child: TextFormField(
                                 controller: cvv,
 
@@ -458,12 +492,7 @@ class _CheckoutState extends State<Checkout> {
                                           left: DimensionConstants
                                               .d18
                                               .w,
-                                          top: DimensionConstants
-                                              .d18
-                                              .h,
-                                          bottom: DimensionConstants
-                                              .d17
-                                              .h,
+
                                           right: DimensionConstants
                                               .d8
                                               .w),
@@ -483,13 +512,10 @@ class _CheckoutState extends State<Checkout> {
                           ),
                         ],
                       ),
-                    ),
-                    SizedBox(
-                      height: DimensionConstants.d20.h,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: DimensionConstants.d15.w),
-                      child: Transform.scale(
+                      SizedBox(
+                        height: DimensionConstants.d20.h,
+                      ),
+                      Transform.scale(
                         scale: 0.8,
                         child:
                         CupertinoSwitch(
@@ -504,75 +530,87 @@ class _CheckoutState extends State<Checkout> {
                             });
                           },
                         ),
-                      ),),
-                    SizedBox(
-                      height: DimensionConstants.d79.h,
-                    ),
-                    Padding(
-                      padding:  EdgeInsets.only(left: DimensionConstants.d21.w,right: DimensionConstants.d21.w,bottom: DimensionConstants.d24.h),
-                      child: GestureDetector(
+                      ),
+                      SizedBox(
+                        height: DimensionConstants.d79.h,
+                      ),
+                      GestureDetector(
                         onTap: (){
                           if(addresscontroller.text==''){
                             DialogHelper.showMessage(context, 'Address cannot be empty');
-                            return;
+
                           }
 
-                          if(phonecontroller.text==''){
+                          else if(phonecontroller.text==''){
                             DialogHelper.showMessage(context, 'Phone number cannot be empty');
-                            return;
+
                           }
 
-                          if(cardholder.text==''){
+                          else if(cardholder.text==''){
                             DialogHelper.showMessage(context, 'Card Holder cannot be empty');
-                            return;
+
                           }
 
-                          if(cardnumber.text==''){
+                          else if(cardnumber.text==''){
                             DialogHelper.showMessage(context, 'Card Number cannot be empty');
-                            return;
+
                           }
 
-                          if(expirydate.text==''){
+                          else if(expirydate.text==''){
                             DialogHelper.showMessage(context, 'Please enter expiry date');
-                            return;
-                          }
-                          if(cvv.text==''){
-                            DialogHelper.showMessage(context, 'Please enter CVV');
-                            return;
-                          }
-                          Navigator.of(context).pushNamed(RoutesConstants.maps);
-                        },
-                        child: SizedBox(
-                          width: DimensionConstants.d373.w,
-                          height: DimensionConstants.d52.h,
-                          child: RoundCornerShape(
-                              bgColor: ColorConstants.colorButtonbgColor,
-                              radius: DimensionConstants.d6.r,
-                              child: Center(
-                                child: Row(
-                                  mainAxisAlignment:
-                                  MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'done'.tr(),
-                                    ).buttonText(
-                                        ColorConstants.whiteColor,
-                                        DimensionConstants.d16.sp,
-                                        TextAlign.center),
 
-                                  ],
-                                ),
-                              )
-                          ),
+                          }
+                          else if(cvv.text==''){
+                            DialogHelper.showMessage(context, 'Please enter CVV');
+
+                          }
+                          else{
+                            Navigator.of(context).pushNamed(RoutesConstants.maps);
+                          }
+
+                        },
+                        child: RoundCornerShape(
+                            decoration: BoxDecoration(
+
+                                boxShadow: [
+                                  BoxShadow(
+                                    offset: Offset(0.0, 0.75),
+                                    blurRadius: 12,
+                                    color: ColorConstants.borderColor,
+                                  )
+                                ]
+                            ),
+                            width: DimensionConstants.d373.w,
+                            height: DimensionConstants.d52.h,
+                            bgColor: ColorConstants.colorButtonbgColor,
+                            topRightradius: DimensionConstants.d6.r,
+                            topleftradius: DimensionConstants.d6.r,
+                            bottomRightradius: DimensionConstants.d6.r,
+                            bottomleftradius: DimensionConstants.d6.r,
+                            child: Center(
+                              child: Row(
+                                mainAxisAlignment:
+                                MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'done'.tr(),
+                                  ).boldText(
+                                      ColorConstants.whiteColor,
+                                      DimensionConstants.d16.sp,
+                                      TextAlign.center),
+
+                                ],
+                              ),
+                            )
                         ),
                       ),
-                    ),
 
 
 
 
 
-                  ],
+                    ],
+                  ),
                 ),
 
               );

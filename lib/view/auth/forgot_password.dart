@@ -25,16 +25,13 @@ class ForgotPassword extends StatefulWidget {
 }
 
 class _ForgotPasswordState extends State<ForgotPassword> {
-  ScreenScaler? scaler;
-  final _formKey = GlobalKey<FormState>();
-  final fnamecontroller = TextEditingController();
-  final lnamecontroller = TextEditingController();
-  final agecontroller = TextEditingController();
-  final desccontroller = TextEditingController();
+
+
+
   final _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
+
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-  bool _passwordVisible = false;
+
 
   @override
   void initState() {
@@ -52,7 +49,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             onModelReady: (provider) {},
             builder: (context, provider, _) {
               return Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.93.w),
+                  padding: EdgeInsets.symmetric(horizontal: DimensionConstants.d20.w),
                   child: SingleChildScrollView(
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,7 +58,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                             GestureDetector(onTap: (){
                               Navigator.pop(context);
                             },
-                                child: Icon(Icons.arrow_back_ios,color: ColorConstants.colorBlack,size: DimensionConstants.d20,)),
+                                child: const Icon(Icons.arrow_back_ios,color: ColorConstants.colorBlack,size: DimensionConstants.d20,)),
                             SizedBox(
                               height: DimensionConstants.d89.h,
                             ),
@@ -71,94 +68,95 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                               children: [
                                 Text(
                                   "welcome_message".tr(),
-                                ).regularText(ColorConstants.headingColor, DimensionConstants.d22.sp),
+                                ).mediumText(ColorConstants.headingColor, DimensionConstants.d22.sp,TextAlign.center),
 
                               ],
                             ) ,
                             SizedBox(
                               height: DimensionConstants.d51.h,
                             ),
-                            SizedBox(
-                              child: Form(
+                            RoundCornerShape(
+                              decoration: const BoxDecoration(
 
-                                child: Column(
-                                  children: [
+                                  boxShadow: [
+                                    BoxShadow(
+                                      offset: Offset(0.0, 0.75),
+                                      blurRadius: 12,
+                                      color: ColorConstants.borderColor,
+                                    )
+                                  ]
+                              ),
+                              height: DimensionConstants.d52.h,
+                              bgColor: ColorConstants.whiteColor,
+                              topRightradius: DimensionConstants.d6.r,
+                              topleftradius: DimensionConstants.d6.r,
+                              bottomRightradius: DimensionConstants.d6.r,
+                              bottomleftradius: DimensionConstants.d6.r,
+                              child: Center(
+                                child: TextFormField(
+                                  cursorColor:
+                                  ColorConstants.colorButtonbgColor,
+                                  controller: _emailController,
+                                  style: ViewDecoration.textFieldStyle(
+                                      DimensionConstants.d16.sp),
+                                  decoration: ViewDecoration
+                                      .inputDecorationWithCurve(
+                                      "enter_email".tr(),
+                                      prefixIcon: Padding(
+                                          padding: EdgeInsets.only(
+                                              left: DimensionConstants.d20.w,
+                                              right: DimensionConstants.d10.w),
+                                          child: const ImageView(
+                                            path: ImageConstants.ic_email,
+                                          )
+                                      )
+                                  ),
+                                  textInputAction: TextInputAction.next,
+                                  keyboardType:
+                                  TextInputType.emailAddress,
 
-
-                                    SizedBox(
-                                      height: DimensionConstants.d52.h,
-                                      child: RoundCornerShape(
-                                        bgColor: ColorConstants.whiteColor,
-                                        radius: DimensionConstants.d6.r,
-                                        child: TextFormField(
-                                          cursorColor:
-                                          ColorConstants.colorButtonbgColor,
-                                          controller: _emailController,
-                                          style: ViewDecoration.textFieldStyle(
-                                              DimensionConstants.d16.sp),
-                                          decoration: ViewDecoration
-                                              .inputDecorationWithCurve(
-                                              "enter_email".tr(),
-                                              prefixIcon: Padding(
-                                                  padding: EdgeInsets.only(left: DimensionConstants.d20.w,top: DimensionConstants.d16.h,
-                                                      bottom: DimensionConstants.d16.h,right: DimensionConstants.d10.w),
-                                                  child: const ImageView(
-                                                    path: ImageConstants.ic_email,
-                                                  )
-                                              )
-                                          ),
-                                          textInputAction: TextInputAction.next,
-                                          keyboardType:
-                                          TextInputType.emailAddress,
-
-                                        ),
-                                      ),
-                                    ),
-
-
-
-                                    SizedBox(
-                                      height: DimensionConstants.d37.h,
-                                    ),
-                                  ],
                                 ),
                               ),
+                            ),
+                            SizedBox(
+                              height: DimensionConstants.d37.h,
                             ),
                             GestureDetector(
                                 onTap: () {
                                   if (_emailController.text == '') {
                                     DialogHelper.showMessage(
                                         context, 'Email cannot be empty');
-                                    return;
+
                                   }
-                                  if (!Validations.emailValidation(_emailController.text)) {
+                                  else if (!Validations.emailValidation(_emailController.text)) {
                                     DialogHelper.showMessage(
                                         context, 'Invalid email');
-                                    return;
+
                                   }
                                 },
-                                child: SizedBox(
-                                    width: DimensionConstants.d373.w,
+                                child: RoundCornerShape(
                                     height: DimensionConstants.d52.h,
-                                    child: RoundCornerShape(
-                                        bgColor: ColorConstants.colorButtonbgColor,
-                                        radius: DimensionConstants.d6.r,
-                                        child: Center(
-                                          child: Row(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                            children: [
-                                              Text(
-                                                'submit'.tr(),
-                                              ).buttonText(
-                                                  ColorConstants.whiteColor,
-                                                  DimensionConstants.d16.sp,
-                                                  TextAlign.center),
+                                    bgColor: ColorConstants.colorButtonbgColor,
+                                    topRightradius: DimensionConstants.d6.r,
+                                    topleftradius: DimensionConstants.d6.r,
+                                    bottomRightradius: DimensionConstants.d6.r,
+                                    bottomleftradius: DimensionConstants.d6.r,
+                                    child: Center(
+                                      child: Row(
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            'submit'.tr(),
+                                          ).boldText(
+                                              ColorConstants.whiteColor,
+                                              DimensionConstants.d16.sp,
+                                              TextAlign.center),
 
-                                            ],
+                                        ],
 
-                                          ),
-                                        ))))
+                                      ),
+                                    )))
                           ]
                       )));
             },

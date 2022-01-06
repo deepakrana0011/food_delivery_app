@@ -6,34 +6,48 @@ class RoundCornerShape extends StatelessWidget {
   Widget child;
   Color bgColor;
   Color strokeColor;
-  double radius;
+  double? topleftradius;
+  double? topRightradius;
+  double? bottomleftradius;
+  double? bottomRightradius;
+  double? height;
+  double? width;
+  double? elevation;
+  Decoration? decoration;
+
 
 
   RoundCornerShape(
       {required this.child,
       required this.bgColor,
-      required this.radius,
+      this.topleftradius,
+        this.topRightradius,
+        this.bottomleftradius,
+        this.bottomRightradius,
+        this.height,
+        this.width,
+
+        this.decoration,
+
+
       this.strokeColor = Colors.transparent});
 
   @override
   Widget build(BuildContext context) {
-    ScreenScaler scaler = new ScreenScaler()..init(context);
-    return Container(
-        decoration: BoxDecoration(
 
-            boxShadow: [
-              BoxShadow(
-                offset: Offset(0.0, 0.75),
-                blurRadius: 12,
-                color: ColorConstants.borderColor,
-              )
-            ]
-        ),
+    return Container(
+      height: height,
+        width: width,
+
+        decoration: decoration,
 
         child: Material(
+
       shape: RoundedRectangleBorder(
           side: BorderSide(color: strokeColor),
-          borderRadius: scaler.getBorderRadiusCircularLR(radius, radius, radius, radius)),
+          borderRadius:
+          BorderRadius.only(topLeft:Radius.circular(topleftradius!),topRight: Radius.circular(topRightradius!),
+              bottomLeft: Radius.circular(bottomleftradius!),bottomRight: Radius.circular(bottomRightradius!))),
       color: bgColor,
       child: child,
     ));

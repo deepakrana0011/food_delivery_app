@@ -18,7 +18,7 @@ class ColorConstants {
   static const Color colorDarkBlue = Color(0XFF0A1B33);
   static const Color colorMediumGray = Color(0XFFE8E8E8);
   static const Color colorLightBlue = Color(0XFF6393AD);
-  static const Color colorbackground=Color(0XFFF5F5F5);
+  static const Color colorbackground=Color(0XFFFFFFFF);
   static const Color colorTextAppBar=Color(0XFF181725);
   static const Color colorHintTextColor=Color(0XFFC5C5C5);
   static const Color colorButtonbgColor=Color(0XFFE21F23);
